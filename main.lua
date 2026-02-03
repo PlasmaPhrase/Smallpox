@@ -39,3 +39,24 @@ SMODS.current_mod.optional_features = function()
         cardareas = {} 
     }
 end
+
+-- Main Menu Colours (Credit to Cryptid and JoyousSpring)
+local game_main_menu_ref = Game.main_menu
+function Game:main_menu(change_context)
+    local ret = game_main_menu_ref(self, change_context)
+
+        local colours = { c1 = HEX("3F528C"), c2 = HEX("89ACEB") }
+        G.SPLASH_BACK:define_draw_steps({
+            {
+                shader = "splash",
+                send = {
+                    { name = "time",       ref_table = G.TIMERS, ref_value = "REAL_SHADER" },
+                    { name = "vort_speed", val = 0.4 },
+                    { name = "colour_1",   ref_table = colours,  ref_value = "c1" },
+                    { name = "colour_2",   ref_table = colours,      ref_value = "c2" },
+                },
+            },
+        })
+
+    return ret
+end

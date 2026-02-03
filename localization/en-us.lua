@@ -1,6 +1,12 @@
 return {
     descriptions = {
         Joker = {
+            j_smallpox_examplejoker = {
+                name = 'Joker+',
+                text = {
+                    "{C:mult}+#1#{} Mult"
+                }
+            },
             j_smallpox_grinch = {
                 name = 'The Grinch',
                 text = {
@@ -19,3 +25,4 @@ return {
         },
     }
 }
+
