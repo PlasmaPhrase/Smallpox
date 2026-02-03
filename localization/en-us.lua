@@ -24,7 +24,25 @@ return {
                     "{C:mult}+#1#{} Mult"
                 }
             },
+            j_smallpox_susie = {
+                name = "Susie",
+                text = {
+                    {
+                        "Scored {C:attention}8{}s and {C:attention}6{}s are",
+                        "enhanced to {C:attention}Steel{} cards",
+                        "when played"
+                    },
+                    {
+                        "Played {C:attention}Steel{} cards give",
+                        "{C:chips}+#1#{} Chips when scored"
+                    }
+                }
+            },
         },
+    },
+    misc = {
+        dictionary = {
+            k_steel = "Steel",
+        }
     }
 }
-
