@@ -1,4 +1,4 @@
--- ATLASES
+-- STANDARD ATLASES
 
 SMODS.Atlas({
     key = "modicon", 
@@ -18,8 +18,8 @@ SMODS.Atlas({
 })
 
 SMODS.Atlas({
-    key = "CustomJokers", 
-    path = "CustomJokers.png", 
+    key = "CustomDecks", 
+    path = "CustomDecks.png", 
     px = 71,
     py = 95,
     atlas_table = "ASSET_ATLAS"
@@ -27,7 +27,7 @@ SMODS.Atlas({
 
 -- ASSERTS
 
-assert(SMODS.load_file("src/jokers.lua"))()
+assert(SMODS.load_file("src/jokers/example.lua"))() -- The example joker
 
 -- Unsure what this does
 local NFS = require("nativefs")
