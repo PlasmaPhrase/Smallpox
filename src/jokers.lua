@@ -30,7 +30,7 @@ SMODS.Joker {
     atlas = "CustomJokers",
     pos = { x = 3, y = 1 },
 
-    config = { extra = { min = 4, max = 20, moneymin = 1, moneymax = 20} },
+    config = { extra = { min = 4, max = 20, moneymin = 1, moneymax = 20, mult_n = 1, mult_d = 2, X_n = 1, X_d = 2} }, --kept throwing errors when i tried to uses mult_n and mult_d directly and X_n and X_d so idk
 
     loc_txt = {
         name = "Blackjack",
@@ -47,11 +47,18 @@ SMODS.Joker {
         local main_end = {
 
             {
-                n = G.UIT.T,
+                n = G.UIT.O,
                 config = {
-                    text = "X",
-                    colour = G.C.MULT,
-                    scale = 0.32
+                    object = DynaText({
+                        string = {"X", "+"},
+                        colours = { G.C.MULT },
+                        pop_in_rate = 9999999,
+                        silent = true,
+                        random_element = true,
+                        pop_delay = 0.2011,
+                        scale = 0.32,
+                        min_cycle_time = 0
+                    })
                 }
             },
 
@@ -71,11 +78,26 @@ SMODS.Joker {
                 }
             },
 
+            {
+                n = G.UIT.O,
+                config = {
+                    object = DynaText({
+                        string = {" Mult", " Chips"},
+                        colours = { G.C.DARK_EDITION },
+                        pop_in_rate = 9999999,
+                        silent = true,
+                        random_element = true,
+                        pop_delay = 0.2011,
+                        scale = 0.32,
+                        min_cycle_time = 0
+                    })
+                }
+            },
 
             {
                 n = G.UIT.T,
                 config = {
-                    text = " Mult and ",
+                    text = " and ",
                     colour = G.C.UI.TEXT_DARK,
                     scale = 0.32
                 }
@@ -128,14 +150,41 @@ SMODS.Joker {
                 end
             end
 
-
+            -- this whole block is so overcomplicated lmao i could do this way better but nested ifs it is
             if faces == 1 and aces == 1 and numbers == 0 then
-                return {
-                    Xmult = pseudorandom('BJrandMult', card.ability.extra.min, card.ability.extra.max),
-                    dollars  = math.floor(pseudorandom('BJrandMoney', card.ability.extra.moneymin, card.ability.extra.moneymax) + 0.5),
-                    message = "BlackJack!",
-                    colour = G.C.MULT
-                }
+                if SMODS.pseudorandom_probability(card, "black_spot", 1, 2) then
+                    if SMODS.pseudorandom_probability(card, "X_prob", 1, 2) then
+                        return {
+                            Xmult = pseudorandom('BJrandMult', card.ability.extra.min, card.ability.extra.max),
+                            dollars  = math.floor(pseudorandom('BJrandMoney', card.ability.extra.moneymin, card.ability.extra.moneymax) + 0.5),
+                            message = "BlackJack!",
+                            colour = G.C.MULT
+                        }
+                    else
+                        return {
+                            mult = pseudorandom('BJrandMult', card.ability.extra.min, card.ability.extra.max),
+                            dollars  = math.floor(pseudorandom('BJrandMoney', card.ability.extra.moneymin, card.ability.extra.moneymax) + 0.5),
+                            message = "BlackJack!",
+                            colour = G.C.MULT
+                        }
+                    end
+                else 
+                    if SMODS.pseudorandom_probability(card, "X_prob", 1, 2) then
+                        return {
+                            xchips = pseudorandom('BJrandMult', card.ability.extra.min, card.ability.extra.max),
+                            dollars  = math.floor(pseudorandom('BJrandMoney', card.ability.extra.moneymin, card.ability.extra.moneymax) + 0.5),
+                            message = "BlackJack!",
+                            colour = G.C.CHIPS
+                        }
+                    else
+                        return {
+                            chips = pseudorandom('BJrandMult', card.ability.extra.min, card.ability.extra.max),
+                            dollars  = math.floor(pseudorandom('BJrandMoney', card.ability.extra.moneymin, card.ability.extra.moneymax) + 0.5),
+                            message = "BlackJack!",
+                            colour = G.C.CHIPS
+                        }
+                    end
+                end
             end
         end
     end
