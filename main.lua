@@ -29,8 +29,9 @@ SMODS.Atlas({
 
 assert(SMODS.load_file("./src/backs.lua"))()
 assert(SMODS.load_file("./src/jokers/example.lua"))() -- The example joker
+assert(SMODS.load_file("./src/jokers/grinch.lua"))()
 
--- Unsure what this does (apparently it's Talisman stuff)
+-- Unsure what this does
 local NFS = require("nativefs")
 to_big = to_big or function(a) return a end
 lenient_bignum = lenient_bignum or function(a) return a end
