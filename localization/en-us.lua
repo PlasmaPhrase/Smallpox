@@ -24,6 +24,18 @@ return {
                     "{C:mult}+#1#{} Mult"
                 }
             },
+            j_smallpox_demon_core = {
+                name = "Demon Core",
+                text = {
+                    "When {C:attention}Blind{} is selected,",
+                    "this {C:attention}Joker{} gains {X:mult,C:white}X#1#{} Mult",
+                    "After defeating a {C:attention}Boss",
+                    "{C:attention}Blind{}, if a {C:spectral}Spectral{} Card",
+                    "was not used this {C:attention}Ante,",
+                    "{C:red}debuffs{} {C:attention}1{} random {C:attention}Joker",
+                    "{C:inactive}(Currently {X:mult,C:white}X#2#{C:inactive} Mult)",
+                }
+            }
         },
     }
 }
