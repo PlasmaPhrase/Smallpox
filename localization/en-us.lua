@@ -24,6 +24,17 @@ return {
                     "{C:mult}+#1#{} Mult"
                 }
             },
+            j_smallpox_bliss = {
+                name = {
+                    'Bliss',
+                    '{s:0.5}created by {s:0.5,C:edition}LasagnaFelidae{}',
+                },
+                text = { 
+                  "Gains {C:chips}#1#{} Chips if {C:attention}#2#{} suits or",
+                  "more have been played.",
+                  "{C:inactive}(Currently {}{C:chips}#3#{}{C:inactive} Chips.)"
+                },
+            },
         
 
             j_smallpox_blackjack = {
@@ -56,7 +67,7 @@ return {
 
                     j_smallpox_Inky = {
                             name = {
-                                "Restraunt Menu",
+                                "Restaurant Menu",
                                 "{s:0.5}Created by {s:0.5,C:green,E:1}Inky{}{}",
                                 "{s:0.3}Programmed by {s:0.3,C:smallpox_typ0,E:1}SLDTyp0{}{}"
                             },
@@ -68,6 +79,8 @@ return {
                         },
                     },
         
+     
     }
 }
+
 
