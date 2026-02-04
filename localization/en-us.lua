@@ -18,12 +18,14 @@ return {
             },
         },
         Joker = {
-            j_smallpox_examplejoker = {
-                name = 'Joker+',
+            j_smallpox_miller = {
+                name = "VOIDWALKER",
                 text = {
-                    "{C:mult}+#1#{} Mult"
-                }
-            },
+                        "Reduced blind",
+                        "requirements by", 
+                        "a {C:attention}25%{}",
+                        },
+                },
         },
     }
 }
