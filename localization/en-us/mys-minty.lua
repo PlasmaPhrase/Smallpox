@@ -6,7 +6,7 @@ return {
             j_smallpox_mys_minty_vaccine = {
                 name = {
                     "Vaccine",
-                    "{s:0.5}By {s:0.5,V:2}#2#{}"
+                    "{s:0.5}created by {s:0.5,V:2}#2#{}"
                 },
                 text = {
                     "{X:dark_edition}^#1#{} Mult if all",
@@ -17,7 +17,7 @@ return {
             j_smallpox_mys_minty_vaccine_alt = {
                 name = {
                     "Vaccine",
-                    "{s:0.5}By {s:0.5,V:2}#2#{}"
+                    "{s:0.5}created by {s:0.5,V:2}#2#{}"
                 },
                 text = {
                     "{X:dark_edition}^#1#{} Mult if",
