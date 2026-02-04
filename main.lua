@@ -30,6 +30,9 @@ SMODS.Atlas({
 assert(SMODS.load_file("./src/backs.lua"))()
 assert(SMODS.load_file("./src/jokers/example.lua"))() -- The example joker
 assert(SMODS.load_file("./src/jokers/bliss.lua"))() -- Bliss by LasagnaFelidae
+assert(SMODS.load_file("./src/jokers/typ0.lua"))() -- Blackjack by Typ0
+assert(SMODS.load_file("./src/jokers/tatsu.lua"))() -- Butterfly Effect by Tatsu, p: Typ0
+assert(SMODS.load_file("./src/jokers/inky.lua"))() -- Restaurant Menu by Inky, p: Typ0
 
 -- Unsure what this does (apparently it's Talisman stuff)
 local NFS = require("nativefs")
