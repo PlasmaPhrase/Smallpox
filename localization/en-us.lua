@@ -24,7 +24,19 @@ return {
                     "{C:mult}+#1#{} Mult"
                 }
             },
+            j_smallpox_bliss = {
+                name = {
+                    'Bliss',
+                    '{s:0.5}created by {s:0.5,C:edition}LasagnaFelidae{}',
+                },
+                text = { 
+                  "Gains {C:chips}#1#{} Chips if {C:attention}#2#{} suits or",
+                  "more have been played.",
+                  "{C:inactive}(Currently {}{C:chips}#3#{}{C:inactive} Chips.)"
+                },
+            },
         },
     }
 }
+
 
