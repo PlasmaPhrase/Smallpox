@@ -1,14 +1,22 @@
+SMODS.Atlas({
+    key = "miller", 
+    path = "jokers/miller.png", 
+    px = 71,
+    py = 95,
+    atlas_table = "ASSET_ATLAS"
+})
+
 SMODS.Joker{
     key = "miller",
     pos = {
-        x = 7,
+        x = 0,
         y = 0
     },
     soul_pos = { 
-        x = 8, 
+        x = 1, 
         y = 0 
     },
-    atlas = "CustomJokers", --change later
+    atlas = "miller", --change later
     cost = 8,
     rarity = 3,
     discovered = true,
@@ -28,4 +36,5 @@ SMODS.Joker{
         end
     end
 }
+
 
