@@ -24,6 +24,17 @@ return {
                     "{C:mult}+#1#{} Mult"
                 }
             },
+            j_smallpox_demon_core = {
+                name = "Demon Core",
+                text = {
+                    "When {C:attention}Blind{} is selected,",
+                    "this {C:attention}Joker{} gains {X:mult,C:white}X#1#{} Mult",
+                    "and {C:attention}destroys{} a random",
+                    "card in deck",
+                    "{C:inactive}(Currently {X:mult,C:white}X#2#{C:inactive} Mult)",
+                },
+            }
+
             j_smallpox_bliss = {
                 name = {
                     'Bliss',
