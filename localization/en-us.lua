@@ -167,8 +167,8 @@ return {
             j_smallpox_examplejoker = {
                 name = 'Joker+',
                 text = {
-                    "{C:mult}+#1#{} Mult"
-					"{C:inactive,s:0.8}\"our lovely chud son\""
+                    "{C:mult}+#1#{} Mult",
+					"{C:inactive,s:0.8}our lovely chud son"
                 }
             },
         },
@@ -179,6 +179,7 @@ return {
     },
   },        
 }
+
 
 
 
