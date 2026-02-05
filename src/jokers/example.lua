@@ -12,12 +12,13 @@ SMODS.Joker {
     key = "examplejoker",
     pos = { x = 0, y = 0 },
     rarity = 1,
+    pools = {["Smallpox"] = true},
     blueprint_compat = true,
     cost = 2,
     discovered = true,
     config = { extra = { mult = 5 }, },
     atlas = 'examplejoker',
-
+    pronouns = "he_they", --our chud son
     loc_vars = function(self, info_queue, card)
         return { vars = { card.ability.extra.mult } }
     end,
@@ -25,12 +26,11 @@ SMODS.Joker {
     calculate = function(self, card, context)
         if context.joker_main then
             return {
-                mult = card.ability.extra.mult,
-                message = "test!",
-                colour = HEX('a4eaf4')
+                mult = card.ability.extra.mult
             }
         end
     end
 }
+
 
 
