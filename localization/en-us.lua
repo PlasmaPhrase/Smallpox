@@ -44,7 +44,7 @@ return {
                     "if there are {C:attention}equal{} amounts of jokers",
                     "to this card's left and right.",
                 }
-            }
+            },
             j_smallpox_functions = {
                 name = {
                     'Functions',
