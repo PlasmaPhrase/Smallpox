@@ -24,6 +24,18 @@ return {
                     "{C:mult}+#1#{} Mult"
                 }
             },
+            j_smallpox_smallpox = {
+                name = {
+                    'Smallpox',
+                    '{s:0.5}created by {s:0.5,V:1}Plasma{}',
+                },
+                text = {
+                    "{X:mult,C:white} X#1# {} Mult",
+                    "{C:green}#2# in #3#{} chance for a",
+                    "random Joker to become",
+                    "{V:1}infected{} with {C:attention}Smallpox{}"
+                }
+            },
             j_smallpox_grinch = {
                 name = {
                     'The Grinch',
