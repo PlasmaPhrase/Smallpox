@@ -18,10 +18,16 @@ return {
             },
         },
         Joker = {
-            j_smallpox_examplejoker = {
-                name = 'Joker+',
+            j_smallpox_functions = {
+                name = 'Functions',
                 text = {
-                    "{C:mult}+#1#{} Mult"
+                    "After {C:attention}scoring{} or being {C:attention}used{}:", 
+                    "{C:attention}Randomize{} the {C:spectral,E:1}Scoring Operator",
+                    "between {C:chips}Chips{} and {C:mult}Mult{}.",
+                    "{C:inactive}(Currently {V:1,E:2}#1#{C:inactive})",
+                    " ",
+                    "Can only be {C:attention}used",
+                    "{C:attention}once{} per round",
                 }
             },
             j_smallpox_smallpox = {

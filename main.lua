@@ -28,8 +28,12 @@ SMODS.Atlas({
 -- ASSERTS
 
 assert(SMODS.load_file("./src/backs.lua"))()
+assert(SMODS.load_file("./src/ui.lua"))() -- The use button
 assert(SMODS.load_file("./src/pools.lua"))()
+
+
 assert(SMODS.load_file("./src/jokers/example.lua"))() -- The example joker
+assert(SMODS.load_file("./src/jokers/breuhh.lua"))() -- Functions by Breuhh
 assert(SMODS.load_file("./src/jokers/grinch.lua"))() -- Grinch by Soulware
 assert(SMODS.load_file("./src/jokers/vaccine.lua"))() -- Vaccine by mys.minty
 assert(SMODS.load_file("./src/jokers/demon_core.lua"))() -- Demon Core by ThunderEdge

@@ -18,7 +18,7 @@ SMODS.Joker {
     discovered = true,
     config = { extra = { mult = 5 }, },
     atlas = 'examplejoker',
-    pronouns = "he_they", --soulwares chud son
+    pronouns = "he_they", --our chud son
     loc_vars = function(self, info_queue, card)
         return { vars = { card.ability.extra.mult } }
     end,
