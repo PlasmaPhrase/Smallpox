@@ -12,6 +12,7 @@ SMODS.Joker {
     key = "examplejoker",
     pos = { x = 0, y = 0 },
     rarity = 1,
+    pools = {["Smallpox"] = true},
     blueprint_compat = true,
     cost = 2,
     discovered = true,
@@ -30,5 +31,6 @@ SMODS.Joker {
         end
     end
 }
+
 
 
