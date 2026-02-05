@@ -159,7 +159,7 @@ return {
                     "{s:0.5}created by Abel",
                 },
                 text = {
-                    "Reduced blind",
+                    "Reduce blind",
                     "requirements by", 
                     "{C:attention}#1#%{}",
                     },
@@ -179,6 +179,7 @@ return {
     },
   },        
 }
+
 
 
 
