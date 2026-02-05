@@ -1,4 +1,4 @@
--- ATLASES
+-- STANDARD ATLASES
 
 SMODS.Atlas({
     key = "modicon", 
@@ -18,8 +18,8 @@ SMODS.Atlas({
 })
 
 SMODS.Atlas({
-    key = "CustomJokers", 
-    path = "CustomJokers.png", 
+    key = "CustomDecks", 
+    path = "CustomDecks.png", 
     px = 71,
     py = 95,
     atlas_table = "ASSET_ATLAS"
@@ -27,9 +27,12 @@ SMODS.Atlas({
 
 -- ASSERTS
 
-assert(SMODS.load_file("src/jokers.lua"))()
+assert(SMODS.load_file("./src/backs.lua"))()
+assert(SMODS.load_file("./src/pools.lua"))()
+assert(SMODS.load_file("./src/jokers/example.lua"))() -- The example joker
+assert(SMODS.load_file("./src/jokers/scales_of_justice.lua"))()
 
--- Unsure what this does
+-- Unsure what this does (apparently it's Talisman stuff)
 local NFS = require("nativefs")
 to_big = to_big or function(a) return a end
 lenient_bignum = lenient_bignum or function(a) return a end
