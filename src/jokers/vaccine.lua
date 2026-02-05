@@ -26,6 +26,7 @@ SMODS.Joker {
     blueprint_compat = true,
     cost = 9,
     discovered = true,
+    pools = {["Smallpox"] = true},
     config = { extra = { emult = 2 }, },
     atlas = 'mys_minty_vaccine',
 
