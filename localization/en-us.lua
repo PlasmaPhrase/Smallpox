@@ -18,6 +18,19 @@ return {
             },
         },
         Joker = {
+            j_felijo_astro = {
+			  name = {
+                    "Astro",
+                    '{s:0.5}created by {s:0.5,C:blue}Astro{}',
+                    "{s:0.5}programmed by {s:0.5,C:edition}LasagnaFelidae{}{}"
+                },
+			  text = { 
+				"Grants {C:chips}#1#{} Chips",
+				"for each {V:1}#2#{} card",
+                "in your deck.",
+				"{s:0.8,C:inactive}(Currently {}{s:0.8,C:chips}#3#{}{s:0.8,C:inactive} Chips. [#4#])"
+			  }
+			},
             j_smallpox_functions = {
                 name = {
                     'Functions',
@@ -117,8 +130,8 @@ return {
             j_smallpox_Tatsu = {
                 name = {
                     "Butterfly Effect",
-                    "{s:0.5}Created by {s:0.5,V:1,E:1}Tatsu{}{}",
-                    "{s:0.3}Programmed by {s:0.3,C:smallpox_typ0,E:1}SLDTyp0{}{}"
+                    "{s:0.5}created by {s:0.5,V:1,E:1}Tatsu{}{}",
+                    "{s:0.5}programmed by {s:0.5,C:smallpox_typ0,E:1}SLDTyp0{}{}"
                 },
                 text = {
                     "{C:attention}Sell{} this card to",
@@ -132,7 +145,7 @@ return {
               name = {
                     "Restaurant Menu",
                     "{s:0.5}created by {s:0.5,C:green,E:1}Inky{}{}",
-                    "{s:0.3}programmed by {s:0.3,C:smallpox_typ0,E:1}SLDTyp0{}{}"
+                    "{s:0.5}programmed by {s:0.5,C:smallpox_typ0,E:1}SLDTyp0{}{}"
                 },
               text = {
                     "When {C:attention}sold,{}",
@@ -160,5 +173,6 @@ return {
     },
   },        
 }
+
 
 
