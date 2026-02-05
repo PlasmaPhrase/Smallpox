@@ -97,7 +97,7 @@ return {
                 text = {
                     "When {C:attention}Blind{} is selected,",
                     "this {C:attention}Joker{} gains {X:mult,C:white}X#1#{} Mult",
-                    "and {C:attention}destroys{} a random",
+                    "and {C:red}destroys{} a random",
                     "card in deck",
                     "{C:inactive}(Currently {X:mult,C:white}X#2#{C:inactive} Mult)",
                 },
@@ -179,6 +179,7 @@ return {
     },
   },        
 }
+
 
 
 
