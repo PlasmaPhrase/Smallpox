@@ -15,5 +15,9 @@ SMODS.Sound({
 SMODS.Sound({
     key = "tatsu_sfx", 
     path = "tatsu.mp3", 
-    sync = true,
+})
+
+SMODS.Sound({
+    key = "poxofthewild_pop",
+    path = "poxofthewild_pop.ogg",
 })
