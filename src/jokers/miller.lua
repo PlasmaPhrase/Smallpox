@@ -24,7 +24,7 @@ SMODS.Joker{
     discovered = true,
     config = { extra = { percentage = 0.25}, },
     loc_vars = function(self, info_queue, card)
-        return { vars = { percentage * 100, }
+        return { vars = { percentage * 100} }
     end,
     calculate = function(self, card, context)
         if context.setting_blind and G.GAME.blind.in_blind then
