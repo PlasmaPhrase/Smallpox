@@ -139,7 +139,7 @@ return {
                 name = {
                     "VOIDWALKER",
                     "{s:0.5}created by Abel",
-                }
+                },
                 text = {
                     "Reduced blind",
                     "requirements by", 
