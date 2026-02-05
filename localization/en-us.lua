@@ -24,13 +24,16 @@ return {
                     '{s:0.5}created by Breuuh',
                 },
                 text = {
-                    "After {C:attention}scoring{} or being {C:attention}used{}:", 
-                    "{C:attention}Randomize{} the {C:spectral,E:1}Scoring Operator",
-                    "between {C:chips}Chips{} and {C:mult}Mult{}.",
-                    "{C:inactive}(Currently {V:1,E:2}#1#{C:inactive})",
-                    " ",
-                    "Can only be {C:attention}used",
-                    "{C:attention}once{} per round",
+                    {
+                        "After {C:attention}scoring{} or {C:attention}use{}:", 
+                        "{C:attention}randomize{} the {C:spectral,E:1}scoring operator",
+                        "between {C:chips}Chips{} and {C:mult}Mult{}.",
+                        "{C:inactive}(Currently {V:1,E:2}#1#{C:inactive})",
+                    },
+                    {
+                        "Can only be {C:attention}used",
+                        "{C:attention}once{} per round",
+                    }
                 }
             },
             j_smallpox_smallpox = {
@@ -93,8 +96,9 @@ return {
                     '{s:0.5}created by {s:0.5,C:edition}LasagnaFelidae{}',
                 },
                 text = { 
-                    "Gains {C:chips}#1#{} Chips if {C:attention}#2#{} suits or",
-                    "more have been played.",
+                    "Gains {C:chips}#1#{} Chips",
+                    "if {C:attention}#2#{} or more suits",
+                    "have been played.",
                     "{C:inactive}(Currently {}{C:chips}#3#{}{C:inactive} Chips.)"
                 },
             },
@@ -155,4 +159,5 @@ return {
     },
   },        
 }
+
 
