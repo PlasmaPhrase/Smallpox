@@ -27,7 +27,17 @@ return {
                     "{V:1}infected{} with {C:attention}Smallpox{}"
                 }
             }
+            j_smallpox_miller = {
+                name = "{C:smallpox_miller}VOIDWALKER{}",
+                text = {
+                        "Reduced blind",
+                        "requirements by", 
+                        "a {C:attention}25%{}",
+                },
+            },
+        },
         }
     }
 }
+
 
