@@ -203,6 +203,18 @@ return {
                     },
                 }
             },
+
+            j_smallpox_missingnumber = {
+                name = {
+                    "Stained Glass Window",
+                    "{s:0.5}created by {s:0.5,C:planet,E:1}Missing Number{}{}",
+                    "{s:0.5}programmed by {s:0.5,C:smallpox_typ0,E:1}SLDTyp0{}{}"
+                },
+                text = {
+                    "Played {C:attention}Glass{} cards",
+                    "earn {C:chips}X#1#{} when scored",
+                }
+            },
         },
   },
   misc = {
