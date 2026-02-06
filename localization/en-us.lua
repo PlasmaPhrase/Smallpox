@@ -185,6 +185,25 @@ return {
 					"{C:inactive,s:0.8}our lovely chud son"
                 }
             },
+
+            j_smallpox_Tech = {
+                name = {
+                    'The Pox of The Wild',
+                    "{s:0.5}created by {s:0.5,C:spectral,E:1}Tech{}{}",
+                    "{s:0.5}programmed by {s:0.5,C:smallpox_typ0,E:1}SLDTyp0{}{}"
+                },
+                text = {
+                    {
+                    'For every {C:attention}Smallpox{} Joker',
+                    'give Xmult according to their {C:red}rarity.{}',
+                    'If the Jokers rarity is {C:red}Rare{} or above, Retrigger it.',
+                    },
+                    {
+                    '{C:inactive}[{}{C:common}Common:{}{C:inactive}{C:mult} 1.5X Mult,{} {C:uncommon}Uncommon:{}{C:mult} 2X Mult{}{C:inactive}]{}',
+                    '{C:inactive}[{}{C:rare}Rare:{} {C:mult}2.5X Mult,{} {C:legendary}Legendary:{} {C:mult}3X Mult{}{C:inactive}]{}',
+                    }
+                }
+            },
         },
   },
   misc = {
