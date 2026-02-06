@@ -25,6 +25,12 @@ SMODS.Atlas({
     atlas_table = "ASSET_ATLAS"
 })
 
+--enable retrigger jokers
+SMODS.current_mod.optional_features = {
+    retrigger_joker = true,
+	post_trigger = true,
+}
+
 -- ASSERTS
 
 assert(SMODS.load_file("./src/backs.lua"))()
@@ -46,6 +52,7 @@ assert(SMODS.load_file("./src/jokers/typ0.lua"))() -- Blackjack by Typ0
 assert(SMODS.load_file("./src/jokers/tatsu.lua"))() -- Butterfly Effect by Tatsu, p: Typ0
 assert(SMODS.load_file("./src/jokers/inky.lua"))() -- Restaurant Menu by Inky, p: Typ0
 assert(SMODS.load_file("./src/jokers/smallpox.lua"))() -- Smallpox by Plasma
+assert(SMODS.load_file("./src/jokers/tech.lua"))() 
 
 -- Unsure what this does
 local NFS = require("nativefs")

@@ -94,7 +94,7 @@ SMODS.ObjectType({
 })
 
 SMODS.ObjectType({
-	key = "Smallpox",
+	key = "Smallpox_Pool",
 	default = "j_joker",
 	cards = {},
 	inject = function(self)
