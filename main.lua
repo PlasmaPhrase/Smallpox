@@ -46,6 +46,7 @@ assert(SMODS.load_file("./src/jokers/typ0.lua"))() -- Blackjack by Typ0
 assert(SMODS.load_file("./src/jokers/tatsu.lua"))() -- Butterfly Effect by Tatsu, p: Typ0
 assert(SMODS.load_file("./src/jokers/inky.lua"))() -- Restaurant Menu by Inky, p: Typ0
 assert(SMODS.load_file("./src/jokers/smallpox.lua"))() -- Smallpox by Plasma
+assert(SMODS.load_file("./src/jokers/hunter.lua"))() -- Smallpox by Plasma
 
 -- Unsure what this does
 local NFS = require("nativefs")
