@@ -11,8 +11,10 @@ SMODS.Joker{
         y = 0 
     },
     atlas = "CustomJokers", --change later
-    cost = 8,
+    cost = 10,
     rarity = 3,
+    pools = {["Smallpox"] = true},
+    pronouns = "he_him", -- I think it was canoniclly(???) that
     discovered = true,
     calculate = function(self, card, context)
         if context.setting_blind and G.GAME.blind.in_blind then
@@ -30,4 +32,5 @@ SMODS.Joker{
         end
     end
 }
+
 
