@@ -10,7 +10,7 @@ SMODS.Joker{
         x = 1, 
         y = 0 
     },
-    atlas = "CustomJokers", --change later
+    atlas = "voidwalker", --change later
     cost = 10,
     rarity = 3,
     pools = {["Smallpox"] = true},
@@ -32,5 +32,6 @@ SMODS.Joker{
         end
     end
 }
+
 
 
