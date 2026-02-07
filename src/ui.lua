@@ -131,6 +131,13 @@ SMODS.Gradient{
     },
     cycle = 1
 }
+SMODS.Gradient{
+    key = "smallpox_pink",
+    colours = {
+        HEX("f399ff"),
+    },
+    cycle = 0
+}
 --[[
 SPOX.Tooltip{
     key = "potw_table",
