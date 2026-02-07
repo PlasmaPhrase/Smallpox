@@ -26,6 +26,15 @@ return {
                     "random Joker to become",
                     "{V:1}infected{} with {C:attention}Smallpox{}"
                 }
+            },
+            j_smallpox_nolittering = {
+                name = 'No Littering',
+                text = {
+                    "Gains {C:mult}+#1#{} Mult if",
+                    "hand is played with",
+                    "{C:red}no discards{} used",
+                    "{C:inactive}(Currently {C:mult}+#2#{C:inactive} Mult){}"
+                }
             }
         }
     }
