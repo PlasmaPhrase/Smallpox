@@ -1,3 +1,9 @@
+SPOX = SMODS.current_mod
+SPOX.optional_features = {
+	post_trigger = true,
+	retrigger_joker = true,
+	}
+
 -- STANDARD ATLASES
 
 SMODS.Atlas({
@@ -25,21 +31,14 @@ SMODS.Atlas({
     atlas_table = "ASSET_ATLAS"
 })
 
---enable retrigger jokers
-SMODS.current_mod.optional_features = {
-    retrigger_joker = true,
-	post_trigger = true,
-}
-
-SMODS.optional_features.retrigger_joker = true
 
 -- ASSERTS
-
-assert(SMODS.load_file("./src/backs.lua"))()
-assert(SMODS.load_file("./src/pools.lua"))()
-assert(SMODS.load_file("./src/ui.lua"))() -- The use button
-assert(SMODS.load_file("./src/pools.lua"))()
-assert(SMODS.load_file("./src/sounds.lua"))()
+assert(SMODS.load_file("./src/pre.lua"))() -- PRELOADING FUNCTIONS
+assert(SMODS.load_file("./src/ui.lua"))() -- UI
+assert(SMODS.load_file("./src/backs.lua"))() -- DECKS
+assert(SMODS.load_file("./src/pools.lua"))() -- JOKER POOLS
+assert(SMODS.load_file("./src/sounds.lua"))() -- SOUNDS
+--assert(SMODS.load_file("./src/atlasses.lua"))() -- ATLASSES
 
 assert(SMODS.load_file("./src/jokers/example.lua"))() -- The example joker
 assert(SMODS.load_file("./src/jokers/scales_of_justice.lua"))() -- Scales of Justice by Revo
@@ -54,7 +53,7 @@ assert(SMODS.load_file("./src/jokers/typ0.lua"))() -- Blackjack by Typ0
 assert(SMODS.load_file("./src/jokers/tatsu.lua"))() -- Butterfly Effect by Tatsu, p: Typ0
 assert(SMODS.load_file("./src/jokers/inky.lua"))() -- Restaurant Menu by Inky, p: Typ0
 assert(SMODS.load_file("./src/jokers/smallpox.lua"))() -- Smallpox by Plasma
-assert(SMODS.load_file("./src/jokers/tech.lua"))() 
+assert(SMODS.load_file("./src/jokers/tech.lua"))() -- Pox Of The Wild by Tech
 
 -- Unsure what this does
 local NFS = require("nativefs")
