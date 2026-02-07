@@ -35,7 +35,6 @@ return {
                 name = {
                   "Atlas", 
                   "{s:0.5}created by {C:blue,s:0.5}ABuffZucchini{}{}",
-                  "{s:0.5}art by {C:blue,s:0.5}ABuffZucchini{}{}"
                 },
                 text = {
                     "{X:mult,C:white}X#1#{} Mult",
