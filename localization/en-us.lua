@@ -241,7 +241,7 @@ return {
             j_smallpox_polymorphine = {
                 name = {
 					'Polymorphine',
-					"{s:0.5}created by {s:0.5,C:money}NinjaBanana{}{}",
+					"{s:0.5}created by {s:0.5,C:blue}NinjaBanana{}{}",
 					"{s:0.5}art by {s:0.5,C:money,E:smallpox_rainbow}???{}{}",
 				},
                 text = {
