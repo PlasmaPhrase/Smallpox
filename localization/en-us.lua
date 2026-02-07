@@ -46,8 +46,8 @@ return {
             j_smallpox_scales_of_justice = {
                 name = {
                   "Scales of Justice", 
-                  "{s:0.5}created by {C:purple,s:0.5}Revo",
-                  "{s:0.5}art by {C:blue,s:0.5}Plasma"
+                  "{s:0.5}created by {C:purple,s:0.5}Revo{}{}",
+                  "{s:0.5}art by {C:blue,s:0.5}Plasma{}{}"
                 },
                 text = {
                     "{X:mult,C:white}X#1#{} Mult if the",
@@ -62,7 +62,7 @@ return {
                 name = {
 					"Kasane Teto",
 					"{s:0.5}created by {C:purple,s:0.5}Sillyz",
-                  	"{s:0.5}art by {C:blue,s:0.5}Plasma,{} {C:edition,s:0.5}LasagnaFelidae{}{}"
+                  	"{s:0.5}art by {C:blue,s:0.5}Plasma, {C:edition,s:0.5}LasagnaFelidae{}{}{}"
 					},
                 text = {
                     "Gain {X:mult,C:white}X#1#{} Mult for every",
@@ -91,7 +91,7 @@ return {
             j_smallpox_smallpox = {
                 name = {
                     'Smallpox',
-                    '{s:0.5}created by {s:0.5,C:blue}Plasma{}',
+                    '{s:0.5}created by {s:0.5,C:blue}Plasma{}{}',
                 },
                 text = {
                     "{X:mult,C:white} X#1# {} Mult",
@@ -103,7 +103,7 @@ return {
             j_smallpox_grinch = {
                 name = {
                     'The Grinch',
-                    '{s:0.5}created by {s:0.5,C:green}soulware{}',
+                    '{s:0.5}created by {s:0.5,C:green}soulware{}{}',
                 },
                 text = {
                    {
@@ -313,6 +313,7 @@ return {
     },
   },        
 }
+
 
 
 
