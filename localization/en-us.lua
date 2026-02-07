@@ -38,6 +38,16 @@ return {
                     }
                 }
             },
+			j_smallpox_missingnumber = {
+                name = {
+                    "Stained Glass Window",
+                    '{s:0.5}created by {s:0.5,C:smallpox_fire}missingnumber{}',
+                },
+                text = {
+                    "Played {C:hearts}Hearts{} cards become {C:attention}Glass{}.",
+                    "{C:hearts}Glass Hearts{} grant {X:blue,C:white}X1.5{} Chips when played{}",
+                }
+            },
             j_smallpox_roomtemperaturecarrot = {
                 name = {
                     'Room Temperature Carrot',
@@ -373,6 +383,7 @@ return {
     },
   },        
 }
+
 
 
 
