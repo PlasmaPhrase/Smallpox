@@ -262,7 +262,7 @@ return {
             j_smallpox_spikedball = {
                 name = {
                     'Spiked Ball',
-                    "{s:0.5}created by {s:0.5,C:dark_edition}Pi_Cubed{}{}",
+                    "{s:0.5}created by {s:0.5,V:1}pi_cubed{}",
                 },
                 text = {
                     {
