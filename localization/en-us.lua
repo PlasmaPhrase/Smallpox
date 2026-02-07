@@ -24,6 +24,21 @@ return {
             },
         },
         Joker = {
+
+               j_smallpox_zucchiniatlas = {
+                name = {
+                  "Atlas", 
+                  "{s:0.5}created by {C:blue,s:0.5}ABuffZucchini{}{}",
+                },
+                text = {
+                    "{X:mult,C:white}X#1#{} Mult",
+                    "This Joker {C:attention}gains{} {X:mult,C:white}X#4#{} Mult",
+                    "when using a {C:planet}Planet{} card,",
+                    "and {C:red}loses{} {X:mult,C:white}X#4#{} Mult at end of round,",
+             
+                    "{s:0.8,C:inactive}(Max of {X:mult,C:white,s:0.8}X#2#{s:0.8,C:inactive}, card destroyed at {X:mult,C:white,s:0.8}X#3#{s:0.8,C:inactive}){}"
+                }
+            },
             j_smallpox_rhythm = {
                 name = {
                         'Amp Up!',
@@ -402,8 +417,4 @@ return {
     },
   },        
 }
-
-
-
-
 
