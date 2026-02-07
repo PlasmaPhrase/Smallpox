@@ -1,6 +1,6 @@
 SMODS.Atlas({
     key = "susie", 
-    path = "jokers/placeholder.png", 
+    path = "jokers/susie.png", 
     px = 71,
     py = 95,
     atlas_table = "ASSET_ATLAS"
