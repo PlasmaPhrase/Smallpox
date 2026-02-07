@@ -41,6 +41,7 @@ assert(SMODS.load_file("./src/sounds.lua"))() -- SOUNDS
 --assert(SMODS.load_file("./src/atlasses.lua"))() -- ATLASSES
 
 assert(SMODS.load_file("./src/jokers/example.lua"))() -- The example joker
+assert(SMODS.load_file("./src/jokers/pi_cubed.lua"))() -- Spike Ball by Pi_cubed
 assert(SMODS.load_file("./src/jokers/scales_of_justice.lua"))() -- Scales of Justice by Revo
 assert(SMODS.load_file("./src/jokers/breuhh.lua"))() -- Functions by Breuhh
 assert(SMODS.load_file("./src/jokers/miller.lua"))() -- VOIDWALKER by Abel
