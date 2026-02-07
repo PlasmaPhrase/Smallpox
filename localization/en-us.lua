@@ -275,7 +275,11 @@ return {
                 }
             },
             j_smallpox_susie = {
-                name = "Susie",
+                name = {
+					"Susie",
+					"{s:0.5}created by {s:0.5,C:smallpox_pink}MetaNite64{}{}",
+					"{s:0.5}art by {s:0.5,C:money,E:smallpox_rainbow}???{}{}",
+				},
                 text = {
                     {
                         "Scored {C:attention}8{}s and {C:attention}6{}s are",
@@ -309,3 +313,4 @@ return {
     },
   },        
 }
+
