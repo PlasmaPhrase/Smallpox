@@ -30,7 +30,22 @@ return {
                     "random Joker to become",
                     "{V:1}infected{} with {C:attention}Smallpox{}"
                 }
-            }
+            },
+            j_smallpox_factory_line = {
+                name = {
+                    "Factory Line",
+                    "{s:0.5}created by {C:lily_pink,s:0.5}Lily Felli{}{}",
+                    "{s:0.5}unoriginal art by {C:lily_pink,s:0.5}Lily Felli{}{}"
+                },
+                text = {
+                    "When the counter reaches {C:attention}#1#{},",
+                    "create a random {C:rare}Rare{} Joker",
+                    "Counter increases by {C:attention}#3#{} for every",
+                    "other Joker owned at end of round",
+                    "{s:1.2,C:attention}#2#{} / {s:1.2,C:attention}#1#{}",
+                    "{C:inactive}(Must have room)",
+                }
+            },
         }
     }
 }
