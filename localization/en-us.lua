@@ -18,15 +18,27 @@ return {
             },
         },
         Joker = {
-            j_smallpox_ = {
+            j_smallpox_seethrujoke = {
                 name = 'See Through The Joke',
                 text = {
                     "{C:attention}+6 Hand Size{}"
                     "{C:red}-4 card selection limit{}"
                     "{C:inactive}Art and code done by FlynnsaneFellow{}"
+            j_smallpox_smallpox = {
+                name = {
+                  "Smallpox", 
+                  "{s:0.5}created by {C:blue,s:0.5}Plasma{}{}",
+                  "{s:0.5}art by {C:blue,s:0.5}Plasma{}{}"
+                },
+                text = {
+                    "{X:mult,C:white} X#1# {} Mult",
+                    "{C:green}#2# in #3#{} chance for a",
+                    "random Joker to become",
+                    "{V:1}infected{} with {C:attention}Smallpox{}"
                 }
-            },
-        },
+            }
+        }
     }
 }
+
 
