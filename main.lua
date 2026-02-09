@@ -40,7 +40,6 @@ assert(SMODS.load_file("./src/pools.lua"))() -- JOKER POOLS
 assert(SMODS.load_file("./src/sounds.lua"))() -- SOUNDS
 --assert(SMODS.load_file("./src/atlasses.lua"))() -- ATLASSES
 
-
 ---COMMON
 assert(SMODS.load_file("./src/jokers/ampup.lua"))() -- Amp Up by M0x3s
 assert(SMODS.load_file("./src/jokers/bliss.lua"))() -- Bliss by LasagnaFelidae
@@ -65,9 +64,10 @@ assert(SMODS.load_file("./src/jokers/demon_core.lua"))() -- Demon Core by Thunde
 assert(SMODS.load_file("./src/jokers/breuhh.lua"))() -- Functions by Breuhh
 assert(SMODS.load_file("./src/jokers/sillyzteto.lua"))() -- Kasane Teto by Sillyz
 assert(SMODS.load_file("./src/jokers/hunter.lua"))() -- Notebook Sketch by Hunter
-assert(SMODS.load_file("./src/jokers/polymorphine.lua"))() -- Polymorphine by NinjaBanana --- THESE JOKERS HAVE PLACEHOLDER ART!!!!!!!!!!
+assert(SMODS.load_file("./src/jokers/polymorphine.lua"))() -- Polymorphine by NinjaBanana
 assert(SMODS.load_file("./src/jokers/roomtemperaturecarrot.lua"))() -- Room Temp. Carrot by Rainstar
 assert(SMODS.load_file("./src/jokers/scales_of_justice.lua"))() -- Scales of Justice by Revo
+assert(SMODS.load_file("./src/jokers/seethroughthejoke.lua"))() -- See Through the Joke by Flynn
 assert(SMODS.load_file("./src/jokers/smallpox.lua"))() -- Smallpox by Plasma
 assert(SMODS.load_file("./src/jokers/missingnumber.lua"))() -- Stained Glass Window by missingnumber
 assert(SMODS.load_file("./src/jokers/miller.lua"))() -- VOIDWALKER by Abel
@@ -75,6 +75,7 @@ assert(SMODS.load_file("./src/jokers/miller.lua"))() -- VOIDWALKER by Abel
 ---LEGENDARY
 assert(SMODS.load_file("./src/jokers/Egbert.lua"))() -- John Egbert, by First Try
 assert(SMODS.load_file("./src/jokers/tech.lua"))() -- Pox Of The Wild by Tech, p: LasagnaFelidae, a: Plasma
+
 
 -- Unsure what this does (apparently it's Talisman stuff)
 local NFS = require("nativefs")
@@ -106,4 +107,5 @@ function Game:main_menu(change_context)
         })
 
     return ret
+    end
 end
