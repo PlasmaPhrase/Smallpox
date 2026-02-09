@@ -30,6 +30,21 @@ return {
                     "random Joker to become",
                     "{V:1}infected{} with {C:attention}Smallpox{}"
                 }
+            },
+            j_smallpox_tjetsu_sumi = {
+                name = {
+                    "Sumi",
+                    "{s:0.5}created by {C:tarot,s:0.5}Tje.Tsu{}{}",
+                },
+                text = {
+                    {"Scored {C:hearts}Hearts{} give",
+                    "{X:mult,C:white}X#2#{} Mult if scored",
+                    "after a {C:spades}Spade{}"},
+                    {"Scored {C:spades}Spades{} give",
+                    "{X:chips,C:white}X#1#{} Chips if scored",
+                    "after a {C:hearts}Heart{}"},
+                    {"{C:inactive}(Last scored : {V:1}#3#{}{C:inactive}){}"}
+                }
             }
         }
     }
