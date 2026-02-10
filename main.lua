@@ -31,7 +31,6 @@ SMODS.Atlas({
     atlas_table = "ASSET_ATLAS"
 })
 
-
 -- ASSERTS
 assert(SMODS.load_file("./src/pre.lua"))() -- PRELOADING FUNCTIONS
 assert(SMODS.load_file("./src/ui.lua"))() -- UI
@@ -39,9 +38,6 @@ assert(SMODS.load_file("./src/backs.lua"))() -- DECKS
 assert(SMODS.load_file("./src/pools.lua"))() -- JOKER POOLS
 assert(SMODS.load_file("./src/sounds.lua"))() -- SOUNDS
 --assert(SMODS.load_file("./src/atlasses.lua"))() -- ATLASSES
-
-
-
 
 ---COMMON
 assert(SMODS.load_file("./src/jokers/ampup.lua"))() -- Amp Up by M0x3s
@@ -63,7 +59,7 @@ assert(SMODS.load_file("./src/jokers/grinch.lua"))() -- Grinch by Soulware
 assert(SMODS.load_file("./src/jokers/vaccine.lua"))() -- Vaccine by mys.minty
 
 ---RARE
-
+assert(SMODS.load_file("./src/jokers/ruby.lua"))() -- Birthright by Ruby
 assert(SMODS.load_file("./src/jokers/tatsu.lua"))() -- Butterfly Effect by Tatsu, p: Typ0
 assert(SMODS.load_file("./src/jokers/demon_core.lua"))() -- Demon Core by ThunderEdge
 assert(SMODS.load_file("./src/jokers/breuhh.lua"))() -- Functions by Breuhh
@@ -114,5 +110,25 @@ function Game:main_menu(change_context)
         })
 
     return ret
+    end
+end
+
+--moved here for merging sake
+SPOX.calculate = function(self, context)
+    if context.ante_end then
+        G.GAME.birthright_cant_cardshop = nil
+        if G.planets then
+            for i = 1, #G.planets do
+                G.planets[i]:apply_to_run({type = 'ante_end'})
+                delay(0.5)
+            end
+            G.E_MANAGER:add_event(Event{
+                func = function()
+                    G.planets = {}
+                    G.HUD_planets = {}
+                    return true
+                end
+            })
+        end
     end
 end
