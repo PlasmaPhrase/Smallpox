@@ -19,7 +19,11 @@ return {
         },
         Joker = {
             j_smallpox_smallpox = {
-                name = 'Smallpox',
+                name = {
+                  "Smallpox", 
+                  "{s:0.5}created by {C:blue,s:0.5}Plasma{}{}",
+                  "{s:0.5}art by {C:blue,s:0.5}Plasma{}{}"
+                },
                 text = {
                     "{X:mult,C:white} X#1# {} Mult",
                     "{C:green}#2# in #3#{} chance for a",
@@ -370,4 +374,5 @@ return {
         }
     }
 }
+
 
