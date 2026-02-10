@@ -351,6 +351,23 @@ return {
                 text = { { "{C:red}+#1#{} Mult", "{C:blue}+#2#{} Chips" }, { "{C:red}Removed{} at the", "end of ante"} }
             },
         }
+    },
+    misc = {
+        dictionary = {
+            k_switch_ex = "Switch!",
+            k_last_change = "Last Change",
+            k_sell_all = "Sell All",
+            k_buy = "Buy",
+            k_currently_invested = "Currently Invested",
+
+            k_cycle = "Cycle",
+            k_cycle_edition = "Cycle Edition",
+            k_cycle_rank = "Cycle Rank",
+            k_cycle_seal = "Cycle Seal",
+            k_cycle_suit = "Cycle Suit",
+            k_enhancement = "Enhancement",
+            k_buy_card = "Buy Card"
+        }
     }
 }
 

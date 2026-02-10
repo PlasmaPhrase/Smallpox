@@ -1,9 +1,9 @@
--- SMODS.Atlas({
---     key = "ruby_birthright", 
---     path = "ruby_birthright.png", 
---     px = 71,
---     py = 95,
--- })
+SMODS.Atlas({
+    key = "ruby_birthright", 
+    path = "ruby_birthright.png", 
+    px = 71,
+    py = 95,
+})
 
 SMODS.Atlas({
     key = "ruby_birthright_glitched", 
@@ -31,6 +31,7 @@ end
 SMODS.Joker {
     key = "birthright",
     pos = {x=0,y=0},
+    atlas = "ruby_birthright",
     rarity = 3,
     cost = 10,
     pools = {["Smallpox"] = true},
@@ -99,13 +100,6 @@ SMODS.Joker {
             local card = SMODS.add_card {set = "Joker"}
             card.ability.eternal = true
             card:set_edition("e_negative")
-        end
-        if Smallpox.get_selected_deck() == "b_checkered" then
-            local suits = {}
-            for i, v in pairs(G.playing_cards) do
-                suits[#suits+1] = v
-            end
-            G.GAME.birthright_checkered_suit = G.GAME.birthright_checkered_suit or pseudorandom_element(suits, pseudoseed("birthright_checkered")).base.suit
         end
         if Smallpox.get_selected_deck() == "b_plasma" then
             SMODS.set_scoring_calculation("smallpox_plasma_birthright")
@@ -186,6 +180,10 @@ SMODS.Joker {
                 and context.consumeable.ability.suit_conv
             then
                 G.GAME.birthright_checkered_suit = context.consumeable.ability.suit_conv
+                return {
+                    message = localize("k_switch_ex"),
+                    colour = G.C.SUITS[G.GAME.birthright_checkered_suit]
+                }
             end
             if Smallpox.get_selected_deck() == "b_zodiac" and
                 (
@@ -387,7 +385,7 @@ function _G.create_UIBox_stocks()
                     {n=G.UIT.R,config={align = "cm", minw = 1.3, minh = 1.3, r=0.15,colour = G.C.ORANGE,shadow = true}, nodes = {
                         {n=G.UIT.R, config={align = "cm", padding = 0.07}, nodes={
                         {n=G.UIT.R, config={align = "cm", maxw = 1.3}, nodes={
-                            {n=G.UIT.T, config={text = "Last Change", scale = 0.4, colour = G.C.WHITE, shadow = true}} --TODO: localize
+                            {n=G.UIT.T, config={text = localize("k_last_change"), scale = 0.4, colour = G.C.WHITE, shadow = true}}
                         }},
                         {n=G.UIT.R, config={align = "cm", maxw = 1.3}, nodes={
                             {n=G.UIT.T, config={text = number_format(ratio*100).."%", scale = 0.4, colour = G.C.WHITE, shadow = true}}
@@ -399,7 +397,7 @@ function _G.create_UIBox_stocks()
                     {n=G.UIT.R,config={func = "can_sell_all_stocks", button = 'toggle_shop', align = "cm", minw = 1.3, minh = 1.3, r=0.15,colour = G.C.RED,shadow = true}, nodes = {
                         {n=G.UIT.R, config={align = "cm", padding = 0.07}, nodes={
                             {n=G.UIT.R, config={align = "cm", maxw = 1.3}, nodes={
-                                {n=G.UIT.T, config={text = "Sell All", scale = 0.4, colour = G.C.WHITE, shadow = true}}
+                                {n=G.UIT.T, config={text = localize("k_sell_all"), scale = 0.4, colour = G.C.WHITE, shadow = true}}
                             }}, 
                             {n=G.UIT.R, config={align = "cm", maxw = 1.3}, nodes={
                                 {n=G.UIT.T, config={text = "("..localize("$"), scale = 0.4, colour = G.C.WHITE, shadow = true}},
@@ -413,7 +411,7 @@ function _G.create_UIBox_stocks()
                     {n=G.UIT.R,config={func = "can_buy_stocks", button = 'toggle_shop', align = "cm", minw = 1.3, minh = 1.3, r=0.15,colour = G.C.GREEN,shadow = true}, nodes = {
                         {n=G.UIT.R, config={align = "cm", padding = 0.07}, nodes={
                             {n=G.UIT.R, config={align = "cm", maxw = 1.3}, nodes={
-                                {n=G.UIT.T, config={text = "Buy", scale = 0.4, colour = G.C.WHITE, shadow = true}}
+                                {n=G.UIT.T, config={text = localize("k_buy"), scale = 0.4, colour = G.C.WHITE, shadow = true}}
                             }},
                             {n=G.UIT.R, config={align = "cm", maxw = 1.3}, nodes={
                                 {n=G.UIT.T, config={text = "("..localize("$"), scale = 0.4, colour = G.C.WHITE, shadow = true}},
@@ -438,7 +436,7 @@ function _G.create_UIBox_stocks()
                 {n=G.UIT.C, config={align = "cm", padding = 0.1}, nodes={
                     {n=G.UIT.R, config={align = "cm", padding = 0.07}, nodes={
                         {n=G.UIT.R, config={align = "cm", maxw = 1.3}, nodes={
-                            {n=G.UIT.T, config={text = "Currently Invested", scale = 0.4, colour = G.C.WHITE, shadow = true}} --TODO: localize
+                            {n=G.UIT.T, config={text = localize("k_currently_invested"), scale = 0.4, colour = G.C.WHITE, shadow = true}}
                         }},
                         {n=G.UIT.R, config={align = "cm", maxw = 1.3}, nodes={
                             {n=G.UIT.T, config={text = localize("$"), scale = 0.4, colour = G.C.WHITE, shadow = true}},
@@ -465,7 +463,7 @@ end
 
 G.FUNCS.can_buy_stocks = function(e)
     if
-        G.GAME.dollars + G.GAME.bankrupt_at > G.GAME.smallpox_invest_amt and G.GAME.smallpox_invest_amt > 0
+        G.GAME.dollars + G.GAME.bankrupt_at >= G.GAME.smallpox_invest_amt and G.GAME.smallpox_invest_amt > 0
     then
         e.config.colour = G.C.GREEN
         e.config.button = "buy_stocks"
@@ -1791,27 +1789,27 @@ function _G.create_UIBox_card_shop()
                     {n=G.UIT.O, config={object = G.GAME.smallpox_card_shop}},
                 }},
                {n=G.UIT.C, config={align = "cm", padding = 0.1}, nodes={
-                    {n=G.UIT.R,config={func = "can_cycle_rank", button = 'toggle_shop', align = "cm", minw = 1.3, minh = 1.3, r=0.15,colour = G.C.GREEN,shadow = true}, nodes = {
+                    {n=G.UIT.R,config={func = "can_cycle_rank", button = 'toggle_shop', align = "cm", minw = 1.3, minh = 1.3, r=0.15,colour = G.C.BLUE,shadow = true}, nodes = {
                         {n=G.UIT.R, config={align = "cm", padding = 0.07}, nodes={
                             {n=G.UIT.R, config={align = "cm", maxw = 1.3}, nodes={
-                                {n=G.UIT.T, config={text = "Cycle Rank", scale = 0.4, colour = G.C.WHITE, shadow = true}}
+                                {n=G.UIT.T, config={text = localize("k_cycle_rank"), scale = 0.4, colour = G.C.WHITE, shadow = true}}
                             }},
                         }},              
                     }},
                     {n=G.UIT.R,config={func = "can_cycle_suit", button = 'toggle_shop', align = "cm", minw = 1.3, minh = 1.3, r=0.15,colour = G.C.RED,shadow = true}, nodes = {
                         {n=G.UIT.R, config={align = "cm", padding = 0.07}, nodes={
                             {n=G.UIT.R, config={align = "cm", maxw = 1.3}, nodes={
-                                {n=G.UIT.T, config={text = "Cycle Suit", scale = 0.4, colour = G.C.WHITE, shadow = true}}
+                                {n=G.UIT.T, config={text = localize("k_cycle_suit"), scale = 0.4, colour = G.C.WHITE, shadow = true}}
                             }},
                         }},              
                     }},
-                    {n=G.UIT.R,config={func = "can_cycle_enhancement", button = 'toggle_shop', align = "cm", minw = 1.3, minh = 1.3, r=0.15,colour = G.C.ORANGE,shadow = true}, nodes = {
+                    {n=G.UIT.R,config={func = "can_cycle_enhancement", button = 'toggle_shop', align = "cm", minw = 1.3, minh = 1.3, r=0.15,colour = G.C.PURPLE,shadow = true}, nodes = {
                         {n=G.UIT.R, config={align = "cm", padding = 0.07}, nodes={
                             {n=G.UIT.R, config={align = "cm", maxw = 1.3}, nodes={
-                                {n=G.UIT.T, config={text = "Cycle", scale = 0.4, colour = G.C.WHITE, shadow = true}},
+                                {n=G.UIT.T, config={text = localize("k_cycle"), scale = 0.4, colour = G.C.WHITE, shadow = true}},
                             }},
                             {n=G.UIT.R, config={align = "cm", maxw = 1.3}, nodes={
-                                {n=G.UIT.T, config={text = "Enhancement", scale = 0.4, colour = G.C.WHITE, shadow = true}},
+                                {n=G.UIT.T, config={text = localize("k_enhancement"), scale = 0.4, colour = G.C.WHITE, shadow = true}},
                             }},
                         }},              
                     }},
@@ -1820,24 +1818,24 @@ function _G.create_UIBox_card_shop()
                     {n=G.UIT.R,config={func = "can_cycle_seal", button = 'toggle_shop', align = "cm", minw = 1.3, minh = 1.3, r=0.15,colour = G.C.ORANGE,shadow = true}, nodes = {
                         {n=G.UIT.R, config={align = "cm", padding = 0.07}, nodes={
                             {n=G.UIT.R, config={align = "cm", maxw = 1.3}, nodes={
-                                {n=G.UIT.T, config={text = "Cycle Seal", scale = 0.4, colour = G.C.WHITE, shadow = true}}
+                                {n=G.UIT.T, config={text = localize("k_cycle_seal"), scale = 0.4, colour = G.C.WHITE, shadow = true}}
                             }},
                         }},              
                     }},
-                    {n=G.UIT.R,config={func = "can_cycle_edition", button = 'toggle_shop', align = "cm", minw = 1.3, minh = 1.3, r=0.15,colour = G.C.GREEN,shadow = true}, nodes = {
+                    {n=G.UIT.R,config={func = "can_cycle_edition", button = 'toggle_shop', align = "cm", minw = 1.3, minh = 1.3, r=0.15,colour = G.C.DARK_EDITION,shadow = true}, nodes = {
                         {n=G.UIT.R, config={align = "cm", padding = 0.07}, nodes={
                             {n=G.UIT.R, config={align = "cm", maxw = 1.3}, nodes={
-                                {n=G.UIT.T, config={text = "Cycle Edition", scale = 0.4, colour = G.C.WHITE, shadow = true}}
+                                {n=G.UIT.T, config={text = localize("k_cycle_edition"), scale = 0.4, colour = G.C.WHITE, shadow = true}}
                             }},
                         }},              
                     }},
-                    {n=G.UIT.R,config={func = "can_buy_cardshop", button = 'toggle_shop', align = "cm", minw = 1.3, minh = 1.3, r=0.15,colour = G.C.ORANGE,shadow = true}, nodes = {
+                    {n=G.UIT.R,config={func = "can_buy_cardshop", button = 'toggle_shop', align = "cm", minw = 1.3, minh = 1.3, r=0.15,colour = G.C.GREEN,shadow = true}, nodes = {
                         {n=G.UIT.R, config={align = "cm", padding = 0.07}, nodes={
                             {n=G.UIT.R, config={align = "cm", maxw = 1.3}, nodes={
-                                {n=G.UIT.T, config={text = "Buy Card", scale = 0.4, colour = G.C.WHITE, shadow = true}}
+                                {n=G.UIT.T, config={text = localize("k_buy_card"), scale = 0.4, colour = G.C.WHITE, shadow = true}}
                             }},
                             {n=G.UIT.R, config={align = "cm", maxw = 1.3}, nodes={
-                                {n=G.UIT.T, config={text = "$", scale = 0.4, colour = G.C.WHITE, shadow = true}},
+                                {n=G.UIT.T, config={text = localize("$"), scale = 0.4, colour = G.C.WHITE, shadow = true}},
                                 {n=G.UIT.T, config={ref_table = G.GAME, ref_value = 'smallpox_card_cost', colour = G.C.WHITE, scale = 0.55, shadow = true}}
                             }},
                         }},              
@@ -1856,7 +1854,7 @@ function G.FUNCS.can_cycle_seal(e) e.config.button = "cycle_seal" end
 function G.FUNCS.can_cycle_edition(e) e.config.button = "cycle_edition" end
 G.FUNCS.can_buy_cardshop = function(e)
     if
-        G.GAME.dollars + G.GAME.bankrupt_at > G.GAME.smallpox_card_cost
+        G.GAME.dollars + G.GAME.bankrupt_at >= G.GAME.smallpox_card_cost
     then
         e.config.colour = G.C.ORANGE
         e.config.button = "buy_cardshop"
