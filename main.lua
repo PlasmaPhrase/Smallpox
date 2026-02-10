@@ -25,11 +25,14 @@ SMODS.Atlas({
     atlas_table = "ASSET_ATLAS"
 })
 
+Smallpox = SMODS.current_mod
+
 -- ASSERTS
 
 assert(SMODS.load_file("./src/backs.lua"))()
 assert(SMODS.load_file("./src/pools.lua"))()
 assert(SMODS.load_file("./src/jokers/example.lua"))() -- The example joker
+assert(SMODS.load_file("./src/jokers/ruby.lua"))()
 
 -- Unsure what this does (apparently it's Talisman stuff)
 local NFS = require("nativefs")
@@ -61,4 +64,23 @@ function Game:main_menu(change_context)
         })
 
     return ret
+end
+
+--moved here for merging sake
+Smallpox.calculate = function(self, context)
+    if context.ante_end then
+        if G.planets then
+            for i = 1, #G.planets do
+                G.planets[i]:apply_to_run({type = 'ante_end'})
+                delay(0.5)
+            end
+            G.E_MANAGER:add_event(Event{
+                func = function()
+                    G.planets = {}
+                    G.HUD_planets = {}
+                    return true
+                end
+            })
+        end
+    end
 end
