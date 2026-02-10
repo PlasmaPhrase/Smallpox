@@ -49,14 +49,14 @@ return {
                 }
             },
  
-            j_smallpox_seethrujoke = {
+            j_smallpox_eyejoker = {
                 name = {
                   'See Through The Joke',
                    "{s:0.5}created by {C:tarot,s:0.5}flynnsaneFellow{}{}",
                 },
                 text = {
-                    "{C:attention}+6 Hand Size{}"
-                    "{C:red}-4 card selection limit{}"
+                    "{C:attention}+6 Hand Size{}",
+                    "{C:red}-4 card selection limit{}",
                     "{C:inactive}Art and code done by FlynnsaneFellow{}"
                   }
               },

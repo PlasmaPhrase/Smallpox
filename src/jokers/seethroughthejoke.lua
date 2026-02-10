@@ -19,7 +19,7 @@ SMODS.Joker {
     atlas = 'eyejoker',
     pools = {["Smallpox"] = true},
     calculate = function(self, card, context)
-    end
+    end,
 
     add_to_deck = function(self, card, from_debuff)
         G.hand:change_size(card.ability.extra.h_size)
