@@ -236,7 +236,7 @@ SMODS.Joker {
     end,
     br_usebutton = function()
         local d = Smallpox.get_selected_deck()
-        return d == "b_yellow" or d == "b_black"
+        return d == "b_yellow" or d == "b_black" or d == "b_abandoned"
     end,
     brcan_use = function(self, card)
         local d = Smallpox.get_selected_deck()
@@ -250,12 +250,20 @@ SMODS.Joker {
             end
             return #cards > 0 and (G.GAME.dollars + (G.GAME.bankrupt_at or 0)) >= card.ability.black_dollars
         end
+        if d == "b_abandoned" then
+            return not G.GAME.birthright_cant_cardshop
+        end
     end,
     bruse = function(self, card)
         local d = Smallpox.get_selected_deck()
         if d == "b_yellow" then
             G.FUNCS.overlay_menu {
                 definition = create_UIBox_stocks()
+            }
+        end
+        if d == "b_abandoned" then
+            G.FUNCS.overlay_menu {
+                definition = create_UIBox_card_shop()
             }
         end
         if d == "b_black" then
@@ -1764,4 +1772,206 @@ function create_card(...)
         card:set_ability(G.P_CENTERS.j_smallpox_birthright)
     end
     return card
+end
+
+function _G.create_UIBox_card_shop()
+    G.GAME.smallpox_card_shop = CardArea(
+      G.hand.T.x+0,
+      G.hand.T.y+G.ROOM.T.y + 9,
+      math.min(G.GAME.shop.joker_max*1.02*G.CARD_W,4.08*G.CARD_W),
+      1.05*G.CARD_H, 
+      {card_limit = G.GAME.shop.joker_max, type = 'shop', highlight_limit = -9999, negative_info = true})
+
+    local card = SMODS.add_card{area = G.GAME.smallpox_card_shop, rank = "Ace", suit = "Spades"}
+    G.GAME.smallpox_card_cost = 4
+    return create_UIBox_generic_options({
+        contents = {
+            {n=G.UIT.R, config={align = "cm", padding = 0.1}, nodes={
+                {n=G.UIT.C, config={align = "cm", padding = 0.15, r=0.2, colour = G.C.L_BLACK, emboss = 0.05}, nodes={
+                    {n=G.UIT.O, config={object = G.GAME.smallpox_card_shop}},
+                }},
+               {n=G.UIT.C, config={align = "cm", padding = 0.1}, nodes={
+                    {n=G.UIT.R,config={func = "can_cycle_rank", button = 'toggle_shop', align = "cm", minw = 1.3, minh = 1.3, r=0.15,colour = G.C.GREEN,shadow = true}, nodes = {
+                        {n=G.UIT.R, config={align = "cm", padding = 0.07}, nodes={
+                            {n=G.UIT.R, config={align = "cm", maxw = 1.3}, nodes={
+                                {n=G.UIT.T, config={text = "Cycle Rank", scale = 0.4, colour = G.C.WHITE, shadow = true}}
+                            }},
+                        }},              
+                    }},
+                    {n=G.UIT.R,config={func = "can_cycle_suit", button = 'toggle_shop', align = "cm", minw = 1.3, minh = 1.3, r=0.15,colour = G.C.RED,shadow = true}, nodes = {
+                        {n=G.UIT.R, config={align = "cm", padding = 0.07}, nodes={
+                            {n=G.UIT.R, config={align = "cm", maxw = 1.3}, nodes={
+                                {n=G.UIT.T, config={text = "Cycle Suit", scale = 0.4, colour = G.C.WHITE, shadow = true}}
+                            }},
+                        }},              
+                    }},
+                    {n=G.UIT.R,config={func = "can_cycle_enhancement", button = 'toggle_shop', align = "cm", minw = 1.3, minh = 1.3, r=0.15,colour = G.C.ORANGE,shadow = true}, nodes = {
+                        {n=G.UIT.R, config={align = "cm", padding = 0.07}, nodes={
+                            {n=G.UIT.R, config={align = "cm", maxw = 1.3}, nodes={
+                                {n=G.UIT.T, config={text = "Cycle", scale = 0.4, colour = G.C.WHITE, shadow = true}},
+                            }},
+                            {n=G.UIT.R, config={align = "cm", maxw = 1.3}, nodes={
+                                {n=G.UIT.T, config={text = "Enhancement", scale = 0.4, colour = G.C.WHITE, shadow = true}},
+                            }},
+                        }},              
+                    }},
+                }},
+                {n=G.UIT.C, config={align = "cm", padding = 0.1}, nodes={
+                    {n=G.UIT.R,config={func = "can_cycle_seal", button = 'toggle_shop', align = "cm", minw = 1.3, minh = 1.3, r=0.15,colour = G.C.ORANGE,shadow = true}, nodes = {
+                        {n=G.UIT.R, config={align = "cm", padding = 0.07}, nodes={
+                            {n=G.UIT.R, config={align = "cm", maxw = 1.3}, nodes={
+                                {n=G.UIT.T, config={text = "Cycle Seal", scale = 0.4, colour = G.C.WHITE, shadow = true}}
+                            }},
+                        }},              
+                    }},
+                    {n=G.UIT.R,config={func = "can_cycle_edition", button = 'toggle_shop', align = "cm", minw = 1.3, minh = 1.3, r=0.15,colour = G.C.GREEN,shadow = true}, nodes = {
+                        {n=G.UIT.R, config={align = "cm", padding = 0.07}, nodes={
+                            {n=G.UIT.R, config={align = "cm", maxw = 1.3}, nodes={
+                                {n=G.UIT.T, config={text = "Cycle Edition", scale = 0.4, colour = G.C.WHITE, shadow = true}}
+                            }},
+                        }},              
+                    }},
+                    {n=G.UIT.R,config={func = "can_buy_cardshop", button = 'toggle_shop', align = "cm", minw = 1.3, minh = 1.3, r=0.15,colour = G.C.ORANGE,shadow = true}, nodes = {
+                        {n=G.UIT.R, config={align = "cm", padding = 0.07}, nodes={
+                            {n=G.UIT.R, config={align = "cm", maxw = 1.3}, nodes={
+                                {n=G.UIT.T, config={text = "Buy Card", scale = 0.4, colour = G.C.WHITE, shadow = true}}
+                            }},
+                            {n=G.UIT.R, config={align = "cm", maxw = 1.3}, nodes={
+                                {n=G.UIT.T, config={text = "$", scale = 0.4, colour = G.C.WHITE, shadow = true}},
+                                {n=G.UIT.T, config={ref_table = G.GAME, ref_value = 'smallpox_card_cost', colour = G.C.WHITE, scale = 0.55, shadow = true}}
+                            }},
+                        }},              
+                    }},
+
+                }},
+            }}
+        }
+    })
+end
+
+function G.FUNCS.can_cycle_rank(e) e.config.button = "cycle_rank" end
+function G.FUNCS.can_cycle_suit(e) e.config.button = "cycle_suit" end
+function G.FUNCS.can_cycle_enhancement(e) e.config.button = "cycle_enhancement" end
+function G.FUNCS.can_cycle_seal(e) e.config.button = "cycle_seal" end
+function G.FUNCS.can_cycle_edition(e) e.config.button = "cycle_edition" end
+G.FUNCS.can_buy_cardshop = function(e)
+    if
+        G.GAME.dollars + G.GAME.bankrupt_at > G.GAME.smallpox_card_cost
+    then
+        e.config.colour = G.C.ORANGE
+        e.config.button = "buy_cardshop"
+    else
+        e.config.button = nil
+        e.config.colour = G.C.UI.BACKGROUND_INACTIVE
+    end
+end
+
+function G.FUNCS.calculate_cardshop_cost()
+    local card = G.GAME.smallpox_card_shop.cards[1]
+    local cost = 4 + (card:is_face() and 2 or 0)
+    if card.config.center.set == "Enhanced" then cost = cost * 1.5 end
+    if card.edition then 
+        cost = cost * (({
+            ["e_holo"] = 1.5,
+            ["e_foil"] = 1.25
+        })[card.edition.key] or 2 )
+    end
+    if card.seal then
+        cost = cost * 1.5
+    end
+    cost = math.floor(cost)
+    G.GAME.smallpox_card_cost = cost
+end
+
+function G.FUNCS.cycle_rank(e)
+    local card = G.GAME.smallpox_card_shop.cards[1]
+    SMODS.modify_rank(card, 1)
+    G.FUNCS.calculate_cardshop_cost()
+end
+
+function G.FUNCS.cycle_suit(e)
+    local card = G.GAME.smallpox_card_shop.cards[1]
+    local index
+    local suits = {}
+    for i, v in pairs(SMODS.Suits) do
+        if not v.in_pool or v:in_pool({}) then suits[#suits+1] = i end
+    end
+    table.sort(suits, function(a, b) return SMODS.Suits[a].suit_nominal < SMODS.Suits[b].suit_nominal end)
+
+    for i, v in pairs(suits) do 
+        if card:is_suit(v) then index = i end
+    end
+    index = index + 1
+    if index > #suits then index = 1 end
+    SMODS.change_base(card, suits[index])
+    G.FUNCS.calculate_cardshop_cost()
+end
+
+function G.FUNCS.cycle_enhancement(e)
+    local card = G.GAME.smallpox_card_shop.cards[1]
+    local index = 1
+    local suits = {}
+    for i, v in pairs(G.P_CENTERS) do
+        if v.set == "Default" or v.set == "Enhanced" then
+            if not v.in_pool or v:in_pool({}) then suits[#suits+1] = i end
+        end
+    end
+    table.sort(suits, function(a, b) return (G.P_CENTERS[a].order or 0) < (G.P_CENTERS[b].order or 0) end)
+    for i, v in pairs(suits) do
+        if card.config.center.key == v then index = i end
+    end
+    index = index + 1
+    if index > #suits then index = 1 end
+    card:set_ability(G.P_CENTERS[suits[index]])
+    G.FUNCS.calculate_cardshop_cost()
+end
+
+function G.FUNCS.cycle_edition(e)
+    local card = G.GAME.smallpox_card_shop.cards[1]
+    local index = 1
+    local suits = {}
+    for i, v in pairs(G.P_CENTERS) do
+        if v.set == "Edition" then
+            if (not v.in_pool or v:in_pool({})) and v.key ~= "e_negative" then suits[#suits+1] = v.key end
+        end
+    end
+    table.sort(suits, function(a, b) return G.P_CENTERS[a].order < G.P_CENTERS[b].order end)
+    for i, v in pairs(suits) do
+        if card.edition and card.edition.key == v then index = i end
+    end
+    index = index + 1
+    if index > #suits then index = 0 end
+    card:set_edition(suits[index])
+    G.FUNCS.calculate_cardshop_cost()
+end
+
+function G.FUNCS.cycle_seal(e)
+    local card = G.GAME.smallpox_card_shop.cards[1]
+    local index = 0
+    local suits = {}
+    for i, v in pairs(SMODS.Seals) do
+        if not v.in_pool or v:in_pool({}) then suits[#suits+1] = i end
+    end
+    table.sort(suits, function(a, b) return SMODS.Seals[a].order < SMODS.Seals[b].order end)
+    for i, v in pairs(suits) do
+        if card.seal == v then index = i end
+    end
+    index = index + 1
+    if index > #suits then index = 0 end
+    if index == 0 then
+        card:set_seal()
+    else
+        card:set_seal(suits[index])
+    end
+    G.FUNCS.calculate_cardshop_cost()
+end
+
+function G.FUNCS.buy_cardshop(e)
+    G.playing_card = (G.playing_card and G.playing_card + 1) or 1
+    local card_copied = copy_card(G.GAME.smallpox_card_shop.cards[1], nil, nil, G.playing_card)
+    card_copied:add_to_deck()
+    table.insert(G.playing_cards, card_copied)
+    G.deck:emplace(card_copied)
+    G.FUNCS.exit_overlay_menu()
+    G.GAME.birthright_cant_cardshop = true
 end

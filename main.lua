@@ -69,6 +69,7 @@ end
 --moved here for merging sake
 Smallpox.calculate = function(self, context)
     if context.ante_end then
+        G.GAME.birthright_cant_cardshop = nil
         if G.planets then
             for i = 1, #G.planets do
                 G.planets[i]:apply_to_run({type = 'ante_end'})

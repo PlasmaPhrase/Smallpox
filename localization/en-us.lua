@@ -137,9 +137,12 @@ return {
             j_smallpox_birthright_abandoned = {
                 name = {
                     "Birthright",
-                    "{s:0.8,C:inactive}{}"
+                    "{s:0.8,C:inactive}Make Your Destiny{}"
                 },
                 text = {
+                    "Once per ante open",
+                    "a {C:red}Customiseable{}",
+                    "Playing Card shop"
                 }
             },
             j_smallpox_birthright_checkered = {
