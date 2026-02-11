@@ -15,7 +15,7 @@ SMODS.Joker {
     cost = 5,
     discovered = true,
     atlas = 'Inky',
-    pools = {["Smallpox_Pool"] = true},
+    pools = {["Smallpox"] = true},
 
     
     
