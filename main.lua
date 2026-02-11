@@ -43,6 +43,7 @@ assert(SMODS.load_file("./src/sounds.lua"))() -- SOUNDS
 assert(SMODS.load_file("./src/jokers/ampup.lua"))() -- Amp Up by M0x3s
 assert(SMODS.load_file("./src/jokers/bliss.lua"))() -- Bliss by LasagnaFelidae
 assert(SMODS.load_file("./src/jokers/example.lua"))() -- The example joker
+
 assert(SMODS.load_file("./src/jokers/GhostSalt.lua"))() -- No Littering by GhostSalt
 
 ---UNCOMMON
@@ -76,6 +77,9 @@ assert(SMODS.load_file("./src/jokers/miller.lua"))() -- VOIDWALKER by Abel
 ---LEGENDARY
 assert(SMODS.load_file("./src/jokers/Egbert.lua"))() -- John Egbert, by First Try
 assert(SMODS.load_file("./src/jokers/tech.lua"))() -- Pox Of The Wild by Tech, p: LasagnaFelidae, a: Plasma
+
+--uncatagorized
+assert(SMODS.load_file("./src/jokers/missingposter.lua"))() -- Missing Poster
 
 
 

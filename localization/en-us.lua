@@ -753,6 +753,17 @@ return {
                 text = {
                     
                 }
+            },
+             j_smallpox_missingposter = {
+                name = {
+                  "Missing Poster", 
+                  "{s:0.5}created by {C:blue,s:0.5}LFMoth{}{}",
+                  "{s:0.5}art by {C:blue,s:0.5}LFMoth{}{}"
+                },
+                text = {
+                    "When a {C:attention}Joker{} is {C:attention}destroyed{}",
+                    "gain {C:money}$#1#{}"
+                }
             }
         },
         --not actually an edition, used on tags
