@@ -30,6 +30,7 @@ SMODS.Atlas({
 assert(SMODS.load_file("./src/backs.lua"))()
 assert(SMODS.load_file("./src/pools.lua"))()
 assert(SMODS.load_file("./src/jokers/example.lua"))() -- The example joker
+assert(SMODS.load_file("./src/jokers/claus dies.lua"))() -- CLAUS NOOOOOOOOOOOOOOOOO
 
 -- Unsure what this does (apparently it's Talisman stuff)
 local NFS = require("nativefs")
@@ -62,3 +63,7 @@ function Game:main_menu(change_context)
 
     return ret
 end
+
+SMODS.current_mod.optional_features = { --I DON'T KNOW IF THIS IS ALLOWED
+    retrigger_joker = true
+}

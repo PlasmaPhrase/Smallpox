@@ -30,6 +30,15 @@ return {
                     "random Joker to become",
                     "{V:1}infected{} with {C:attention}Smallpox{}"
                 }
+            },
+            j_smallpox_claus_dies = {
+                name = "PK Thunder",
+                text = {
+                    "{C:green}#1# in #4# chance{} to apply {X:red,C:white}X3{} Mult",
+                    "{C:attention}Retriggers self 3 extra times{}",
+                    "{C:green}#3# in #6# chance{} to {C:attention}Disable Boss Blind{}",
+                    "when {C:attention}Triggered{}"
+                }
             }
         }
     }
