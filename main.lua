@@ -65,14 +65,14 @@ assert(SMODS.load_file("./src/jokers/demon_core.lua"))() -- Demon Core by Thunde
 assert(SMODS.load_file("./src/jokers/breuhh.lua"))() -- Functions by Breuhh
 assert(SMODS.load_file("./src/jokers/sillyzteto.lua"))() -- Kasane Teto by Sillyz
 assert(SMODS.load_file("./src/jokers/hunter.lua"))() -- Notebook Sketch by Hunter
-assert(SMODS.load_file("./src/jokers/polymorphine.lua"))() -- Polymorphine by NinjaBanana --- THESE JOKERS HAVE PLACEHOLDER ART!!!!!!!!!!
+assert(SMODS.load_file("./src/jokers/polymorphine.lua"))() -- Polymorphine by NinjaBanana
+assert(SMODS.load_file("./src/jokers/tigerthawk.lua"))() -- Rock Singer by TigerTHawk
 assert(SMODS.load_file("./src/jokers/roomtemperaturecarrot.lua"))() -- Room Temp. Carrot by Rainstar
 assert(SMODS.load_file("./src/jokers/scales_of_justice.lua"))() -- Scales of Justice by Revo
 assert(SMODS.load_file("./src/jokers/smallpox.lua"))() -- Smallpox by Plasma
 assert(SMODS.load_file("./src/jokers/missingnumber.lua"))() -- Stained Glass Window by missingnumber
 assert(SMODS.load_file("./src/jokers/miller.lua"))() -- VOIDWALKER by Abel
 
-assert(SMODS.load_file("./src/jokers/tigerthawk.lua"))() -- VOIDWALKER by Abel
 
 ---LEGENDARY
 assert(SMODS.load_file("./src/jokers/Egbert.lua"))() -- John Egbert, by First Try
