@@ -1,10 +1,8 @@
 SMODS.Atlas({
     key = "tigerthawk", 
-    path = "jokers/tigerthawk.png", 
+    path = "jokers/SmellsLikeTeenSpirit.png", 
     px = 71,
-    py = 95,
-    atlas_table = "ANIMATION_ATLAS",
-    frames = 10
+    py = 95
 })
 
 SMODS.Joker {
