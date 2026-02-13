@@ -1,10 +1,5 @@
 
 return {
-    misc = {
-        dictionary = {
-            k_smallpox_rhythm_miss = "Missed." 
-        },
-    },
     descriptions = {
         Back = {
             b_smallpox_showman = {
@@ -24,7 +19,47 @@ return {
             },
         },
         Joker = {
-
+            j_smallpox_factory_line = {
+                name = {
+                    "Factory Line",
+                    "{s:0.5}created by {C:lily_pink,s:0.5}Lily Felli{}{}",
+                },
+                text = {
+                    "When the counter reaches {C:attention}#1#{},",
+                    "create a random {C:rare}Rare{} Joker",
+                    "Counter increases by {C:attention}#3#{} for every",
+                    "other Joker owned at end of round",
+                    "{s:1.2,C:attention}#2#{} / {s:1.2,C:attention}#1#{}",
+                    "{C:inactive}(Must have room)",
+                }
+            },
+            j_smallpox_tjetsu_sumi = {
+                name = {
+                    "Sumi",
+                    "{s:0.5}created by {C:tarot,s:0.5}Tje.Tsu{}{}",
+                },
+                text = {
+                    {"Scored {C:hearts}Hearts{} give",
+                    "{X:mult,C:white}X#2#{} Mult if scored",
+                    "after a {C:spades}Spade{}"},
+                    {"Scored {C:spades}Spades{} give",
+                    "{X:chips,C:white}X#1#{} Chips if scored",
+                    "after a {C:hearts}Heart{}"},
+                    {"{C:inactive}(Last scored : {V:1}#3#{}{C:inactive}){}"}
+                }
+            },
+ 
+            j_smallpox_eyejoker = {
+                name = {
+                  'See Through The Joke',
+                   "{s:0.5}created by {C:tarot,s:0.5}flynnsaneFellow{}{}",
+                },
+                text = {
+                    "{C:attention}+6 Hand Size{}",
+                    "{C:red}-4 card selection limit{}",
+                    "{C:inactive}Art and code done by FlynnsaneFellow{}"
+                  }
+              },
                j_smallpox_zucchiniatlas = {
                 name = {
                   "Atlas", 
@@ -158,10 +193,10 @@ return {
 
             j_smallpox_sillyzteto = {
                 name = {
-					"Kasane Teto",
-					"{s:0.5}created by {C:purple,s:0.5}Sillyz",
-                  	"{s:0.5}art by {C:blue,s:0.5}Plasma, {C:edition,s:0.5}LasagnaFelidae{}{}{}"
-					},
+                      "Kasane Teto",
+                      "{s:0.5}created by {C:purple,s:0.5}Sillyz",
+                      "{s:0.5}art by {C:blue,s:0.5}Plasma, {C:edition,s:0.5}LasagnaFelidae{}{}{}"
+                      },
                 text = {
                     "Gain {X:mult,C:white}X#1#{} Mult for every",
                     "{C:attention}Ace{} of {C:hearts}Hearts{} destroyed",
@@ -416,24 +451,441 @@ return {
                     "{C:inactive}(Currently {C:white,X:red}x#1#{C:inactive} Mult)",
                 },
             },
+            j_smallpox_birthright = {
+                name = {
+                    "Birthright",
+                    "{s:0.5}created {IMG:smallpox_ruby_paw,s:0.35}a{}{s:0.35} {}{C:red,s:0.5}Ruby{}",
+                },
+                text = {
+                    "Has a different effect",
+                    "based on the {C:attention}Selected{} Deck"
+                }
+            },
+            j_smallpox_birthright_red = {
+                name = {
+                    "Birthright",
+                    "{s:0.8,C:inactive}Venemous Slander{}",
+                    "{s:0.5}created by {IMG:smallpox_ruby_paw,s:0.35}a{}{s:0.35} {}{s:0.35} {}{C:red,s:0.5}Ruby{}",
+                },
+                text = {
+                    {
+                        "Always draw {C:attention}one{}",
+                        "more card than the number",
+                        "of {C:attention}selected{} cards",
+                        "when {C:red}discarding{}"
+                    },
+                }
+            },
+            j_smallpox_birthright_blue = {
+                name = {
+                    "Birthright",
+                    "{s:0.8,C:inactive}Conjoined{}",
+                    "{s:0.5}created by {IMG:smallpox_ruby_paw,s:0.35}a{}{s:0.35} {}{C:red,s:0.5}Ruby{}",
+                },
+                text = {
+                    {
+                        "Play up to {C:blue}+#1#{}",
+                        "extra cards"
+                    },
+                    {
+                        "Score cards past the first",
+                        "{C:attention}4{} are retriggered"
+                    }
+                }
+            },
+            j_smallpox_birthright_yellow = {
+                name = {
+                    "Birthright",
+                    "{s:0.8,C:inactive}Money, Money. Money{}",
+                    "{s:0.5}created by {IMG:smallpox_ruby_paw,s:0.35}a{}{s:0.35} {}{C:red,s:0.5}Ruby{}",
+                },
+                text = {
+                    {
+                        "Use This Joker to",
+                        "open the {C:attention}Stock Market{}"
+                    },
+                    {
+                        "{C:attention}Stocks{} progress after",
+                        "a hand is played"
+                    }
+                }
+            },
+            j_smallpox_birthright_green = {
+                name = {
+                    "Birthright",
+                    "{s:0.8,C:inactive}Regurgitate{}",
+                    "{s:0.5}created by {IMG:smallpox_ruby_paw,s:0.35}a{}{s:0.35} {}{C:red,s:0.5}Ruby{}",
+                },
+                text = {
+                    {
+                        "Unused {C:blue}Hands{} and {C:red}Discards{}",
+                        "are carried over until the",
+                        "end of the current ante"
+                    },
+                }
+            },
+            j_smallpox_birthright_black = {
+                name = {
+                    "Birthright",
+                    "{s:0.8,C:inactive}Make her a member{}",
+                    "{s:0.8,C:inactive}of the Midnight Crew{}"
+                },
+                text = {
+                    {
+                        "Spawns a {C:dark_edition}Negative{}",
+                        "{C:attention}Eternal{} Joker on pickup"
+                    },
+                    {
+                        "Use this Joker for {C:money}$#1#{}",
+                        "to reroll all {C:attention}selected{}",
+                        "{C:dark_edition}Negative{} Jokers"
+                    }
+                }
+            },
+            j_smallpox_birthright_magic = {
+                name = {
+                    "Birthright",
+                    "{s:0.8,C:inactive}Samsara{}{s:0.35} {}",
+                    "{s:0.5}created by {IMG:smallpox_ruby_paw,s:0.35}a{}{s:0.35} {}{C:red,s:0.5}Ruby{}",
+                },
+                text = {
+                    {
+                        "{C:attention}Arcana Packs{} always",
+                        "contain {C:purple}The Fool{}"
+                    },
+                    {
+                        "If {C:purple}The Fool{} tries to copy",
+                        "{C:purple}The Fool{}, instead create",
+                        "a random {C:spectral}Spectral{} card"
+                    }
+                }
+            },
+            j_smallpox_birthright_nebula = {
+                name = {
+                    "Birthright",
+                    "{s:0.8,C:inactive}Interstellar{}",
+                    "{s:0.5}created by {IMG:smallpox_ruby_paw,s:0.35}a{}{s:0.35} {}{C:red,s:0.5}Ruby{}",
+                },
+                text = {
+                    "Using a Planet card",
+                    "provides its {C:red}Mult{} per level",
+                    "and {C:blue}Chips{} per level",
+                    "to all hands for the",
+                    "remainder of the current ante"
+                }
+            },
+            j_smallpox_birthright_ghost = {
+                name = {
+                    "Birthright",
+                    "{s:0.8,C:inactive}Better Destiny{}",
+                    "{s:0.5}created by {IMG:smallpox_ruby_paw,s:0.35}a{}{s:0.35} {}{C:red,s:0.5}Ruby{}",
+                },
+                text = {
+                    {
+                        "Shop contains an extra",
+                        "{C:spectral}Spectral{} card slot",
+                        "that can be rerolled"
+                    }
+                }
+            },
+            j_smallpox_birthright_nebula = {
+                name = {
+                    "Birthright",
+                    "{s:0.8,C:inactive}Interstellar{}",
+                    "{s:0.5}created by {IMG:smallpox_ruby_paw,s:0.35}a{}{s:0.35} {}{C:red,s:0.5}Ruby{}",
+                },
+                text = {
+                    "Using a Planet card",
+                    "provides its {C:red}Mult{} per level",
+                    "and {C:blue}Chips{} per level",
+                    "to all hands for the",
+                    "remainder of the current ante"
+                }
+            },
+            j_smallpox_birthright_abandoned = {
+                name = {
+                    "Birthright",
+                    "{s:0.8,C:inactive}Make Your Destiny{}",
+                    "{s:0.5}created by {IMG:smallpox_ruby_paw,s:0.35}a{}{s:0.35} {}{C:red,s:0.5}Ruby{}",
+                },
+                text = {
+                    "Once per ante open",
+                    "a {C:red}Customiseable{}",
+                    "Playing Card shop"
+                }
+            },
+            j_smallpox_birthright_checkered = {
+                name = {
+                    "Birthright",
+                    "{s:0.8,C:inactive}Chromatic Aberration{}",
+                    "{s:0.5}created by {IMG:smallpox_ruby_paw,s:0.35}a{}{s:0.35} {}{C:red,s:0.5}Ruby{}",
+                },
+                text = {
+                    {
+                        "All Suit based effects",
+                        "now check for {V:1}#1#{}"
+                    },
+                    {
+                        "Changes {C:attention}suit{} based on",
+                        "used suit changing {C:purple}Tarots{}"
+                    }
+                }
+            },
+            j_smallpox_birthright_zodiac = {
+                name = {
+                    "Birthright",
+                    "{s:0.8,C:inactive}Dominion, Attuned{}",
+                    "{s:0.5}created by {IMG:smallpox_ruby_paw,s:0.35}a{}{s:0.35} {}{C:red,s:0.5}Ruby{}",
+                },
+                text = {
+                    {
+                        "Changes effect based on",
+                        "whether {C:purple}Tarots{}",
+                        "{C:planet}Planets{} or {C:spectral}Spectrals{} were",
+                        "the last used consumable type"
+                    },
+                }
+            },
+            j_smallpox_birthright_zodiac_Spectral = {
+                name = {
+                    "Birthright",
+                    "{s:0.8,C:inactive}Dominion, Attuned{}",
+                    "{s:0.5}created by {IMG:smallpox_ruby_paw,s:0.35}a{}{s:0.35} {}{C:red,s:0.5}Ruby{}",
+                },
+                text = {
+                    {
+                        "If played hand has exactly",
+                        "{C:attention}2{} cards apply",
+                        "a random {C:attention}Edition{}",
+                        "to a random played card"
+                    },
+                    {
+                        "Changes effect based on",
+                        "whether {C:purple}Tarots{}",
+                        "{C:planet}Planets{} or {C:spectral}Spectrals{} were",
+                        "the last used consumable type"
+                    },
+                }
+            },
+            j_smallpox_birthright_zodiac_Planet = {
+                name = {
+                    "Birthright",
+                    "{s:0.8,C:inactive}Dominion, Attuned{}",
+                    "{s:0.5}created by {IMG:smallpox_ruby_paw,s:0.35}a{}{s:0.35} {}{C:red,s:0.5}Ruby{}",
+                },
+                text = {
+                    {
+                        "Gives the base {C:red}Mult{} and {C:blue}Chips{}",
+                        "of the played hand"
+                    },
+                    {
+                        "Changes effect based on",
+                        "whether {C:purple}Tarots{}",
+                        "{C:planet}Planets{} or {C:spectral}Spectrals{} were",
+                        "the last used consumable type"
+                    },
+                }
+            },
+            j_smallpox_birthright_zodiac_Tarot = {
+                name = {
+                    "Birthright",
+                    "{s:0.8,C:inactive}Dominion, Attuned{}",
+                    "{s:0.5}created by {IMG:smallpox_ruby_paw,s:0.35}a{}{s:0.35} {}{C:red,s:0.5}Ruby{}",
+                },
+                text = {
+                    {
+                        "Retrigger all scored",
+                        "{C:attention}enhanced{} cards"
+                    },
+                    {
+                        "Changes effect based on",
+                        "whether {C:purple}Tarots{}",
+                        "{C:planet}Planets{} or {C:spectral}Spectrals{} were",
+                        "the last used consumable type"
+                    },
+                }
+            },
+            j_smallpox_birthright_painted = {
+                name = {
+                    "Birthright",
+                    "{s:0.8,C:inactive}The World looks White{}",
+                    "{s:0.8,C:inactive}The World looks Red{}",
+                    "{s:0.5}created by {IMG:smallpox_ruby_paw,s:0.35}a{}{s:0.35} {}{C:red,s:0.5}Ruby{}",
+                },
+                text = {
+                    {
+                        "Cards {C:attention}held in hand{} are",
+                        "scored as if played",
+                        "{C:attention}two{} times"
+                    },
+                }
+            },
+            j_smallpox_birthright_anaglyph = {
+                name = {
+                    "Birthright",
+                    "{s:0.8,C:inactive}Bifurcated{}",
+                    "{s:0.5}created by {IMG:smallpox_ruby_paw,s:0.35}a{}{s:0.35} {}{C:red,s:0.5}Ruby{}",
+                },
+                text = {
+                    {
+                        "You can hold a maximum",
+                        "of {C:red}10{} Tags"
+                    },
+                    {
+                        "{C:attention}Double Tags{} now create",
+                        "an additional {C:dark_edition}Negative{} copy",
+                        "of copied Tags"
+                    }
+                }
+            },
+            j_smallpox_birthright_plasma = {
+                name = {
+                    "Birthright",
+                    "{s:0.8,C:inactive}REACTOR MELTDOWN IMMINENT{}",
+                    "{s:0.5}created by {IMG:smallpox_ruby_paw,s:0.35}a{}{s:0.35} {}{C:red,s:0.5}Ruby{}",
+                },
+                text = {
+                    {
+                        "Scoring Operator set to",
+                        "{C:blue}Chips{} ^ {C:red}2{}"
+                    },
+                    {
+                        "{C:red}Mult{} operations instead",
+                        "affect {C:blue}Chips{}"
+                    },
+                    {
+                        "Balancing no longer occurs"
+                    }
+                }
+            },
+            j_smallpox_birthright_erratic = {
+                name = {
+                    "Birthright",
+                    "{s:0.8,C:inactive}Absolute Entropy{}",
+                    "{s:0.5}created by {IMG:smallpox_ruby_paw,s:0.35}a{}{s:0.35} {}{C:red,s:0.5}Ruby{}",
+                },
+                text = {
+                    
+                }
+            },
+             j_smallpox_missingposter = {
+                name = {
+                  "Missing Poster", 
+                  "{s:0.5}created by {C:blue,s:0.5}LFMoth{}{}",
+                  "{s:0.5}art by {C:blue,s:0.5}LFMoth{}{}"
+                },
+                text = {
+                    "When a {C:attention}Joker{} is {C:attention}destroyed{}",
+                    "gain {C:money}$#1#{}"
+                }
+            }
+            j_smallpox_theriantropy = {
+                name = {
+                    "Theriantropy",
+                    "{s:0.5}created by Jewel",
+                },
+                text = {
+                "When a {C:attention}face card{} is {C:attention}scored,",
+                "{C:green}1 in 2{} chance to make it {C:gold}Wild,",
+                "{C:green}1 in 10{} chance to destroy this {C:attention}Joker",
+                "and create a copy of {C:spectral}The Cryptid", 
+                "{s:0.8,C:inactive}(Must have room)",
+                    
+                }
+            },
         },
-		tooltips = {
-			tt_smallpox_potw_table = {
-				name = "Rarity xMults",
-				text = {
-					'{C:common}Common{}: {X:mult,C:white}X#1#{}',
-					'{C:uncommon}Uncommon{}: {X:mult,C:white}X#2#{}',
-					'{C:rare}Rare{}: {X:mult,C:white}X#3#{}',
-					'{C:legendary}Legendary{}: {X:mult,C:white}X#4#{}',
-				},
-			},
+        --not actually an edition, used on tags
+        Edition = {
+            e_negative_tag = {
+                name = "Negative",
+                text = {
+                    "{C:dark_edition}+#1#{} Tag Slot"
+                }
+            }
+        },
+        --ditto Edition, only used in localization
+        Tag = {
+            ["tag_smallpox_ruby_High Card"] = {
+                name = "Pluto",
+                text = { { "{C:red}+#1#{} Mult", "{C:blue}+#2#{} Chips" }, { "{C:red}Removed{} at the", "end of ante"} }
+            },
+            ["tag_smallpox_ruby_Pair"] = {
+                name = "Mercury",
+                text = { { "{C:red}+#1#{} Mult", "{C:blue}+#2#{} Chips" }, { "{C:red}Removed{} at the", "end of ante"} }
+            },
+            ["tag_smallpox_ruby_Three of a Kind"] = {
+                name = "Venus",
+                text = { { "{C:red}+#1#{} Mult", "{C:blue}+#2#{} Chips" }, { "{C:red}Removed{} at the", "end of ante"} }
+            },
+            ["tag_smallpox_ruby_Full House"] = {
+                name = "Earth",
+                text = { { "{C:red}+#1#{} Mult", "{C:blue}+#2#{} Chips" }, { "{C:red}Removed{} at the", "end of ante"} }
+            },
+            ["tag_smallpox_ruby_Four of a Kind"] = {
+                name = "Mars",
+                text = { { "{C:red}+#1#{} Mult", "{C:blue}+#2#{} Chips" }, { "{C:red}Removed{} at the", "end of ante"} }
+            },
+            ["tag_smallpox_ruby_Flush"] = {
+                name = "Jupiter",
+                text = { { "{C:red}+#1#{} Mult", "{C:blue}+#2#{} Chips" }, { "{C:red}Removed{} at the", "end of ante"} }
+            },
+            ["tag_smallpox_ruby_Straight"] = {
+                name = "Saturn",
+                text = { { "{C:red}+#1#{} Mult", "{C:blue}+#2#{} Chips" }, { "{C:red}Removed{} at the", "end of ante"} }
+            },
+            ["tag_smallpox_ruby_Two Pair"] = {
+                name = "Uranus",
+                text = { { "{C:red}+#1#{} Mult", "{C:blue}+#2#{} Chips" }, { "{C:red}Removed{} at the", "end of ante"} }
+            },
+            ["tag_smallpox_ruby_Straight Flush"] = {
+                name = "Neptune",
+                text = { { "{C:red}+#1#{} Mult", "{C:blue}+#2#{} Chips" }, { "{C:red}Removed{} at the", "end of ante"} }
+            },
+            ["tag_smallpox_ruby_Five of a Kind"] = {
+                name = "Planet X",
+                text = { { "{C:red}+#1#{} Mult", "{C:blue}+#2#{} Chips" }, { "{C:red}Removed{} at the", "end of ante"} }
+            },
+            ["tag_smallpox_ruby_Flush House"] = {
+                name = "Ceres",
+                text = { { "{C:red}+#1#{} Mult", "{C:blue}+#2#{} Chips" }, { "{C:red}Removed{} at the", "end of ante"} }
+            },
+            ["tag_smallpox_ruby_Flush Five"] = {
+                name = "Eris",
+                text = { { "{C:red}+#1#{} Mult", "{C:blue}+#2#{} Chips" }, { "{C:red}Removed{} at the", "end of ante"} }
+            },
+        },
+
+      tooltips = {
+        tt_smallpox_potw_table = {
+          name = "Rarity xMults",
+          text = {
+            '{C:common}Common{}: {X:mult,C:white}X#1#{}',
+            '{C:uncommon}Uncommon{}: {X:mult,C:white}X#2#{}',
+            '{C:rare}Rare{}: {X:mult,C:white}X#3#{}',
+            '{C:legendary}Legendary{}: {X:mult,C:white}X#4#{}',
+          },
+        },
 		},
   },
   misc = {
     dictionary = {
       mintypox_name = "mys. minty",
       k_steel = "Steel",
+      k_switch_ex = "Switch!",
+      k_last_change = "Last Change",
+      k_sell_all = "Sell All",
+      k_buy = "Buy",
+      k_currently_invested = "Currently Invested",
+
+      k_cycle = "Cycle",
+      k_cycle_edition = "Cycle Edition",
+      k_cycle_rank = "Cycle Rank",
+      k_cycle_seal = "Cycle Seal",
+      k_cycle_suit = "Cycle Suit",
+      k_enhancement = "Enhancement",
+      k_buy_card = "Buy Card",
+      k_smallpox_rhythm_miss = "Missed." ,
     },
   },        
-}
 
+}

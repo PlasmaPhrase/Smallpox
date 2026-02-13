@@ -1,14 +1,7 @@
---[[
-DO NOT DELETE OUR CHUD SON EXAMPLE JOKER
-DO NOT DELETE OUR CHUD SON EXAMPLE JOKER
-DO NOT DELETE OUR CHUD SON EXAMPLE JOKER
-DO NOT DELETE OUR CHUD SON EXAMPLE JOKER
-]]
-
--- Example Joker Atlas
+-- Joker Atlas
 SMODS.Atlas({
-    key = "examplejoker", 
-    path = "jokers/ExampleJoker.png", 
+    key = "missingposter", 
+    path = "jokers/missingposter.png", 
     px = 71,
     py = 95,
     atlas_table = "ASSET_ATLAS"
@@ -29,27 +22,33 @@ please set cost according to rarity
 +-----+------------+----------+
 ]]
 SMODS.Joker {
-    key = "examplejoker",
-    atlas = 'examplejoker',
+    key = "missingposter",
+    atlas = 'missingposter',
     pos = { x = 0, y = 0 },
-    rarity = 1,
-    cost = 3,
+    rarity = 2,
+    cost = 5,
     pools = {["Smallpox"] = true}, -- see comment at the top
-    blueprint_compat = true, -- set to false if you dont want blueprint to copy
+    blueprint_compat = false, -- set to false if you dont want blueprint to copy
     discovered = true,
     unlocked = true,
-    config = { extra = { mult = 5 }, },
-    pronouns = "he_they", -- see comment at top
+    config = { extra = { dollars = 6 }, },
+    pronouns = "it_its", -- see comment at top
     loc_vars = function(self, info_queue, card)
-        return { vars = { card.ability.extra.mult } }
+        return { vars = { card.ability.extra.dollars} }
     end,
     
     calculate = function(self, card, context)
-        if context.joker_main then
+        if context.joker_type_destroyed and context.card.ability.set == "Joker" then
             return {
-                mult = card.ability.extra.mult,
-                message = "test!",
-                colour = HEX('a4eaf4')
+                dollars = card.ability.extra.dollars,
+                func = function() -- This is for timing purposes, this goes after the dollar modification
+                    G.E_MANAGER:add_event(Event({
+                        func = function()
+                            G.GAME.dollar_buffer = 0
+                            return true
+                        end
+                    }))
+                end
             }
         end
     end
