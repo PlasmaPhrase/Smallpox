@@ -30,6 +30,17 @@ return {
                     "random Joker to become",
                     "{V:1}infected{} with {C:attention}Smallpox{}"
                 }
+            },
+            j_smallpox_ren_metaldetector = {
+                name = {
+                  "Metal Detector", 
+                  "{s:0.5}created by {C:blue,s:0.5}PokéRen{}{}",
+                },
+                text = {
+                    "{E:1,C:attention}Drag{} this Joker around",
+                    "to find {C:money}treasure!{}",
+                    "{C:inactive,s:0.9}(Treasure spawns on new round)"
+                }
             }
         }
     }
