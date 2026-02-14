@@ -25,12 +25,16 @@ return {
                     "{s:0.5}created by {C:lily_pink,s:0.5}Lily Felli{}{}",
                 },
                 text = {
+                    {
                     "When the counter reaches {C:attention}#1#{},",
                     "create a random {C:rare}Rare{} Joker",
+                    },
+                    {
                     "Counter increases by {C:attention}#3#{} for every",
                     "other Joker owned at end of round",
                     "{s:1.2,C:attention}#2#{} / {s:1.2,C:attention}#1#{}",
                     "{C:inactive}(Must have room)",
+                    },
                 }
             },
             j_smallpox_tjetsu_sumi = {
@@ -45,7 +49,7 @@ return {
                     {"Scored {C:spades}Spades{} give",
                     "{X:chips,C:white}X#1#{} Chips if scored",
                     "after a {C:hearts}Heart{}"},
-                    {"{C:inactive}(Last scored : {V:1}#3#{}{C:inactive}){}"}
+                    {"{C:inactive}(Last scored: {V:1}#3#{}{C:inactive}){}"}
                 }
             },
  			j_smallpox_iwillnever = {
@@ -67,9 +71,8 @@ return {
                    "{s:0.5}created by {C:tarot,s:0.5}flynnsaneFellow{}{}",
                 },
                 text = {
-                    "{C:attention}+6 Hand Size{}",
-                    "{C:red}-4 card selection limit{}",
-                    "{C:inactive}Art and code done by FlynnsaneFellow{}"
+                    "{C:attention}+6{} hand size",
+                    "{C:red}-4{} card selection limit",
                   }
               },
                j_smallpox_zucchiniatlas = {
@@ -252,10 +255,10 @@ return {
                        "{s:0.5}created by {C:blue,s:0.5}isotypical{}{}",
                 },
                 text = {
-                    "{C:green}#1# in #4# chance{} to apply {X:red,C:white}X3{} Mult",
-                    "{C:attention}Retriggers self 3 extra times{}",
-                    "{C:green}#3# in #6# chance{} to {C:attention}Disable Boss Blind{}",
-                    "when {C:attention}Triggered{}"
+                    "{C:green}#1# in #4#{} chance to apply {X:red,C:white}X3{} Mult",
+                    "This Joker {C:attention}Retriggers{} 3 extra times",
+                    "{C:green}#3# in #6#{} chance to {C:attention}disable{} the Boss Blind",
+                    "when {C:attention}triggered{}"
                 },
             },
             j_smallpox_osjoker = {
@@ -265,21 +268,25 @@ return {
                     "{s:0.5}art by {C:planet,s:0.5}Typ0{}{}"
                 },
                 text = {
-                    "Playing a hand:",
-                    "{C:mult}+#1#{} Mult,",
-                    "{C:mult}+#2#{} More Mult if scored in {C:attention}Friday{},",
-                    "{X:mult,C:white}X#3#{} Mult for each {C:attention}played{} card if scored around {C:attention}4 PM{},",
-                    "{X:chips,C:white}X#4#{} Chips for each held {C:attention}Consumable{} if scored in {C:attention}June{},",
-                    "{C:mult}+1{} Mult for each letter in {C:attention}Clipboard{},",
-                    "Each {C:rare}Rare{} Joker gives {X:chips,C:white}X#12#{} Chips if {C:attention}CPU > #13# Cores{},",
-                    "{C:chips}+#14#{} Chips for every {C:money}$5{} if {C:attention}F{} is pressed  while also {C:attention}pressing{} {C:blue}Play Hand{},",
-                    "{C:money}+$#5#{} for each {C:attention}played{} card if {C:attention}FPS < 30{},",
+                    {
+                    "Playing a {C:chips}hand:",
+                    "{C:mult}+#1#{} Mult",
+                    "{C:mult}+#2#{} More Mult if scored in {C:attention}Friday{}",
+                    "{X:mult,C:white}X#3#{} Mult for each {C:attention}played{} card if scored around {C:attention}4 PM{}",
+                    "{X:chips,C:white}X#4#{} Chips for each held {C:attention}Consumable{} if scored in {C:attention}June{}",
+                    "{C:mult}+1{} Mult for each letter in {C:attention}Clipboard{}",
+                    "Each {C:rare}Rare{} Joker gives {X:chips,C:white}X#12#{} Chips if {C:attention}CPU > #13# Cores{}",
+                    "{C:chips}+#14#{} Chips for every {C:money}$5{} if {C:attention}F{} is pressed while also {C:attention}pressing{} {C:blue}Play Hand{}",
+                    "{C:money}+$#5#{} for each {C:attention}played{} card if {C:attention}FPS < 30{}",
+                    },
+                    {
                     "At end of round:",
                     "All Jokers gain {C:money}+$#6#{} value if {C:attention}Music Volume < 10{},",
                     "Gain {C:attention}Double Tag{} if {C:attention}Battery #7#% ~ #8#%{},",
                     "Create a {C:dark_edition}Negative{} copy of a random held {C:attention}Consumable{} after {C:attention}#9# Minutes{},",
                     "{C:green}#10# in #11#{} chance to create a {C:dark_edition}Negative{} {C:common}Common{} Joker when {C:attention}Blind{} is selected on {C:attention}Linux{},",
                     "{X:money,C:white}X#15#{} Money if {C:legendary,E:1}all conditions{} are met at end of shop"
+                    },
                 }
             },
             j_smallpox_ins_oro = {
@@ -290,7 +297,7 @@ return {
                 text = {
                     "{X:mult,C:white}X#1#{} Mult",
                     "When this card is {C:attention}sold or {C:attention}destroyed",
-                    "create a copy in the next shop",
+                    "create a {C:attention}copy{} in the next shop",
                     "with an extra {X:mult,C:white}X#2#{} Mult"
               },
             },
@@ -518,11 +525,11 @@ return {
                     "{s:0.5}programmed by {s:0.5,C:smallpox_typ0,E:1}SLDTyp0{}{}"
                 },
                 text = {
-                    "When {C:attention}Blind{} is selected,",
-                    "destroy Joker to left and the right",
-                    "and permanently add {C:attention}#2#x of {}",
-                    "its sell value to this {C:red}Mult",
-                    "{C:inactive}(Currently {C:white,X:red}x#1#{C:inactive} Mult)",
+                    "When {C:attention}Blind{} is selected, {C:attention}destroy{}",
+                    "Jokers on the left and right",
+                    "and permanently add {C:white,X:attention}X#2#{} of",
+                    "its sell value to {C:red}Mult",
+                    "{C:inactive}(Currently {C:white,X:red}X#1#{C:inactive} Mult)",
                 },
             },
             j_smallpox_birthright = {
@@ -848,8 +855,8 @@ return {
                   "{s:0.5}created by {C:blue,s:0.5}LFMoth{}{}",
                 },
                 text = {
-                    "When a {C:attention}Joker{} is {C:attention}destroyed{}",
-                    "gain {C:money}$#1#{}"
+                    "When a {C:attention}Joker{} is",
+                    "{C:attention}destroyed{}, gain {C:money}$#1#{}"
                 }
             },
             j_smallpox_theriantropy = {
@@ -959,7 +966,7 @@ return {
       k_buy_card = "Buy Card",
       k_smallpox_rhythm_miss = "Missed." ,
       spox_flash_warn = 
-            "Welcome to Smallpox!\nThis mod was made by 45 developers and artists\nover the course of just under 3 weeks.\n\nPlease note that some jokers utilise\nFlashing lights.\nThere is a config option for this\nIf it effects you.\n\nEnjoy the mod! -Smallpox Team"
+            "Warning!\n\nThis mod may contain flashing images which\nmay not be suitable for individuals with\nphotosensitive epilepsy.\n\nYou can disable flashing images in the Mod Menu\nby selecting [Config] and clicking [Photosensitive Mode]"
       
     },
   },        
