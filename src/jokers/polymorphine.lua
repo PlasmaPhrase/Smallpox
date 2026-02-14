@@ -1,6 +1,6 @@
 SMODS.Atlas({
-    key = "placeholder", 
-    path = "jokers/placeholder.png", 
+    key = "polymorphine", 
+    path = "jokers/polymorphine.png", 
     px = 71,
     py = 95,
     atlas_table = "ASSET_ATLAS"
@@ -9,7 +9,7 @@ SMODS.Atlas({
 -- Polymorphine
 SMODS.Joker {
     key = "polymorphine",
-    atlas = 'placeholder',
+    atlas = 'polymorphine',
     pos = { x = 0, y = 0 },
     rarity = 3,
     pools = {["Smallpox"] = true},
