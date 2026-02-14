@@ -155,11 +155,17 @@ SMODS.Joker {
         local mult = e.base_mult
         local chips = 0
 
+        local letters = s.clipboard:gsub("[^%a]", "")
+
+        
+
         if context.joker_main then
             return {
-                mult = e.base_mult
+                mult = e.base_mult + #letters
             }
         end
+
+        print(s.friday)
 
         if context.joker_main and s.friday then
             return {
@@ -191,10 +197,10 @@ SMODS.Joker {
             }
         end
 
-        local letters = s.clipboard:gsub("[^%a]", "")
-        mult = mult + #letters
+        
 
-        if context.press_play and context.key_press_f and context.joker_main then
+        if context.press_play and context.key_press_f  then
+            print("aaaaaaaaaaaaaaa")
             return {
                 chips = chips +
                     math.floor(G.GAME.dollars / 5) * e.f_chips
