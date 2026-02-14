@@ -1,12 +1,28 @@
 -- Example Joker Atlas
-SMODS.Atlas({
-    key = "ERRNO",
-    path = "jokers/errjoker.png",
-    px = 71,
-    py = 95,
-    atlas_table = "ANIMATION_ATLAS",
-    frames = 63
-})
+
+local key_ps = ""
+
+if SPOX_CONFIG.SPOX_Photosensitivity then
+    key_ps = "_ps"
+end
+
+    SMODS.Atlas({
+        key = "ERRNO_ps", 
+        path = "jokers/errjokerunanimated.png", 
+        px = 71,
+        py = 95,
+        atlas_table = "ASSET_ATLAS"
+    })
+
+    SMODS.Atlas({
+        key = "ERRNO",
+        path = "jokers/errjoker.png",
+        px = 71,
+        py = 95,
+        atlas_table = "ANIMATION_ATLAS",
+        frames = 63
+    })
+
 
 --[[
 Example Joker
@@ -81,7 +97,7 @@ SMODS.DynaTextEffect { -- credits to Haya
 
 SMODS.Joker {
     key = "osjoker",
-    atlas = 'ERRNO',
+    atlas = 'ERRNO'..key_ps,
     pos = { x = 0, y = 0 },
     rarity = 1,
     cost = 3,

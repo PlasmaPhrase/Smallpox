@@ -22,7 +22,7 @@ SMODS.current_mod.config_tab = function()
                         n = G.UIT.C,
                         nodes = {
                             create_toggle {
-                                label = "Photosensitive Mode",
+                                label = "Photosensitive Mode (Requires Restart)",
                                 ref_table = SPOX_CONFIG,
                                 ref_value = "SPOX_Photosensitivity"
                             },
