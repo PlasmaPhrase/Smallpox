@@ -71,6 +71,7 @@ assert(SMODS.load_file("./src/jokers/sillyzteto.lua"))() -- Kasane Teto by Silly
 assert(SMODS.load_file("./src/jokers/hunter.lua"))() -- Notebook Sketch by Hunter
 assert(SMODS.load_file("./src/jokers/ouro.lua"))() -- Ouroboros by candycanearter
 assert(SMODS.load_file("./src/jokers/polymorphine.lua"))() -- Polymorphine by NinjaBanana, a: LasagnaFelidae
+assert(SMODS.load_file("./src/jokers/claus dies.lua"))() -- PK Thunder by isotypical
 assert(SMODS.load_file("./src/jokers/tigerthawk.lua"))() -- Rock Singer by TigerTHawk
 assert(SMODS.load_file("./src/jokers/roomtemperaturecarrot.lua"))() -- Room Temp. Carrot by Rainstar
 assert(SMODS.load_file("./src/jokers/scales_of_justice.lua"))() -- Scales of Justice by Revo
@@ -78,8 +79,6 @@ assert(SMODS.load_file("./src/jokers/seethroughthejoke.lua"))() -- See Through t
 assert(SMODS.load_file("./src/jokers/smallpox.lua"))() -- Smallpox by Plasma
 assert(SMODS.load_file("./src/jokers/missingnumber.lua"))() -- Stained Glass Window by missingnumber
 assert(SMODS.load_file("./src/jokers/miller.lua"))() -- VOIDWALKER by Abel
-
-
 
 ---LEGENDARY
 assert(SMODS.load_file("./src/jokers/Egbert.lua"))() -- John Egbert, by FirstTry
@@ -152,3 +151,7 @@ SPOX.calculate = function(self, context)
     end
     
 end
+
+SMODS.current_mod.optional_features = { --I DON'T KNOW IF THIS IS ALLOWED
+    retrigger_joker = true
+}
