@@ -30,7 +30,7 @@ SMODS.Atlas({
 assert(SMODS.load_file("./src/backs.lua"))()
 assert(SMODS.load_file("./src/pools.lua"))()
 assert(SMODS.load_file("./src/jokers/example.lua"))() -- The example joker
-assert(SMODS.load_file("./src/jokers/ouro.lua"))() 
+assert(SMODS.load_file("./src/jokers/ouro.lua"))() -- Ouroboros by Etherware
 
 -- Unsure what this does (apparently it's Talisman stuff)
 local NFS = require("nativefs")
