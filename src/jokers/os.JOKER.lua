@@ -99,8 +99,8 @@ SMODS.Joker {
     key = "osjoker",
     atlas = 'ERRNO'..key_ps,
     pos = { x = 0, y = 0 },
-    rarity = 1,
-    cost = 3,
+    rarity = 2,
+    cost = 5,
     pools = { ["Smallpox"] = true }, -- see comment at the top
     blueprint_compat = true,       -- set to false if you dont want blueprint to copy
     discovered = true,
