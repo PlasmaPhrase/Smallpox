@@ -48,7 +48,18 @@ return {
                     {"{C:inactive}(Last scored : {V:1}#3#{}{C:inactive}){}"}
                 }
             },
- 
+ 			j_smallpox_iwillnever = {
+                name = {
+                    "I will never use JokerForge to make mods again",
+                    "{s:0.5}created by {V:1,s:0.5}Edward Robinson{}{}",
+					"{s:0.5}programmed by {s:0.5,C:edition}LasagnaFelidae{}{}"
+                },
+                text = {
+                    {
+					"Gives {X:mult,C:white}X3{} Mult if",
+					"{C:green}JokerForge{} sucks"
+                	}
+            },
             j_smallpox_eyejoker = {
                 name = {
                   'See Through The Joke',
@@ -953,3 +964,4 @@ return {
   },        
 
 }
+

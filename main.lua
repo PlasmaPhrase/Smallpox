@@ -45,6 +45,7 @@ assert(SMODS.load_file("./src/jokers/ampup.lua"))() -- Amp Up by M0x3s
 assert(SMODS.load_file("./src/jokers/bliss.lua"))() -- Bliss by LasagnaFelidae
 assert(SMODS.load_file("./src/jokers/example.lua"))() -- The example joker our chud son
 assert(SMODS.load_file("./src/jokers/GhostSalt.lua"))() -- No Littering by GhostSalt
+assert(SMODS.load_file("./src/jokers/iwillnever.lua"))() -- I will never... by Edward Robinson, p: LasagnaFelidae
 assert(SMODS.load_file("./src/jokers/os.JOKER.lua"))() -- os.JOKER by Nxkoo, a: Typ0
 assert(SMODS.load_file("./src/jokers/theriantropy.lua"))() -- Theriantropy by Jewel
 ---UNCOMMON
