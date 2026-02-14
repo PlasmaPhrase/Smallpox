@@ -18,13 +18,21 @@ return {
             },
         },
         Joker = {
-            j_smallpox_examplejoker = {
-                name = 'Joker+',
+            j_smallpox_smallpox = {
+                name = {
+                  "Smallpox", 
+                  "{s:0.5}created by {C:blue,s:0.5}Plasma{}{}",
+                  "{s:0.5}art by {C:blue,s:0.5}Plasma{}{}"
+                },
                 text = {
-                    "{C:mult}+#1#{} Mult"
+                    "{X:mult,C:white} X#1# {} Mult",
+                    "{C:green}#2# in #3#{} chance for a",
+                    "random Joker to become",
+                    "{V:1}infected{} with {C:attention}Smallpox{}"
                 }
-            },
-        },
+            }
+        }
     }
 }
+
 
