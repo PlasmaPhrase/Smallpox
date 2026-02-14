@@ -45,6 +45,7 @@ assert(SMODS.load_file("./src/jokers/ampup.lua"))() -- Amp Up by M0x3s
 assert(SMODS.load_file("./src/jokers/bliss.lua"))() -- Bliss by LasagnaFelidae
 assert(SMODS.load_file("./src/jokers/example.lua"))() -- The example joker our chud son
 assert(SMODS.load_file("./src/jokers/GhostSalt.lua"))() -- No Littering by GhostSalt
+assert(SMODS.load_file("./src/jokers/os.JOKER.lua"))() -- os.JOKER by Nxkoo, a: Typ0
 assert(SMODS.load_file("./src/jokers/theriantropy.lua"))() -- Theriantropy by Jewel
 ---UNCOMMON
 assert(SMODS.load_file("./src/jokers/antique_chair.lua"))() -- Antique Chair by cloudzXIII
@@ -79,12 +80,12 @@ assert(SMODS.load_file("./src/jokers/missingnumber.lua"))() -- Stained Glass Win
 assert(SMODS.load_file("./src/jokers/miller.lua"))() -- VOIDWALKER by Abel
 
 
+
 ---LEGENDARY
 assert(SMODS.load_file("./src/jokers/Egbert.lua"))() -- John Egbert, by FirstTry
 assert(SMODS.load_file("./src/jokers/tech.lua"))() -- Pox Of The Wild by Tech, p: LasagnaFelidae, a: Plasma
 
 --uncatagorized
-
 -- Unsure what this does (apparently it's Talisman stuff)
 local NFS = require("nativefs")
 to_big = to_big or function(a) return a end
