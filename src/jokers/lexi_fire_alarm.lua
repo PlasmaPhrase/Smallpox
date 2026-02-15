@@ -18,6 +18,7 @@ SMODS.Joker({
 	pools = {
 		["Smallpox"] = true,
 		["Scaling"] = true,
+		["Metallic"] = true
 	},
 	blueprint_compat = true,
 	discovered = true,

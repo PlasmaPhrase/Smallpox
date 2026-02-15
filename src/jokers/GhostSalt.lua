@@ -12,7 +12,7 @@ SMODS.Joker {
     pos = { x = 0, y = 0 },
     rarity = 1,
     cost = 5,
-    pools = {["Smallpox"] = true},
+    pools = {["Smallpox"] = true, ["Metallic"] = true},
     blueprint_compat = true,
     eternal_compat = true,
     perishable_compat = false,

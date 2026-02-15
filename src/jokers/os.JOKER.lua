@@ -101,7 +101,7 @@ SMODS.Joker {
     pos = { x = 0, y = 0 },
     rarity = 2,
     cost = 5,
-    pools = { ["Smallpox"] = true }, -- see comment at the top
+    pools = { ["Smallpox"] = true, ["Metallic"] = true}, -- see comment at the top
     blueprint_compat = true,       -- set to false if you dont want blueprint to copy
     discovered = true,
     unlocked = true,

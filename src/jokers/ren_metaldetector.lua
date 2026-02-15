@@ -129,11 +129,13 @@ SMODS.Joker {
     end,
     add_to_deck = function(self,card,from_debuff)
 
-        for k, joker in pairs(G.P_CENTER_POOLS.Metallic) do
-            table.insert(card.ability.extra.loot_pool, {
-                card = k,
-                weight = (joker.cost * -25)+250
-            })
+        for _, center in ipairs(G.P_CENTER_POOLS.Metallic) do
+            if center and center.key then
+                table.insert(card.ability.extra.loot_pool, {
+                    card = center.key,
+                    weight = math.max(1, (center.cost * -25) + 250)
+                })
+            end
         end
 
         for i = 1, card.ability.extra.treasures_size do

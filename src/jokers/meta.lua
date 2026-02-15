@@ -17,7 +17,7 @@ SMODS.Joker {
     config = { extra = { chips = 86 }, },
     atlas = 'susie',
 
-    pools = { ["Smallpox"] = true },
+    pools = { ["Smallpox"] = true, ["Metallic"] = true },
     pronouns = "she_her",
 
     loc_vars = function(self, info_queue, card)
