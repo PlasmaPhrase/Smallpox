@@ -46,6 +46,7 @@ assert(SMODS.load_file("./src/config_menu.lua"))() -- CONFIG MENU
 assert(SMODS.load_file("./src/jokers/example.lua"))() -- The example joker our chud son
 assert(SMODS.load_file("./src/jokers/ampup.lua"))() -- Amp Up by M0x3s
 assert(SMODS.load_file("./src/jokers/bliss.lua"))() -- Bliss by LasagnaFelidae
+assert(SMODS.load_file("./src/jokers/lexi_fire_alarm.lua"))() -- Fire Alarm by Lexi
 assert(SMODS.load_file("./src/jokers/iwillnever.lua"))() -- I will never... by Edward Robinson, p: LasagnaFelidae
 assert(SMODS.load_file("./src/jokers/ren_metaldetector.lua"))() -- Metal Detector by Ren
 assert(SMODS.load_file("./src/jokers/GhostSalt.lua"))() -- No Littering by GhostSalt
@@ -65,8 +66,6 @@ assert(SMODS.load_file("./src/jokers/pi_cubed.lua"))() -- Spike Ball by Pi_cubed
 assert(SMODS.load_file("./src/jokers/meta.lua"))() -- Susie by Meta
 assert(SMODS.load_file("./src/jokers/grinch.lua"))() -- Grinch by Soulware
 assert(SMODS.load_file("./src/jokers/vaccine.lua"))() -- Vaccine by mys.minty
-
-
 
 ---RARE
 assert(SMODS.load_file("./src/jokers/ruby.lua"))() -- Birthright by Ruby
