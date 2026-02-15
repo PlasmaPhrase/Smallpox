@@ -66,6 +66,7 @@ assert(SMODS.load_file("./src/jokers/meta.lua"))() -- Susie by Meta
 assert(SMODS.load_file("./src/jokers/grinch.lua"))() -- Grinch by Soulware
 assert(SMODS.load_file("./src/jokers/vaccine.lua"))() -- Vaccine by mys.minty
 
+
 ---RARE
 assert(SMODS.load_file("./src/jokers/ruby.lua"))() -- Birthright by Ruby
 assert(SMODS.load_file("./src/jokers/tatsu.lua"))() -- Butterfly Effect by Tatsu, p: Typ0
@@ -83,6 +84,7 @@ assert(SMODS.load_file("./src/jokers/scales_of_justice.lua"))() -- Scales of Jus
 assert(SMODS.load_file("./src/jokers/seethroughthejoke.lua"))() -- See Through the Joke by Flynn
 assert(SMODS.load_file("./src/jokers/missingnumber.lua"))() -- Stained Glass Window by missingnumber
 assert(SMODS.load_file("./src/jokers/miller.lua"))() -- VOIDWALKER by Abel
+
 
 ---LEGENDARY
 assert(SMODS.load_file("./src/jokers/Egbert.lua"))() -- John Egbert, by FirstTry

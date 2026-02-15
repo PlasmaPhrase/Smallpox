@@ -1,5 +1,10 @@
 
 return {
+    misc = {
+        dictionary = {
+            k_smallpox_rhythm_miss = "Missed." 
+        },
+    },
     descriptions = {
         Back = {
             b_smallpox_showman = {
@@ -88,18 +93,6 @@ return {
              
                     "{s:0.8,C:inactive}(Max of {X:mult,C:white,s:0.8}X#2#{s:0.8,C:inactive}, card destroyed at {X:mult,C:white,s:0.8}X#3#{s:0.8,C:inactive}){}"
                 }
-            },
-            j_smallpox_rhythm = {
-                name = {
-                        'Amp Up!',
-                        '{s:0.5}created by {s:0.5,V:1}M0xes{}',
-                },
-                text = {
-                    "This Joker gains {C:chips}+#1#{} Chips",
-					"per {C:attention}consective{} hand played",
-					'when "{C:chips}Joker!{}" is lit',
-					"{C:inactive}(Currently {C:chips}+#2#{C:inactive} Chips)"
-                },
             },
             j_smallpox_puzzlevision = {
                 name = {
@@ -249,6 +242,19 @@ return {
                     "{V:1}infected{} with {C:attention}Smallpox{}"
                 }
             },
+            j_smallpox_rhythm = {
+                name = {
+                        'Amp Up!',
+                        '{s:0.5}created by {s:0.5,V:1}M0xes{}',
+                },
+                text = {
+                    "This Joker gains {C:chips}+#1#{} Chips",
+                    "per {C:attention}consective{} hand played",
+                    'when "{C:chips}Joker!{}" is lit',
+                    "{C:inactive}(Currently {C:chips}+#2#{C:inactive} Chips)"
+                },
+            },
+
             j_smallpox_claus_dies = {
                 name = {
                       "PK Thunder",
@@ -970,7 +976,6 @@ return {
       
     },
   },        
-
 }
 
 
