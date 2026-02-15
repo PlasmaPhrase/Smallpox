@@ -40,15 +40,15 @@ assert(SMODS.load_file("./src/sounds.lua"))() -- SOUNDS
 assert(SMODS.load_file("./src/config_menu.lua"))() -- CONFIG MENU
 --assert(SMODS.load_file("./src/atlasses.lua"))() -- ATLASSES
 
--- RARE (SMALLPOX)
-assert(SMODS.load_file("./src/jokers/smallpox.lua"))() -- Smallpox by Plasma
+
 
 ---COMMON
 assert(SMODS.load_file("./src/jokers/example.lua"))() -- The example joker our chud son
 assert(SMODS.load_file("./src/jokers/ampup.lua"))() -- Amp Up by M0x3s
 assert(SMODS.load_file("./src/jokers/bliss.lua"))() -- Bliss by LasagnaFelidae
-assert(SMODS.load_file("./src/jokers/GhostSalt.lua"))() -- No Littering by GhostSalt
 assert(SMODS.load_file("./src/jokers/iwillnever.lua"))() -- I will never... by Edward Robinson, p: LasagnaFelidae
+assert(SMODS.load_file("./src/jokers/ren_metaldetector.lua"))() -- Metal Detector by Ren
+assert(SMODS.load_file("./src/jokers/GhostSalt.lua"))() -- No Littering by GhostSalt
 assert(SMODS.load_file("./src/jokers/os.JOKER.lua"))() -- os.JOKER by Nxkoo, a: Typ0
 assert(SMODS.load_file("./src/jokers/theriantropy.lua"))() -- Theriantropy by Jewel
 ---UNCOMMON
@@ -67,6 +67,7 @@ assert(SMODS.load_file("./src/jokers/grinch.lua"))() -- Grinch by Soulware
 assert(SMODS.load_file("./src/jokers/vaccine.lua"))() -- Vaccine by mys.minty
 
 
+
 ---RARE
 assert(SMODS.load_file("./src/jokers/ruby.lua"))() -- Birthright by Ruby
 assert(SMODS.load_file("./src/jokers/tatsu.lua"))() -- Butterfly Effect by Tatsu, p: Typ0
@@ -80,11 +81,12 @@ assert(SMODS.load_file("./src/jokers/polymorphine.lua"))() -- Polymorphine by Ni
 assert(SMODS.load_file("./src/jokers/puzzlevision.lua"))() -- Puzzlevision by FireIce
 assert(SMODS.load_file("./src/jokers/tigerthawk.lua"))() -- Rock Singer by TigerTHawk
 assert(SMODS.load_file("./src/jokers/roomtemperaturecarrot.lua"))() -- Room Temp. Carrot by Rainstar
+-- RARE (SMALLPOX)
+assert(SMODS.load_file("./src/jokers/smallpox.lua"))() -- Smallpox by Plasma
 assert(SMODS.load_file("./src/jokers/scales_of_justice.lua"))() -- Scales of Justice by Revo
 assert(SMODS.load_file("./src/jokers/seethroughthejoke.lua"))() -- See Through the Joke by Flynn
 assert(SMODS.load_file("./src/jokers/missingnumber.lua"))() -- Stained Glass Window by missingnumber
 assert(SMODS.load_file("./src/jokers/miller.lua"))() -- VOIDWALKER by Abel
-
 
 ---LEGENDARY
 assert(SMODS.load_file("./src/jokers/Egbert.lua"))() -- John Egbert, by FirstTry
