@@ -3,34 +3,27 @@ SMODS.Atlas({
     path = "jokers/pi_cubed.png", 
     px = 71,
     py = 95,
-    atlas_table = "ASSET_ATLAS"
+    atlas_table = "ANIMATION_ATLAS",
+    frames = 7,
+    fps = 8,
 })
 
 SMODS.Joker {
     key = "spikedball",
-    pos = { x = 0, y = 0 },
-    soul_pos = { x = 1, y = 0 },
+    pos = { x = 0, y = 1 },
+    soul_pos = { x = 0, y = 0 },
     rarity = 2,
     blueprint_compat = true,
     perishable_compat = true,
     eternal_compat = true,
     cost = 6,
     discovered = true,
-    config = { extra = { dollars = 1, difficulty = 0, spin_pos = 0 }, },
+    config = { extra = { dollars = 1, difficulty = 0 }, },
     atlas = 'picubed_atlas',
-    pools = { ['Smallpox'] = true, ["Metallic"] = true },
+    pools = { ["Smallpox"] = true, ["Metallic"] = true },
     loc_vars = function(self, info_queue, card)
         return { vars = { card.ability.extra.dollars, colours = { HEX("E14159") } } }
     end,
-    --[[update = function(self, card, dt) -- replace this with a love.update hook, and check all cards in G.your_collection[1,2,3] and/or G.joker to see if they're j_smallpox_spikedball
-		if not G.SETTINGS.reduced_motion then
-			if not card.ability.extra.spin_pos then card.ability.extra.spin_pos = 0 end
-			card.ability.extra.spin_pos = card.ability.extra.spin_pos + dt * 3
-			if card.ability.extra.spin_pos >= 7 then card.ability.extra.spin_pos = 0 end
-			local da_spin_pos = math.floor(card.ability.extra.spin_pos)
-			card.children.floating_sprite:set_sprite_pos({x = da_spin_pos + 1, y = 0})
-		end
-	end,]]
     calculate = function(self, card, context)
         if context.setting_blind and not context.blueprint then
             card.ability.extra.difficulty = card.ability.extra.difficulty + 1
@@ -60,38 +53,7 @@ SMODS.Joker {
     end
 }
 
-local love_update_spin_pos_ref = love.update
-function love.update(dt)
-    love_update_spin_pos_ref(dt)
-    if not G.SETTINGS.reduced_motion then
-        if G.jokers and G.jokers.cards then
-            for _, card in ipairs(G.jokers.cards) do
-                if card and card.config.center_key == 'j_smallpox_spikedball' then
-                    if not card.ability.extra.spin_pos then card.ability.extra.spin_pos = 0 end
-                    card.ability.extra.spin_pos = card.ability.extra.spin_pos + dt * 8
-                    if card.ability.extra.spin_pos >= 7 then card.ability.extra.spin_pos = 0 end
-                    local da_spin_pos = math.floor(card.ability.extra.spin_pos)
-                    card.children.floating_sprite:set_sprite_pos({x = da_spin_pos + 1, y = 0})
-                end
-            end
-        end
-        if G.your_collection then
-            for i = 1, #G.your_collection do
-                if G.your_collection[i] and G.your_collection[i].cards then
-                    for _, card in ipairs(G.your_collection[i].cards) do
-                        if card and card.config.center_key == 'j_smallpox_spikedball' then
-                            if not card.ability.extra.spin_pos then card.ability.extra.spin_pos = 0 end
-                            card.ability.extra.spin_pos = card.ability.extra.spin_pos + dt * 8
-                            if card.ability.extra.spin_pos >= 7 then card.ability.extra.spin_pos = 0 end
-                            local da_spin_pos = math.floor(card.ability.extra.spin_pos)
-                            card.children.floating_sprite:set_sprite_pos({x = da_spin_pos + 1, y = 0})
-                        end
-                    end
-                end
-            end
-        end
-    end
-end
+love.graphics.setDefaultFilter('nearest', 'nearest') -- stops blurry graphics
 
 SpikedBall = {}
 SpikedBall.window_width, SpikedBall.window_height = love.window.getMode()
@@ -164,11 +126,9 @@ function love.update(dt)
         SpikedBall.timer = SpikedBall.timer + dt
         if SpikedBall.timer >= math.max(0.04, SpikedBall.cooldown - SpikedBall.difficulty*0.11 - 0) then
             SpikedBall.timer = 0
-            --SpikedBall.cooldown = SpikedBall.cooldown * 0.99
             if SpikedBall.show_game then
                 local make_large = math.random() + math.min(0.75, SpikedBall.difficulty*0.015) > 1.015
                 table.insert(SpikedBall.spike_balls, Spike(make_large and 1 or nil))
-                --table.insert(SpikedBall.spike_balls, Spike())
             end
         end
         for _, spike in ipairs(SpikedBall.spike_balls) do
@@ -240,9 +200,6 @@ function love.draw()
         for _, spike in ipairs(SpikedBall.spike_balls) do
             if spike and spike.spin_state then
                 love.graphics.setColor(1, 1, 1, 0.85)
-                --love.graphics.circle("fill", t_p(spike.x), t_p(spike.y), t_p(spike.size*1.1))
-                --love.graphics.setColor(darken({0.2157, 0.2588, 0.2667, 0.7}, 0.8))
-                --love.graphics.circle("fill", t_p(spike.x), t_p(spike.y), t_p(spike.size))
                 if spike.size < 1 then -- small balls
                     if spike.spin_state < 0 then -- -ve spin
                         spike.spin_state = 3.999
@@ -258,12 +215,8 @@ function love.draw()
                 end
                 local floored_spin_state = math.floor(spike.spin_state)
                 if spike.size < 1 then
-                    --love.graphics.setColor(darken({(floored_spin_state+1)/7, 0, 0, 0.7}, 0.8))
-                    --love.graphics.circle("fill", t_p(spike.x), t_p(spike.y), t_p(spike.size))
                     love.graphics.draw(smallball_anim.spriteSheet, smallball_anim.quads[floored_spin_state + 1], t_p(spike.x), t_p(spike.y), nil, t_p(spike.size*3)/smallball_anim.width, nil, smallball_anim.width/2 , smallball_anim.height/2)
                 else
-                    --love.graphics.setColor(darken({0, 0, (floored_spin_state+1)/4, 0.7}, 0.8))
-                    --love.graphics.circle("fill", t_p(spike.x), t_p(spike.y), t_p(spike.size))
                     love.graphics.draw(bigball_anim.spriteSheet, bigball_anim.quads[floored_spin_state + 1], t_p(spike.x), t_p(spike.y), nil, t_p(spike.size*3.2)/bigball_anim.width, nil, bigball_anim.width/2 , bigball_anim.height/2)
                 end
             end
