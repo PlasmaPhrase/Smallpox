@@ -92,6 +92,7 @@ assert(SMODS.load_file("./src/jokers/miller.lua"))() -- VOIDWALKER by Abel
 ---LEGENDARY
 assert(SMODS.load_file("./src/jokers/Egbert.lua"))() -- John Egbert, by FirstTry
 assert(SMODS.load_file("./src/jokers/tech.lua"))() -- Pox Of The Wild by Tech, p: LasagnaFelidae, a: Plasma
+assert(SMODS.load_file("./src/jokers/coin.lua"))() -- THE COIN by Lyre, a: Lyre, p(debug): LasagnaFelidae, 
 
 --uncatagorized
 -- Unsure what this does (apparently it's Talisman stuff)
