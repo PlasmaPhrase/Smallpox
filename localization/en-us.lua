@@ -30,7 +30,38 @@ return {
                     "random Joker to become",
                     "{V:1}infected{} with {C:attention}Smallpox{}"
                 }
-            }
+            },
+            j_smallpox_agency = {
+                name = {
+                  "The Agency", 
+                  "{s:0.5}created by {C:red,s:0.5}Mysthaps{}{}",
+                  "{s:0.5}art by {C:attention,s:0.5}Inky{}{}"
+                },
+                text = {
+                    {
+                        "When hand starts, roll {C:attention}6 {C:red}D4s",
+                        "{C:mult}+#1#{} Mult for every {C:red}3{} rolled"
+                    },
+                    {
+                        "If exactly {C:attention}3 {C:red}3s{} are rolled, pick one:",
+                        "- Counts this roll as {C:attention}3^3{} {C:red}3s{} rolled",
+                        "- Replenish {C:attention}#3# {C:blue}hands{} and {C:red}discards",
+                        "- Permanently increase Mult by {C:mult}#2#",
+                    },
+                }
+            },
+        }
+    },
+    misc = {
+        dictionary = {
+            k_smallpox_triscendence = "!!! TRISCENDENCE !!!",
+            k_smallpox_select_tri = "Select an additional Triscendence effect:",
+            k_smallpox_tri_1 = "All Hands",
+            k_smallpox_tri_2 = "Circle Back",
+            k_smallpox_tri_3 = "Employee of the Moment",
+            k_smallpox_tri_1_desc = "Counts this roll as 3^3 3s rolled",
+            k_smallpox_tri_2_desc = "Replenish 3 hands and discards",
+            k_smallpox_tri_3_desc = "Permanently increase Mult by 3",
         }
     }
 }
