@@ -1,10 +1,5 @@
 
 return {
-    misc = {
-        dictionary = {
-            k_smallpox_rhythm_miss = "Missed." 
-        },
-    },
     descriptions = {
         Back = {
             b_smallpox_showman = {
@@ -241,6 +236,19 @@ return {
                     "random Joker to become",
                     "{V:1}infected{} with {C:attention}Smallpox{}"
                 }
+            },
+            j_smallpox_longsocks = {
+                name = {
+                    "Programmer Socks",
+                    "{s:0.5}created by {C:legendary,s:0.5}ProdByProto{}{}",
+                    "{C:inactive,s:0.4}wear for optimal brain activity during coding"
+                },
+                text = {
+                    "Gains {X:mult,C:white}X#1#{} Mult for",
+                    "each {C:attention}maid outfit{} you own",
+                    "{C:dark_edition,E:1}in real life{}",
+                    "{C:inactive,s:0.85}(Currently {X:mult,C:white}X#2#{}{C:inactive,s:0.85}){}{}"
+                },
             },
             j_smallpox_fableofthemirrorbreaker = {
                 name = {
@@ -1042,7 +1050,9 @@ return {
       k_smallpox_rhythm_miss = "Missed." ,
       spox_flash_warn = 
             "Warning!\n\nThis mod may contain flashing images which\nmay not be suitable for individuals with\nphotosensitive epilepsy.\n\nYou can disable flashing images in the Mod Menu\nby selecting [Config] and clicking [Photosensitive Mode]"
-      
+      smallpox_sockscale1 = "Hot Topic delivery for ",
+      smallpox_sockscale2 = "Slopazon delivery for ",
+      smallpox_sockscale3 = "This is a gift. I hope you like it, "
     },
     labels = {
             smallpox_fable_sticker = "Treasured",
@@ -1051,7 +1061,6 @@ return {
   },        
 
 }
-
 
 
 

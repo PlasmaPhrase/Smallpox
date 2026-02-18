@@ -59,6 +59,7 @@ assert(SMODS.load_file("./src/jokers/Atlas.lua"))() -- Atlas by ABuffZucchini
 assert(SMODS.load_file("./src/jokers/typ0.lua"))() -- Blackjack by Typ0
 assert(SMODS.load_file("./src/jokers/factoryline.lua"))() -- Factory Line by Lily Felli
 assert(SMODS.load_file("./src/jokers/missingposter.lua"))() -- Missing Poster by LFMoth
+assert(SMODS.load_file("./src/jokers/ProgrammerSocks.lua"))() -- Programmer Socks by Proto
 assert(SMODS.load_file("./src/jokers/inky.lua"))() -- Restaurant Menu by Inky, p: Typ0
 assert(SMODS.load_file("./src/jokers/settheory.lua"))() -- Set Theory by Arta
 assert(SMODS.load_file("./src/jokers/tjetsu_sumi.lua"))() -- Sumi by Tsutje
