@@ -81,6 +81,7 @@ assert(SMODS.load_file("./src/jokers/puzzlevision.lua"))() -- Puzzlevision by Fi
 assert(SMODS.load_file("./src/jokers/tigerthawk.lua"))() -- Rock Singer by TigerTHawk
 assert(SMODS.load_file("./src/jokers/roomtemperaturecarrot.lua"))() -- Room Temp. Carrot by Rainstar
 -- RARE (SMALLPOX)
+assert(SMODS.load_file("./src/jokers/notmario.lua"))() -- Fable of the Joke-Maker by notmario
 assert(SMODS.load_file("./src/jokers/smallpox.lua"))() -- Smallpox by Plasma
 assert(SMODS.load_file("./src/jokers/scales_of_justice.lua"))() -- Scales of Justice by Revo
 assert(SMODS.load_file("./src/jokers/seethroughthejoke.lua"))() -- See Through the Joke by Flynn
@@ -99,6 +100,8 @@ lenient_bignum = lenient_bignum or function(a) return a end
 
 SMODS.current_mod.optional_features = function()
     return {
+        post_trigger = true,
+        retrigger_joker = true,
         cardareas = {} 
     }
 end
