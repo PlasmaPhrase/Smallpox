@@ -1,9 +1,6 @@
 SMODS.Atlas {
 	key = "Amp_Up",
 	path = "jokers/jokerhythm.png",
-	atlas_table = 'ANIMATION_ATLAS',
-	frames = 8,
-	fps = 6,
 	px = 71,
 	py = 95
 }
@@ -23,7 +20,7 @@ SMODS.Joker {
 	update = function(self, card, dt)
 		card.children.center:set_sprite_pos({x = math.floor((os.clock() * card.ability.extra.fps) % card.ability.extra.frames), y = 0})
 	end,
-  calculate = function(self, card, context)
+    calculate = function(self, card, context)
         if context.press_play and
 		not context.blueprint then
 			local current_frame = math.floor((os.clock() * card.ability.extra.fps) % card.ability.extra.frames)
@@ -53,4 +50,3 @@ SMODS.Joker {
         return nil
 	end
 }
-

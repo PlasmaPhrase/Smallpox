@@ -57,19 +57,19 @@ return {
                     {"{C:inactive}(Last scored: {V:1}#3#{}{C:inactive}){}"}
                 }
             },
- 			j_smallpox_iwillnever = {
-                name = {
-                    "I Will never use JokerForge to make mods again",
-                    "{s:0.5}created by {V:1,s:0.5}Edward Robinson{}{}",
-					"{s:0.5}programmed by {s:0.5,C:edition}LasagnaFelidae{}{}"
-                },
-                text = {
-                    {
-					"Gives {X:mult,C:white}X3{} Mult if",
-					"{C:green}JokerForge{} sucks"
-                	}
-            	},
-			},
+            j_smallpox_iwillnever = {
+                    name = {
+                        "I Will never use JokerForge to make mods again",
+                        "{s:0.5}created by {V:1,s:0.5}Edward Robinson{}{}",
+                        "{s:0.5}programmed by {s:0.5,C:edition}LasagnaFelidae{}{}"  
+                        },
+                    text = {
+                        {
+                         "Gives {X:mult,C:white}X3{} Mult if",
+                         "{C:green}JokerForge{} sucks"
+                        }
+                    },
+            },
             j_smallpox_eyejoker = {
                 name = {
                   'See Through The Joke',
@@ -107,7 +107,7 @@ return {
                     "{C:inactive}Currently: {C:mult}+#2# Mult{C:inactive}, {X:mult,C:white}X#1#{C:inactive} XMult, and {C:money}#3#${}",
                     "{s:0.9,C:inactive}Updates when Blind is selected"
                     },
-					{
+					          {
                         "{s:0.9,C:inactive}It's TV Time; with your friend, Mr. Puzzles!",
                         "{s:0.9,C:inactive}It's TV Time; take a break from your troubles!",
                         "{s:0.9,C:inactive}WTF IS A COPYRIGHT 2023-2026"
@@ -277,7 +277,6 @@ return {
                     "{C:inactive}(Currently {C:chips}+#2#{C:inactive} Chips)"
                 },
             },
-
             j_smallpox_claus_dies = {
                 name = {
                       "PK Thunder",
