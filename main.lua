@@ -30,6 +30,7 @@ SMODS.Atlas({
 assert(SMODS.load_file("./src/backs.lua"))()
 assert(SMODS.load_file("./src/pools.lua"))()
 assert(SMODS.load_file("./src/jokers/example.lua"))() -- The example joker
+assert(SMODS.load_file("./src/jokers/ProgrammerSocks.lua"))() -- proto's joker
 
 -- Unsure what this does (apparently it's Talisman stuff)
 local NFS = require("nativefs")

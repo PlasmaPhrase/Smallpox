@@ -1,4 +1,11 @@
 return {
+    misc = {
+        dictionary = {
+            smallpox_sockscale1 = "Hot Topic delivery for ",
+            smallpox_sockscale2 = "Slopazon delivery for ",
+            smallpox_sockscale3 = "This is a gift. I hope you like it, "
+        }
+    },
     descriptions = {
         Back = {
             b_smallpox_showman = {
@@ -29,6 +36,20 @@ return {
                     "{C:green}#2# in #3#{} chance for a",
                     "random Joker to become",
                     "{V:1}infected{} with {C:attention}Smallpox{}"
+                }
+            },
+            j_smallpox_longsocks = {
+                name = {
+                    "Programmer Socks",
+                    "{s:0.554}created by {C:legendary,s:0.554}ProdByProto{}{}",
+                    "{s:0.554}art by {C:legendary,s:0.554}ProdByProto{}{}",
+                    "{C:inactive,s:0.444}wear for optimal brain activity during coding"
+                },
+                text = {
+                    "Gains {X:mult,C:white}X#1#{} Mult for",
+                    "each {C:attention}maid outfit{} you own",
+                    "{C:dark_edition,E:1}in real life{}",
+                    "{C:inactive,s:0.85}(Currently {X:mult,C:white}X#2#{}{C:inactive,s:0.85}){}{}"
                 }
             }
         }
