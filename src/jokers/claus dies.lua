@@ -24,6 +24,7 @@ SMODS.Joker {
     rarity = 3,
     cost = 13,
     atlas = "pk_thunder_ANIM",
+    pools = {["Smallpox"] = true},
     config = {
         extra = {
             probability_1a = 1,
