@@ -43,3 +43,35 @@ SMODS.current_mod.config_tab = function()
         }
     }
 end
+
+SMODS.current_mod.extra_tabs = function()
+	return {
+		{
+			label = localize("spox_credits_tab_name"),
+			tab_definition_function = function()
+				return {
+					n = G.UIT.ROOT,
+					config = { align = "cm", padding = 0.05 },
+					nodes = {
+						{
+							n = G.UIT.R,
+							config = { align = "cm" },
+							nodes = {
+								{
+									n = G.UIT.T,
+                                    config = {
+                                        text = localize("spox_credits_tab"),
+                                        colour = G.C.RED,
+                                        scale = 0.5,
+                                        wrap = true,
+                                        maxw = 6
+                                    }
+								}
+							}
+						}
+					}
+				}
+			end
+		}
+	}
+end

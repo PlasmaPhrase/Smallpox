@@ -1106,6 +1106,8 @@ return {
 			k_smallpox_tri_1_desc = "Counts this roll as 3^3 3s rolled",
 			k_smallpox_tri_2_desc = "Replenish 3 hands and discards",
 			k_smallpox_tri_3_desc = "Permanently increase Mult by 3",
+            spox_credits_tab_name = "Credits",
+            spox_credits_tab = "test\n\ntest\n\ntest"
 		},
 		labels = {
 			smallpox_fable_sticker = "Treasured",
