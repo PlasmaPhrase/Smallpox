@@ -30,13 +30,13 @@ return {
                 },
                 text = {
                     {
-                    "When the counter reaches {C:attention}#1#{},",
-                    "create a random {C:rare}Rare{} Joker",
-                    },
-                    {
                     "Counter increases by {C:attention}#3#{} for every",
                     "other Joker owned at end of round",
                     "{s:1.2,C:attention}#2#{} / {s:1.2,C:attention}#1#{}",
+                    },
+                    {
+                    "When the counter reaches {C:attention}#1#{},",
+                    "create a random {C:rare}Rare{} Joker",
                     "{C:inactive}(Must have room)",
                     },
                 }
@@ -100,11 +100,11 @@ return {
                 },
                 text = {
                     {
+                    "When Blind is selected,",
                     "Gain {C:mult}Mult{} based on the run's {C:attention}Round{}",
                     "Gain {X:mult,C:white}XMult{} based on the run's {C:attention}Ante{}",
                     "Gain {C:money}Money{} based on the amount of owned {C:attention}Jokers{}",
-                    "{C:inactive}Currently: {C:mult}+#2# Mult{C:inactive}, {X:mult,C:white}X#1#{C:inactive} XMult, and {C:money}#3#${}",
-                    "{s:0.9,C:inactive}Updates when Blind is selected"
+                    "{C:inactive}Currently {C:mult}+#2# Mult{C:inactive}, {X:mult,C:white}X#1#{C:inactive} XMult, and {C:money}#3#${}",
                     },
 					          {
                         "{s:0.9,C:inactive}It's TV Time; with your friend, Mr. Puzzles!",
@@ -181,7 +181,7 @@ return {
                     "{C:chips}+#1#{} Chips",
                     "for each {V:1}#2#{} card",
                     "in your deck.",
-                    "{s:0.8,C:inactive}(Currently {}{s:0.8,C:chips}+#3#{}{s:0.8,C:inactive} Chips. [#4#])"
+                    "{C:inactive}(Currently {}{C:chips}+#3#{}{C:inactive} Chips)"
                 }
             },
             j_smallpox_scales_of_justice = {
@@ -218,9 +218,8 @@ return {
                 },
                 text = {
                    {
-                    "After {C:attention}scoring{} or {C:attention}use{}",
+                    "After {C:attention}scoring{} or {C:attention}using{} this Joker",
                     "{C:attention}randomize{} the {C:spectral,E:1}scoring operator{}",
-                    "between {C:blue}Chips{} and {C:red}Mult{}",
                     "{C:inactive}(Currently {V:1,E:2}#1#{C:inactive})",
                    },
                    {
@@ -280,7 +279,7 @@ return {
                     "Gains {X:mult,C:white}X#1#{} Mult for",
                     "each {C:attention}maid outfit{} you own",
                     "{C:dark_edition,E:1}in real life{}",
-                    "{C:inactive,s:0.85}(Currently {X:mult,C:white}X#2#{}{C:inactive,s:0.85}){}{}"
+                    "{C:inactive}(Currently {X:mult,C:white}X#2#{}{C:inactive}){}{}"
                 },
             },
             j_smallpox_fableofthemirrorbreaker = {
@@ -364,8 +363,8 @@ return {
                 },
                 text = {
                     "{C:green}#1# in #4#{} chance to apply {X:red,C:white}X3{} Mult",
-                    "This Joker {C:attention}Retriggers{} 3 extra times",
-                    "{C:green}#3# in #6#{} chance to {C:attention}disable{} the Boss Blind",
+                    "and {C:attention}retriggers{} 3 extra times",
+                    "{C:green}#3# in #6#{} chance to {C:attention}disable{} Boss Blind",
                     "when {C:attention}triggered{}"
                 },
             },
@@ -486,7 +485,7 @@ return {
                     "Gains {C:chips}+#1#{} Chips ",
                     "if {C:attention}#2#{} or more Suits",
                     "have been played",
-                    "{C:inactive}(Currently {}{C:chips}+#3#{}{C:inactive} Chips.)"
+                    "{C:inactive}(Currently {}{C:chips}+#3#{}{C:inactive} Chips)"
                 },
             },
        
@@ -560,7 +559,7 @@ return {
                 text = {
                     "Gain {X:mult,C:white}X0.1{} Mult per hand drawn",
                     "Gained mult {C:attention}halves{} at end of ante.",
-                    "{C:inactive,s:0.8}[Currently {X:mult,C:white}X#1#{C:inactive,s:0.8}]"
+                    "{C:inactive}[Currently {X:mult,C:white}X#1#{C:inactive}]"
                 },
             },
 
@@ -577,7 +576,7 @@ return {
                       '{X:common,C:white}+#1#{}/{X:uncommon,C:white}+#2#{}/{X:rare,C:white}+#3#{}/{X:legendary,C:white}+#4#{} xMult',
                       'according to their {C:dark_edition}rarity.{}',
                       '{X:green,C:white}Meme{} and {X:purple,C:white}Disease{} Jokers grant',
-                      'an additional {X:mult,C:white}+#5#{} xMult',
+                      'an additional {X:mult,C:white}+#5#{} XMult',
                     },
                     {
                       'For every {C:rare}Rare{} and {C:legendary}Legendary{} Joker',
@@ -612,7 +611,7 @@ return {
                 text = {
                     "On reroll, {C:attention}randomize{}",
                     "held consumables",
-					"{C:inactive,s:0.8}(Cannot create Rare Spectrals.){}"
+					"{C:inactive,s:0.8}(Cannot create Rare Spectrals){}"
                 },
             },
             j_smallpox_susie = {
@@ -684,7 +683,7 @@ return {
                         "extra cards"
                     },
                     {
-                        "Score cards past the first",
+                        "Scored cards past the first",
                         "{C:attention}4{} are retriggered"
                     }
                 }
@@ -806,7 +805,7 @@ return {
                 },
                 text = {
                     "Once per ante open",
-                    "a {C:red}Customiseable{}",
+                    "a {C:red}Customisable{}",
                     "Playing Card shop"
                 }
             },
@@ -981,10 +980,10 @@ return {
                 },
                 text = {
                 "When a {C:attention}face card{} is {C:attention}scored,",
-                "{C:green}1 in 2{} chance to make it {C:gold}Wild,",
-                "{C:green}1 in 10{} chance to destroy this {C:attention}Joker",
-                "and create a copy of {C:spectral}The Cryptid", 
-                "{s:0.8,C:inactive}(Must have room)",
+                "{C:green}#1# in #2#{} chance to make it {C:gold}Wild,",
+                "{C:green}#3# in #4#{} chance to destroy this {C:attention}Joker",
+                "and create a copy of {C:spectral}Cryptid",
+                "{C:inactive}(Must have room)",
                     
                 }
             },
