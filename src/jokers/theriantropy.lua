@@ -21,7 +21,7 @@ SMODS.Joker {
         info_queue[#info_queue + 1] = G.P_CENTERS.m_wild
         local a, b = SMODS.get_probability_vars(card, 1, card.ability.extra.chance)
         local ab, c = SMODS.get_probability_vars(card, 1, card.ability.extra.chance2)
-        return {vars = {a, b, card.ability.extra.edition}}
+        return {vars = {a, b, ab, c, card.ability.extra.edition}}
     end,
     calculate = function(self, card, context)
         if context.individual and context.cardarea == G.play and context.other_card:is_face() and SMODS.pseudorandom_probability(card, 'smallpox_therian', 1, card.ability.extra.chance) and not context.blueprint then
