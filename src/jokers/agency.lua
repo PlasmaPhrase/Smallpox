@@ -18,7 +18,7 @@ SMODS.Joker {
     unlocked = true,
     config = { extra = { mult = 3, mult_gain = 3, restore = 3, threes = 0 }, },
     loc_vars = function(self, info_queue, card)
-        return { vars = { card.ability.extra.mult, card.ability.extra.mult_gain, card.ability.extra.restore, card.ability.extra.threes, card.ability.extra.threes*card.ability.extra.mult } }
+        return { vars = { card.ability.extra.mult, card.ability.extra.mult_gain, card.ability.extra.restore } }
     end,
     
     calculate = function(self, card, context)
@@ -72,15 +72,19 @@ SMODS.Joker {
                     return true
                     end
                 }))
-            else
-                card.ability.extra.threes = SMODS.find_card("j_smallpox_agency")[1].threes
             end
         end
+
         if context.joker_main then
+            card.ability.extra.threes = SMODS.find_card("j_smallpox_agency")[1].ability.extra.threes
+            local threes = card.ability.extra.threes
             return {
-                mult = card.ability.extra.mult * card.ability.extra.threes
+                mult = card.ability.extra.mult * threes
             }
+        end
+
+        if context.after then
+            card.ability.extra.threes = 0
         end
     end
 }
-
