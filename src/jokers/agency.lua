@@ -18,7 +18,7 @@ SMODS.Joker {
     unlocked = true,
     config = { extra = { mult = 3, mult_gain = 3, restore = 3, threes = 0 }, },
     loc_vars = function(self, info_queue, card)
-        return { vars = { card.ability.extra.mult, card.ability.extra.mult_gain, card.ability.extra.restore } }
+        return { vars = { card.ability.extra.mult, card.ability.extra.mult_gain, card.ability.extra.restore, card.ability.extra.threes, card.ability.extra.threes*card.ability.extra.mult } }
     end,
     
     calculate = function(self, card, context)
@@ -83,3 +83,4 @@ SMODS.Joker {
         end
     end
 }
+
