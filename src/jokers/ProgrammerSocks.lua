@@ -1,4 +1,3 @@
-
 -- Joker and art by ProdByProto
 SMODS.Atlas({
     key = "socks", 
@@ -29,40 +28,35 @@ SMODS.Joker {
             popFactorMin = 250,
             popFactorMax = 550
         },
-		msg = { toggle = false},
     },
     pronouns = "any_all", -- see comment at top
 
     loc_vars = function(self, info_queue, card)
         return { vars = { card.ability.extra.scale, card.ability.extra.xmult } }
     end,
-    stepcheck = function(self,card)
-        card.ability.extra.xmult = card.ability.extra.xmult + card.ability.extra.scale
-		card.ability.extra.steps, card.ability.extra.populationFactor = 0, pseudorandom("populationFactor",card.ability.extra.popFactorMin,card.ability.extra.popFactorMax)  
-	end,
-	
     calculate = function(self, card, context)
-		if G.jokers and G.jokers.highlighted and #G.jokers.highlighted == 0 then
-			card.ability.extra.steps = card.ability.extra.steps + 1
-		end
+        local ret = {}
         if not context.repetition then
+            if G.jokers and G.jokers.highlighted and #G.jokers.highlighted == 0 then
+			    card.ability.extra.steps = card.ability.extra.steps + 1
+		    end
+            
             if card.ability.extra.steps > card.ability.extra.populationFactor then
-				self:stepcheck(card)
-				card.ability.msg.toggle = true
+                card.ability.extra.xmult = card.ability.extra.xmult + card.ability.extra.scale
+                ret.extra = {}
+                ret.extra.message = localize("smallpox_sockscale"..pseudorandom("word",1,3))..G.PROFILES[G.SETTINGS.profile].name
+                ret.extra.message_card = card
+                card.ability.extra.steps, card.ability.extra.populationFactor = 0, pseudorandom("populationFactor",card.ability.extra.popFactorMin,card.ability.extra.popFactorMax)
+                print("Socks Population Factor - " .. card.ability.extra.populationFactor)
             end
         end
+
         if context.joker_main then
-			if card.ability.msg.toggle == true then
-				card.ability.msg.toggle = false
-                return {
-					message = localize("smallpox_sockscale"..pseudorandom("word",1,3))..G.PROFILES[G.SETTINGS.profile].name,
-					xmult = card.ability.extra.xmult
-				}  
-            else
-				return{
-					xmult = card.ability.extra.xmult
-				}
-			end
+            ret.xmult = card.ability.extra.xmult
+        end
+
+        if ret then 
+            SMODS.calculate_effect(ret, card)
         end
     end
 }
