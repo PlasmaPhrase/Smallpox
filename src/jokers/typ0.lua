@@ -6,7 +6,8 @@ SMODS.Atlas({
     atlas_table = "ASSET_ATLAS"
 })
 
-SMODS.Gradient {
+loc_colour()
+G.ARGS.LOC_COLOURS.typ0 = SMODS.Gradient {
     key = "Typ0",
     colours = {HEX('A4C2F4'), HEX('a4eaf4')},
     cycle = 8
@@ -185,7 +186,7 @@ SMODS.Joker {
     smallpox_credits = {
 		{
 			text = "By: SLDTyp0",
-            color = HEX("000000"),
+            color = G.ARGS.LOC_COLOURS.typ0 ,
 		},
 	},
     
