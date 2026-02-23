@@ -43,6 +43,19 @@ SMODS.Joker {
             vars = {localize("k_smallpox_"..card.ability.current_operator.key), colours = {card.ability.current_operator.colour}}
         }
     end,
+    load = function(self, card, card_table, other_card)
+        G.E_MANAGER:add_event(Event({
+            trigger = "after",
+            func = function()
+                local operator = card.ability.current_operator
+                if operator.key == "non" then
+                    return true
+                end
+                SMODS.set_scoring_calculation("smallpox_breuhh_"..operator.key)
+                return true
+            end
+         }))
+    end,
     add_to_deck = function(self, card, from_debuff)
         for _, functions in ipairs(SMODS.find_card("j_smallpox_functions")) do
             if not functions.debuff and functions ~= card then
