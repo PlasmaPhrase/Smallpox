@@ -32,14 +32,13 @@ SMODS.Joker {
         if context.ante_end then
             card.ability.extra.mult = card.ability.extra.mult / 2
             return {
-                xmult = card.ability.extra.mult,
                 message = "Crumpled Page!",
                 colour = G.C.FILTER
              }
         end
         if context.joker_main then
             return {
-                mult = card.ability.extra.mult
+                Xmult = card.ability.extra.mult
             }
         end
     end,
