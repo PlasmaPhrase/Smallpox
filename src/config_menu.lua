@@ -81,7 +81,7 @@ SMODS.current_mod.extra_tabs = function()
                             n = G.UIT.C,
                             config = { w = 8, h = 12, align = "tm", padding = 0.2 },
                             nodes = {
-                                -- Each text item in its own row
+
                                 {
                                     n = G.UIT.R,
                                     config = { align = "tm" },
@@ -93,25 +93,27 @@ SMODS.current_mod.extra_tabs = function()
                                     n = G.UIT.R,
                                     config = { align = "tm" },
                                     nodes = {
-                                        { n = G.UIT.T, config = { text = localize("spox_helpers_tab_name"), colour = G.C.UI.TEXT_LIGHT, scale = 0.6, align = "cm" } }
+                                            { n = G.UIT.T, config = { text = localize("spox_helpers_tab_name"), colour = G.C.UI.TEXT_LIGHT, scale = 0.6, align = "cm" } },
+                                            
+                                        }
+                                      
+                                },
+                                {
+                                    n = G.UIT.R,
+                                    config = { align = "tm" },
+                                    nodes = {
+                                        { n = G.UIT.T, config = { text = localize("spox_helpers"), colour = G.C.UI.TEXT_LIGHT, scale = 0.4, align = "cm" } }
                                     }
                                 },
                                 {
                                     n = G.UIT.R,
                                     config = { align = "tm" },
                                     nodes = {
-                                        { n = G.UIT.T, config = { text = localize("spox_helpers"), colour = G.C.UI.TEXT_LIGHT, scale = 0.5, align = "cm" } }
-                                    }
-                                },
-                                {
-                                    n = G.UIT.R,
-                                    config = { align = "tm" },
-                                    nodes = {
-                                        { n = G.UIT.T, config = { text = localize("spox_contributers_tab_name"), colour = G.C.UI.TEXT_LIGHT, scale = 0.6, align = "cm" } }
+                                        { n = G.UIT.T, config = { text = localize("spox_contributers_tab_name"), colour = G.C.UI.TEXT_LIGHT, scale = 0.6, align = "cm" } },
+                                        
                                     }
                                 },
 
-                                -- Horizontal row of wrapped credits
                                 {
                                     n = G.UIT.R,
                                     config = { align = "cm" },
