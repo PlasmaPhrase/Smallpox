@@ -158,7 +158,7 @@ G.FUNCS.smallpox_breuhh_click = function(e)
         copy.ability.current_operator = operator
     end
     card.ability.been_used = true
-    card_eval_status_text(card, 'extra', nil, nil, nil, {message = operator.name.."!", colour = operator.colour})
+    card_eval_status_text(card, 'extra', nil, nil, nil, {message = localize("k_smallpox_"..card.ability.current_operator.key).."!", colour = operator.colour})
 end
 
 G.FUNCS.smallpox_breuhh_func = function(e)
