@@ -57,7 +57,7 @@ SMODS.Joker {
                     func = function()
                         G.GAME.joker_buffer = 0
                         -- See note about SMODS Scaling Manipulation on the wiki
-                        card.ability.extra.mult = card.ability.extra.mult + shot.sell_cost * 1.5
+                        card.ability.extra.mult = card.ability.extra.mult + sliced_card.sell_cost * card.ability.extra.change
                         card:juice_up(0.8, 0.8)
                         shot:start_dissolve({ HEX("57ecab") }, nil, 1.6)
                         play_sound('smallpox_tigerthawk_gunshot', 0.96 + math.random() * 0.08, 2000)
