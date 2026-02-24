@@ -165,7 +165,7 @@ return {
                 text = { 
                     "{C:chips}+#1#{} Chips",
                     "for each {V:1}#2#{} card",
-                    "in your deck.",
+                    "in your deck",
                     "{C:inactive}(Currently {}{C:chips}+#3#{}{C:inactive} Chips)"
                 }
             },
