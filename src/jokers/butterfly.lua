@@ -28,8 +28,8 @@ SMODS.Joker{
         
     end,
 
-    remove_from_deck = function(self, card, from_debuff)
-        if from_debuff then return end
+    calculate = function(self, card, context)
+        if context.selling_self then
         if not G.jokers or not G.jokers.cards then return end
 
 
@@ -89,6 +89,7 @@ SMODS.Joker{
                 play_sound('generic1', 0.9 + math.random()*0.1, 0.8)
             end
         end
+    end
     end,
     smallpox_credits = {
 		{
