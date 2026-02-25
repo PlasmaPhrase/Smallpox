@@ -1043,6 +1043,11 @@ return {
 		},
 	},
 	misc = {
+        challenge_names = {
+            c_smallpox_epidemic = "Epidemic",
+            c_smallpox_bullethell = "Twin Bullets",
+            c_smallpox_error = "x.x"
+        },
 		dictionary = {
 			mintypox_name = "mys. minty",
 			k_steel = "Steel",

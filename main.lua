@@ -47,6 +47,10 @@ assert(SMODS.load_file("./src/config_menu.lua"))() -- CONFIG MENU
 assert(SMODS.load_file("./src/boosters.lua"))() -- BOOSTERS
 --assert(SMODS.load_file("./src/atlasses.lua"))() -- ATLASSES
 
+-- CHALLENGES
+assert(SMODS.load_file("./src/challenges/epidemic.lua"))()
+assert(SMODS.load_file("./src/challenges/bullethell.lua"))()
+assert(SMODS.load_file("./src/challenges/error.lua"))()
 
 
 ---COMMON
