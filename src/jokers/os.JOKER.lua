@@ -40,7 +40,8 @@ please set cost according to rarity
 ]]
 
 G.YOUAREANIDIOT = G.YOUAREANIDIOT or {
-    pressed_f = false
+    pressed_f = false,
+    pressed_f_with_hand = false
 }
 
 local old_keyp = love.keypressed
@@ -160,7 +161,11 @@ SMODS.Joker {
         
         local e = card.ability.extra
         local s = get_system_state()
-
+        if context.press_play then
+            if G.YOUAREANIDIOT.pressed_f then
+                G.YOUAREANIDIOT.pressed_f_with_hand = true
+            end
+        end
         if context.joker_main then
             local mult = e.base_mult
             local chips = 0
@@ -197,8 +202,9 @@ SMODS.Joker {
             end)
             chips = chips + count
 
-            if G.YOUAREANIDIOT.pressed_f then
+            if G.YOUAREANIDIOT.pressed_f_with_hand then
                 chips = chips + math.floor(G.GAME.dollars / 5) * e.f_chips
+                G.YOUAREANIDIOT.pressed_f_with_hand = false
             end
 
             return {
