@@ -1670,7 +1670,7 @@ SPOX.erratic = {
             for i, v in pairs(G.GAME.hands) do
                 if pseudorandom("erratic_birthright3070") < 0.3 then hands[#hands+1] = i end
             end
-            SMODS.upgrade_poker_hands({ from = tag, hands = hands, level_up = pseudorandom("erratic_levels")*3 })
+            SMODS.upgrade_poker_hands({ from = card, hands = hands, level_up = pseudorandom("erratic_levels")*3 })
         end,
         function(self, card, context)
             local card = pseudorandom_element(G.hand.cards, pseudoseed("erratic_cards"))
