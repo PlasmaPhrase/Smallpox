@@ -154,7 +154,6 @@ SMODS.Joker {
         local s = get_system_state()
 
         if context.press_play then
-            local chips = 0
             if G.YOUAREANIDIOT.pressed_f then
                 chips = chips +
                     math.floor(G.GAME.dollars / 5) * e.f_chips
