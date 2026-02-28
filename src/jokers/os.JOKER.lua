@@ -40,7 +40,6 @@ please set cost according to rarity
 ]]
 
 G.YOUAREANIDIOT = G.YOUAREANIDIOT or {
-    start = love.timer.getTime(),
     pressed_f = false
 }
 
@@ -76,8 +75,7 @@ local function get_system_state() -- im sorry
     s.friday = (t.wday == 6)
     s.june = (t.month == 6)
     s.four_pm = (t.hour == 16)
-    s.session = love.timer.getTime() - G.YOUAREANIDIOT.start
-    s.fps = love.timer.getFPS or 100
+    s.fps = love.timer.getFPS() or 100
     s.volume = G.SETTINGS.SOUND.music_volume
     local _, batt = love.system.getPowerInfo()
     s.battery = batt or 100
@@ -127,7 +125,6 @@ SMODS.Joker {
             volume_value = 2,
             batt_min = 30,
             batt_max = 50,
-            session_min = 23,
             odds = 6,
             rare_xchips = 2,
             cpu_req = 2,
@@ -149,7 +146,7 @@ SMODS.Joker {
                 e.volume_value,
                 e.batt_min,
                 e.batt_max,
-                e.session_min,
+                nil, -- Removed Session Time due to being unused, i do not want to bother editing the loc file numbers - xoxo M0xes
                 numerator,
                 denominator,
                 e.rare_xchips,
@@ -227,16 +224,6 @@ SMODS.Joker {
 
             if s.battery >= e.batt_min and s.battery <= e.batt_max then
                 G.GAME.tags[#G.GAME.tags + 1] = Tag("double")
-            end
-
-            if s.session >= e.session_min * 60 then
-                local c = pseudorandom_element(G.consumeables.cards)
-
-                if c then
-                    local copy = copy_card(c)
-                    copy:set_edition({ negative = true })
-                    G.consumeables:emplace(copy)
-                end
             end
         end
 

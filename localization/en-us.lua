@@ -362,7 +362,6 @@ return {
                     "At end of round:",
                     "All Jokers gain {C:money}+$#6#{} value if {C:attention}Music Volume < 10{},",
                     "Gain {C:attention}Double Tag{} if {C:attention}Battery #7#% ~ #8#%{},",
-                    "Create a {C:dark_edition}Negative{} copy of a random held {C:attention}Consumable{} after {C:attention}#9# Minutes{},",
                     "{C:green}#10# in #11#{} chance to create a {C:dark_edition}Negative{} {C:common}Common{} Joker when {C:attention}Blind{} is selected on {C:attention}Linux{},",
                     "{X:money,C:white}X#15#{} Money if {C:legendary,E:1}all conditions{} are met at end of shop"
                     },
