@@ -1670,7 +1670,7 @@ SPOX.erratic = {
             for i, v in pairs(G.GAME.hands) do
                 if pseudorandom("erratic_birthright3070") < 0.3 then hands[#hands+1] = i end
             end
-            SMODS.upgrade_poker_hands({ from = tag, hands = hands, level_up = pseudorandom("erratic_levels")*3 })
+            SMODS.upgrade_poker_hands({ from = card, hands = hands, level_up = pseudorandom("erratic_levels")*3 })
         end,
         function(self, card, context)
             local card = pseudorandom_element(G.hand.cards, pseudoseed("erratic_cards"))
@@ -1984,6 +1984,14 @@ function G.FUNCS.buy_cardshop(e)
     G.deck:emplace(card_copied)
     G.FUNCS.exit_overlay_menu()
     G.GAME.birthright_cant_cardshop = true
+end
+
+SMODS.current_mod.set_debuff = function(card)
+    if G.GAME.smallpox_card_shop
+    and G.GAME.smallpox_card_shop.cards 
+    and card == G.GAME.smallpox_card_shop.cards[1] then
+        return 'prevent_debuff'
+    end
 end
 
 SMODS.Atlas {

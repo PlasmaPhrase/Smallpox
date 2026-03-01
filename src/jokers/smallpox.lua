@@ -1,4 +1,4 @@
--- Smallpox Atlas
+-- Smallpox Atlases
 SMODS.Atlas({
     key = "smallpox", 
     path = "jokers/Smallpox.png", 
@@ -7,21 +7,26 @@ SMODS.Atlas({
     atlas_table = "ASSET_ATLAS"
 })
 
+SMODS.Sound {
+    key = "cronch",
+    path = "cronch.ogg"
+}
+
 -- Smallpox
 SMODS.Joker {
     key = "smallpox",
     pos = { x = 0, y = 0 },
     rarity = 3,
     blueprint_compat = true,
-    cost = 2,
-    discovered = false,
-    config = { extra = { xmult = 1.5, odds = 4 }, },
+    cost = 1,
+    discovered = true,
+    config = { extra = { xmult = 1, odds = 4, xmult_gain = 0.5 }, },
     pools = {["Smallpox"] = true},
     atlas = 'smallpox',
 
     loc_vars = function(self, info_queue, card)
         local numerator, denominator = SMODS.get_probability_vars(card, 1, card.ability.extra.odds, 'smallpox_smallpox')
-        return { vars = { colours = { HEX('2d50ba') }, card.ability.extra.xmult, numerator, denominator } }
+        return { vars = { colours = { HEX('2d50ba') }, card.ability.extra.xmult, numerator, denominator, card.ability.extra.xmult_gain } }
     end,
 
     calculate = function(self, card, context)
@@ -34,9 +39,12 @@ SMODS.Joker {
                         G.jokers.cards[i]
                 end
             end
+        local joker_to_destroy = pseudorandom_element(destructable_jokers, 'smallpox_smallpox')
         if joker_to_destroy then
             joker_to_destroy.getting_sliced = true
+                card.ability.extra.xmult = card.ability.extra.xmult + card.ability.extra.xmult_gain -- Gain xMult
                 return {
+                    sound = "smallpox_cronch",
                     message = "Infected!",
                     colour = G.C.PURPLE
                 },
@@ -48,10 +56,10 @@ SMODS.Joker {
                  end,
             G.E_MANAGER:add_event(Event({ -- Newly Infected Card
                 func = function()
-                    SMODS.add_card {
-                    key = 'j_smallpox_smallpox',
-                    }
-                    G.GAME.joker_buffer = 0
+                    copied_joker = copy_card(joker_to_destroy, nil, nil, nil, nil)
+                    copied_joker:set_ability(card.config.center.key)
+                    copied_joker:add_to_deck()
+                    G.jokers:emplace(copied_joker)
                     return true
                 end,
             })) -- End Dissolve

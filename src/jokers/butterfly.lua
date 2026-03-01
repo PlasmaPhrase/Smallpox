@@ -28,28 +28,28 @@ SMODS.Joker{
         
     end,
 
-    remove_from_deck = function(self, card, from_debuff)
-        if from_debuff then return end
+    calculate = function(self, card, context)
+        if context.selling_self then
         if not G.jokers or not G.jokers.cards then return end
 
 
         local joker_count = 0
         for _, j in ipairs(G.jokers.cards) do
-            if j ~= card then
+            if j ~= card and not SMODS.is_eternal(j, card) then
                 joker_count = joker_count + 1
             end
         end
 
         local editions = {}
         for _, j in ipairs(G.jokers.cards) do
-            if j ~= card then
+            if j ~= card and not SMODS.is_eternal(j, card) then
                 editions[#editions + 1] = j.edition
             end
         end
 
         for i = #G.jokers.cards, 1, -1 do
             local j = G.jokers.cards[i]
-            if j ~= card then
+            if j ~= card and not SMODS.is_eternal(j, card) then
                 j:start_dissolve()
                 G.jokers:remove_card(j)
             end
@@ -89,6 +89,7 @@ SMODS.Joker{
                 play_sound('generic1', 0.9 + math.random()*0.1, 0.8)
             end
         end
+    end
     end,
     smallpox_credits = {
 		{

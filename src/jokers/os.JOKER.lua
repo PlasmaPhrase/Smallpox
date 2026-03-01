@@ -40,22 +40,33 @@ please set cost according to rarity
 ]]
 
 G.YOUAREANIDIOT = G.YOUAREANIDIOT or {
-    start = love.timer.getTime(),
-    pressed_f = false
+    pressed_f = false,
+    pressed_f_with_hand = false
 }
 
-local old_key = love.keypressed
+local old_keyp = love.keypressed
 
 function love.keypressed(key)
     if key == "f" then
-        if G and G.jokers and G.jokers.cards and not G.SETTINGS.paused then
+        if G then
             G.YOUAREANIDIOT.pressed_f = true
-            SMODS.calculate_context({ key_press_f = true })
         end
     end
 
-    return old_key(key)
+    return old_keyp(key)
 end
+
+local old_keyr = love.keyreleased
+function love.keyreleased(key)
+    if key == "f" then
+        if G then
+            G.YOUAREANIDIOT.pressed_f = false
+        end
+    end
+
+    return old_keyr(key)
+end
+
 
 local function get_system_state() -- im sorry
 
@@ -65,8 +76,7 @@ local function get_system_state() -- im sorry
     s.friday = (t.wday == 6)
     s.june = (t.month == 6)
     s.four_pm = (t.hour == 16)
-    s.session = love.timer.getTime() - G.YOUAREANIDIOT.start
-    s.fps = love.timer.getFPS()
+    s.fps = love.timer.getFPS() or 100
     s.volume = G.SETTINGS.SOUND.music_volume
     local _, batt = love.system.getPowerInfo()
     s.battery = batt or 100
@@ -116,7 +126,6 @@ SMODS.Joker {
             volume_value = 2,
             batt_min = 30,
             batt_max = 50,
-            session_min = 23,
             odds = 6,
             rare_xchips = 2,
             cpu_req = 2,
@@ -138,7 +147,7 @@ SMODS.Joker {
                 e.volume_value,
                 e.batt_min,
                 e.batt_max,
-                e.session_min,
+                nil, -- Removed Session Time due to being unused, i do not want to bother editing the loc file numbers - xoxo M0xes
                 numerator,
                 denominator,
                 e.rare_xchips,
@@ -152,34 +161,32 @@ SMODS.Joker {
         
         local e = card.ability.extra
         local s = get_system_state()
-
+        if context.press_play then
+            if G.YOUAREANIDIOT.pressed_f then
+                G.YOUAREANIDIOT.pressed_f_with_hand = true
+            end
+        end
         if context.joker_main then
             local mult = e.base_mult
             local chips = 0
             local money = 0
+            local xmult = 1
+            local xchips = 1
 
             if s.friday then
                 mult = mult + e.friday_mult
             end
 
             if s.four_pm then
-                mult = mult * (e.pm_xmult ^ context.full_hand_size)
+                xmult = xmult + (e.pm_xmult *  #context.full_hand)
             end
 
             if s.june then
-                chips = chips + (e.june_xchips * #G.consumeables.cards)
-            end
-
-            if s.cpu > e.cpu_req then
-                for _, j in ipairs(G.jokers.cards) do
-                    if j.config.center.rarity == 3 then
-                        chips = chips * e.rare_xchips
-                    end
-                end
+                xchips = xchips + (e.june_xchips * #G.consumeables.cards)
             end
 
             if s.fps < 30 then
-                money = money + (e.lowfps_money * context.full_hand_size)
+                money = money + (e.lowfps_money * #context.full_hand)
             end
             
             local letters = {}
@@ -193,20 +200,24 @@ SMODS.Joker {
                 end
                 return "" 
             end)
-            mult = mult + count
+            chips = chips + count
 
-            if G.YOUAREANIDIOT.pressed_f then
-                chips = chips +
-                    math.floor(G.GAME.dollars / 5) * e.f_chips
-
-                G.YOUAREANIDIOT.pressed_f = false
+            if G.YOUAREANIDIOT.pressed_f_with_hand then
+                chips = chips + math.floor(G.GAME.dollars / 5) * e.f_chips
+                G.YOUAREANIDIOT.pressed_f_with_hand = false
             end
 
             return {
                 mult = mult,
                 chips = chips,
+                xchips = xchips,
+                xmult = xmult,
                 dollars = money
             }
+        end
+        if context.other_joker and (context.other_joker.config.center.rarity == 3 or context.other_joker.config.center.rarity == "Rare") 
+        and (s.cpu > e.cpu_req or true) then
+            return {xchips = card.ability.extra.rare_xchips}
         end
 
         if context.end_of_round then
@@ -219,16 +230,6 @@ SMODS.Joker {
 
             if s.battery >= e.batt_min and s.battery <= e.batt_max then
                 G.GAME.tags[#G.GAME.tags + 1] = Tag("double")
-            end
-
-            if s.session >= e.session_min * 60 then
-                local c = pseudorandom_element(G.consumeables.cards)
-
-                if c then
-                    local copy = copy_card(c)
-                    copy:set_edition({ negative = true })
-                    G.consumeables:emplace(copy)
-                end
             end
         end
 

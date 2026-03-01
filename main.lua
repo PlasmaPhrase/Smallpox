@@ -50,7 +50,7 @@ assert(SMODS.load_file("./src/boosters.lua"))() -- BOOSTERS
 
 
 ---COMMON
-assert(SMODS.load_file("./src/jokers/jokerplus.lua"))() -- The Example Joker (our chud son)
+assert(SMODS.load_file("./src/jokers/jokerplus.lua"))() -- The example joker our chud son
 assert(SMODS.load_file("./src/jokers/agency.lua"))() -- Agency, The by Myst, a: Inky
 assert(SMODS.load_file("./src/jokers/ampup.lua"))() -- Amp Up by M0x3s
 assert(SMODS.load_file("./src/jokers/astro.lua"))() -- Astro by Astro, p: LasagnaFelidae
@@ -63,11 +63,11 @@ assert(SMODS.load_file("./src/jokers/os.JOKER.lua"))() -- os.JOKER by Nxkoo, a: 
 assert(SMODS.load_file("./src/jokers/theriantropy.lua"))() -- Theriantropy by Jewel
 ---UNCOMMON
 assert(SMODS.load_file("./src/jokers/antique_chair.lua"))() -- Antique Chair by cloudzXIII
-assert(SMODS.load_file("./src/jokers/atlas.lua"))() -- Atlas by ABuffZucchini
+assert(SMODS.load_file("./src/jokers/Atlas.lua"))() -- Atlas by ABuffZucchini
 assert(SMODS.load_file("./src/jokers/blackjack.lua"))() -- Blackjack by Typ0
 assert(SMODS.load_file("./src/jokers/factoryline.lua"))() -- Factory Line by Lily Felli
 assert(SMODS.load_file("./src/jokers/missingposter.lua"))() -- Missing Poster by LFMoth
-assert(SMODS.load_file("./src/jokers/programmersocks.lua"))() -- Programmer Socks by Proto
+assert(SMODS.load_file("./src/jokers/ProgrammerSocks.lua"))() -- Programmer Socks by Proto
 assert(SMODS.load_file("./src/jokers/restaurantmenu.lua"))() -- Restaurant Menu by Inky, p: Typ0
 assert(SMODS.load_file("./src/jokers/settheory.lua"))() -- Set Theory by Arta
 assert(SMODS.load_file("./src/jokers/sumi.lua"))() -- Sumi by Tsutje
@@ -120,7 +120,7 @@ end
 local game_main_menu_ref = Game.main_menu
 function Game:main_menu(change_context)
     local desc = localize("Spox_Description")
-    print(type(desc))
+    --print(type(desc))
     local ret = game_main_menu_ref(self, change_context)
 
         local colours = { c1 = HEX("3F528C"), c2 = HEX("89ACEB") }
@@ -219,7 +219,30 @@ SMODS.current_mod.optional_features = { --I DON'T KNOW IF THIS IS ALLOWED
     retrigger_joker = true
 }
 
-
+function create_badge_ext(_string, _badge_col, _text_col, scaling, image)
+    scaling = scaling or 1
+    local i_part
+    if image then
+        local sprite_mod = scaling * 0.5
+        local atlas = SMODS.get_atlas(image)
+        local w_mod = atlas.px / atlas.py
+        i_part = {
+            n = G.UIT.O,
+            config = {
+                object = SMODS.create_sprite(0, 0, sprite_mod * w_mod, sprite_mod, atlas, {x = 0, y = 0})
+            }
+        }
+    end
+    return {n=G.UIT.R, config={align = "cm"}, nodes={
+        {n=G.UIT.R, config={align = "cm", colour = _badge_col or G.C.GREEN, r = 0.1, minw = 2, minh = 0.4*scaling, emboss = 0.05, padding = 0.03*scaling}, nodes={
+            {n=G.UIT.B, config={h=0.1,w=0.03}},
+            {n=G.UIT.O, config={object = DynaText({string = _string or 'ERROR', colours = {_text_col or G.C.WHITE},float = true, shadow = true, offset_y = -0.05, silent = true, spacing = 1, scale = 0.33*scaling})}},
+            image and {n=G.UIT.B, config={h=0.1,w=0.03}} or nil,
+            image and i_part or nil,
+            {n=G.UIT.B, config={h=0.1,w=0.03}},
+        }}
+    }}
+end
 
 local smcmb = SMODS.create_mod_badges
 function SMODS.create_mod_badges(obj, badges)
@@ -264,7 +287,7 @@ function SMODS.create_mod_badges(obj, badges)
                 end
                 credit.size = math.max(size, 0.8)
             end
-            badges[inital_badge_amount + i] = create_badge(credit.text, credit.color, credit.text_color, credit.size)
+            badges[inital_badge_amount + i] = create_badge_ext(credit.text, credit.color, credit.text_color, credit.size, credit.text == "By: Ruby" and "smallpox_ruby_paw" or nil)
         end
     end
 end
