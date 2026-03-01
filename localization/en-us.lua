@@ -1076,8 +1076,8 @@ return {
             spox_contributers_tab_name = "Contributers",
             spox_helpers = "Plasma, LasagnaFelidae, SLDTyp0, M0xes",
             spox_credits_tab_1 = "Mysthaps M0xes LasagnaFelidae Lexi Edward Robinson PokeRen GhostSalt Nxkoo Jewel CloudzXIII Astro AbuffZucchini SLDTyp0 LilyFelli",
-            spox_credits_tab_2 = "Mysthaps M0xes LasagnaFelidae Lexi Edward Robinson PokeRen GhostSalt Nxkoo Jewel CloudzXIII Astro AbuffZucchini SLDTyp0 LilyFelli",
-            spox_credits_tab_3 = "Mysthaps M0xes LasagnaFelidae Lexi Edward Robinson PokeRen GhostSalt Nxkoo Jewel CloudzXIII Astro AbuffZucchini SLDTyp0 LilyFelli",
+            spox_credits_tab_2 = "ProdByProto Inky IamArta Tje.Tsu pi_cubed Metanite64 soulware mys. minty Ruby Tatsu ThunderEdge Breuuh Sillyz Hunter",
+            spox_credits_tab_3 = "isotypical NinjaBanana FireIce421 TigerTHawk Rainstar notmario Plasma Revo FlynnsaneFellow missingnumber Abel FirstTry Tech Lyre",
             Spox_Discord = "Join The Smallpox Discord!",
             Spox_Description = "Smallpox is a collaborative mod where each Joker is made by a different person!"
 		},
