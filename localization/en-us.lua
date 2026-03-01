@@ -94,10 +94,10 @@ return {
                 text = {
                     {
                     "When Blind is selected,",
-                    "Gain {C:mult}Mult{} based on the run's {C:attention}Round{}",
-                    "Gain {X:mult,C:white}XMult{} based on the run's {C:attention}Ante{}",
-                    "Gain {C:money}Money{} based on the amount of owned {C:attention}Jokers{}",
-                    "{C:inactive}Currently {C:mult}+#2# Mult{C:inactive}, {X:mult,C:white}X#1#{C:inactive} XMult, and {C:money}#3#${}",
+                    "Gives {C:mult}Mult{} for every {C:attention}Round{}",
+                    "Gives {X:mult,C:white}XMult{} for every 2 {C:attention}Antes{}",
+                    "Gives {C:money}Money{} for every 2 {C:attention}Jokers{} owned",
+                    "{C:inactive}Currently {C:mult}+#2#{C:inactive} Mult, {X:mult,C:white}X#1#{C:inactive} Mult, and {C:money}$#3#{}",
                     },
 					          {
                         "{s:0.9,C:inactive}It's TV Time; with your friend, Mr. Puzzles!",
@@ -187,8 +187,8 @@ return {
                       "Kasane Teto",
                       },
                 text = {
-                    "Gain {X:mult,C:white}X#1#{} Mult for every",
-                    "{C:attention}Ace{} of {C:hearts}Hearts{} destroyed",
+                    "This Joker gains {X:mult,C:white}X#1#{} Mult",
+                    "for every {C:hearts}Heart{} destroyed",
                     "{C:inactive}(Currently{} {X:mult,C:white}X#2#{} {C:inactive}Mult)",
                 },
             },
@@ -353,16 +353,15 @@ return {
                     "{C:mult}+#2#{} More Mult if scored in {C:attention}Friday{}",
                     "{X:mult,C:white}X#3#{} Mult for each {C:attention}played{} card if scored around {C:attention}4 PM{}",
                     "{X:chips,C:white}X#4#{} Chips for each held {C:attention}Consumable{} if scored in {C:attention}June{}",
-                    "{C:mult}+1{} Mult for each unique {C:attention}ASCII{} character in {C:attention}Clipboard{}",
+                    "{C:chips}+1{} Chips for each unique {C:attention}ASCII{} character in {C:attention}Clipboard{}",
                     "Each {C:rare}Rare{} Joker gives {X:chips,C:white}X#12#{} Chips if {C:attention}CPU > #13# Cores{}",
                     "{C:chips}+#14#{} Chips for every {C:money}$5{} if {C:attention}F{} is pressed while also {C:attention}pressing{} {C:blue}Play Hand{}",
-                    "{C:money}+$#5#{} for each {C:attention}played{} card if {C:attention}FPS < 30{}",
+                    "{C:money}$#5#{} for each {C:attention}played{} card if {C:attention}FPS < 30{}",
                     },
                     {
                     "At end of round:",
                     "All Jokers gain {C:money}+$#6#{} value if {C:attention}Music Volume < 10{},",
                     "Gain {C:attention}Double Tag{} if {C:attention}Battery #7#% ~ #8#%{},",
-                    "Create a {C:dark_edition}Negative{} copy of a random held {C:attention}Consumable{} after {C:attention}#9# Minutes{},",
                     "{C:green}#10# in #11#{} chance to create a {C:dark_edition}Negative{} {C:common}Common{} Joker when {C:attention}Blind{} is selected on {C:attention}Linux{},",
                     "{X:money,C:white}X#15#{} Money if {C:legendary,E:1}all conditions{} are met at end of shop"
                     },
@@ -375,9 +374,10 @@ return {
                 text = {
                     "{X:mult,C:white}X#1#{} Mult",
                     "When this card is {C:attention}sold or {C:attention}destroyed",
-                    "create a {C:attention}copy{} in the next shop",
-                    "with an extra {X:mult,C:white}X#2#{} Mult"
-              },
+                    "create a {C:attention}copy{} in the next shop slot",
+                    "with the same {C:dark_edition}Edition",
+                    "and an extra {X:mult,C:white}X#2#{} Mult"
+               },
             },
             j_smallpox_antique_chair = {
                 name = {
@@ -595,7 +595,6 @@ return {
             j_smallpox_birthright = {
                 name = {
                     "Birthright",
-                    "{s:0.5}created {IMG:smallpox_ruby_paw,s:0.35}a{}{s:0.35} {}{C:red,s:0.5}Ruby{}",
                 },
                 text = {
                     "Has a different effect",
@@ -606,7 +605,6 @@ return {
                 name = {
                     "Birthright",
                     "{s:0.8,C:inactive}Venemous Slander{}",
-                    "{s:0.5}created by {IMG:smallpox_ruby_paw,s:0.35}a{}{s:0.35} {}{s:0.35} {}{C:red,s:0.5}Ruby{}",
                 },
                 text = {
                     {
@@ -621,7 +619,6 @@ return {
                 name = {
                     "Birthright",
                     "{s:0.8,C:inactive}Conjoined{}",
-                    "{s:0.5}created by {IMG:smallpox_ruby_paw,s:0.35}a{}{s:0.35} {}{C:red,s:0.5}Ruby{}",
                 },
                 text = {
                     {
@@ -638,7 +635,6 @@ return {
                 name = {
                     "Birthright",
                     "{s:0.8,C:inactive}Money, Money. Money{}",
-                    "{s:0.5}created by {IMG:smallpox_ruby_paw,s:0.35}a{}{s:0.35} {}{C:red,s:0.5}Ruby{}",
                 },
                 text = {
                     {
@@ -655,7 +651,6 @@ return {
                 name = {
                     "Birthright",
                     "{s:0.8,C:inactive}Regurgitate{}",
-                    "{s:0.5}created by {IMG:smallpox_ruby_paw,s:0.35}a{}{s:0.35} {}{C:red,s:0.5}Ruby{}",
                 },
                 text = {
                     {
@@ -687,7 +682,6 @@ return {
                 name = {
                     "Birthright",
                     "{s:0.8,C:inactive}Samsara{}{s:0.35} {}",
-                    "{s:0.5}created by {IMG:smallpox_ruby_paw,s:0.35}a{}{s:0.35} {}{C:red,s:0.5}Ruby{}",
                 },
                 text = {
                     {
@@ -705,7 +699,6 @@ return {
                 name = {
                     "Birthright",
                     "{s:0.8,C:inactive}Interstellar{}",
-                    "{s:0.5}created by {IMG:smallpox_ruby_paw,s:0.35}a{}{s:0.35} {}{C:red,s:0.5}Ruby{}",
                 },
                 text = {
                     "Using a Planet card",
@@ -719,7 +712,6 @@ return {
                 name = {
                     "Birthright",
                     "{s:0.8,C:inactive}Better Destiny{}",
-                    "{s:0.5}created by {IMG:smallpox_ruby_paw,s:0.35}a{}{s:0.35} {}{C:red,s:0.5}Ruby{}",
                 },
                 text = {
                     {
@@ -733,7 +725,6 @@ return {
                 name = {
                     "Birthright",
                     "{s:0.8,C:inactive}Interstellar{}",
-                    "{s:0.5}created by {IMG:smallpox_ruby_paw,s:0.35}a{}{s:0.35} {}{C:red,s:0.5}Ruby{}",
                 },
                 text = {
                     "Using a Planet card",
@@ -747,7 +738,6 @@ return {
                 name = {
                     "Birthright",
                     "{s:0.8,C:inactive}Make Your Destiny{}",
-                    "{s:0.5}created by {IMG:smallpox_ruby_paw,s:0.35}a{}{s:0.35} {}{C:red,s:0.5}Ruby{}",
                 },
                 text = {
                     "Once per ante open",
@@ -759,7 +749,6 @@ return {
                 name = {
                     "Birthright",
                     "{s:0.8,C:inactive}Chromatic Aberration{}",
-                    "{s:0.5}created by {IMG:smallpox_ruby_paw,s:0.35}a{}{s:0.35} {}{C:red,s:0.5}Ruby{}",
                 },
                 text = {
                     {
@@ -776,7 +765,6 @@ return {
                 name = {
                     "Birthright",
                     "{s:0.8,C:inactive}Dominion, Attuned{}",
-                    "{s:0.5}created by {IMG:smallpox_ruby_paw,s:0.35}a{}{s:0.35} {}{C:red,s:0.5}Ruby{}",
                 },
                 text = {
                     {
@@ -791,7 +779,6 @@ return {
                 name = {
                     "Birthright",
                     "{s:0.8,C:inactive}Dominion, Attuned{}",
-                    "{s:0.5}created by {IMG:smallpox_ruby_paw,s:0.35}a{}{s:0.35} {}{C:red,s:0.5}Ruby{}",
                 },
                 text = {
                     {
@@ -812,7 +799,6 @@ return {
                 name = {
                     "Birthright",
                     "{s:0.8,C:inactive}Dominion, Attuned{}",
-                    "{s:0.5}created by {IMG:smallpox_ruby_paw,s:0.35}a{}{s:0.35} {}{C:red,s:0.5}Ruby{}",
                 },
                 text = {
                     {
@@ -831,7 +817,6 @@ return {
                 name = {
                     "Birthright",
                     "{s:0.8,C:inactive}Dominion, Attuned{}",
-                    "{s:0.5}created by {IMG:smallpox_ruby_paw,s:0.35}a{}{s:0.35} {}{C:red,s:0.5}Ruby{}",
                 },
                 text = {
                     {
@@ -851,7 +836,6 @@ return {
                     "Birthright",
                     "{s:0.8,C:inactive}The World looks White{}",
                     "{s:0.8,C:inactive}The World looks Red{}",
-                    "{s:0.5}created by {IMG:smallpox_ruby_paw,s:0.35}a{}{s:0.35} {}{C:red,s:0.5}Ruby{}",
                 },
                 text = {
                     {
@@ -865,7 +849,6 @@ return {
                 name = {
                     "Birthright",
                     "{s:0.8,C:inactive}Bifurcated{}",
-                    "{s:0.5}created by {IMG:smallpox_ruby_paw,s:0.35}a{}{s:0.35} {}{C:red,s:0.5}Ruby{}",
                 },
                 text = {
                     {
@@ -883,7 +866,6 @@ return {
                 name = {
                     "Birthright",
                     "{s:0.8,C:inactive}REACTOR MELTDOWN IMMINENT{}",
-                    "{s:0.5}created by {IMG:smallpox_ruby_paw,s:0.35}a{}{s:0.35} {}{C:red,s:0.5}Ruby{}",
                 },
                 text = {
                     {
@@ -903,7 +885,6 @@ return {
                 name = {
                     "Birthright",
                     "{s:0.8,C:inactive}Absolute Entropy{}",
-                    "{s:0.5}created by {IMG:smallpox_ruby_paw,s:0.35}a{}{s:0.35} {}{C:red,s:0.5}Ruby{}",
                 },
                 text = {
                     
