@@ -5,7 +5,7 @@ SMODS.Challenge {
     },
     rules = {
         modifiers = {
-            { id = 'joker_slots', value = 1 },
+            { id = 'joker_slots', value = 2 },
         }
     },
 }
