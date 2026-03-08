@@ -375,9 +375,8 @@ return {
                 text = {
                     "{X:mult,C:white}X#1#{} Mult",
                     "When this card is {C:attention}sold or {C:attention}destroyed",
-                    "create a {C:attention}copy{} in the next shop slot",
-                    "with the same {C:dark_edition}Edition",
-                    "and an extra {X:mult,C:white}X#2#{} Mult"
+                    "all copies of {C:attention}Ouroboros{} gain {X:mult,C:white}X#2#{} Mult",
+                    "and this card repleaces the next shop slot"
                },
             },
             j_smallpox_antique_chair = {
