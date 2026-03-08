@@ -55,7 +55,7 @@ SMODS.Joker {
 
 local ccfs = create_card_for_shop
 function create_card_for_shop(area)
-    if #G.GAME.SPOX_OROSHINY > 0 then
+    if G.GAME.SPOX_OROSHINY and #G.GAME.SPOX_OROSHINY > 0 then
         local cyclic = SMODS.create_card { key = "j_smallpox_ins_oro", area = area, key_append = "spox_oro" }
         -- dear god ruby what are you doing
         if cyclic.config.center.key ~= "j_smallpox_ins_oro"  then
