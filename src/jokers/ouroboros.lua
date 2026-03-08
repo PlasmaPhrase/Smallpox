@@ -55,11 +55,7 @@ SMODS.Joker {
 
 local ccfs = create_card_for_shop
 function create_card_for_shop(area)
-    -- fixed 1 in 20 chance to spawn another ouro if one was already scaled
-    -- a bit of ouroboros forgiveness :)
-    local miracle = G.GAME.SPOX_OROINIT > 1 and pseudorandom("spox_oromiracle") > 0.05
-
-    if #G.GAME.SPOX_OROSHINY > 0 or miracle then
+    if #G.GAME.SPOX_OROSHINY > 0 then
         local cyclic = SMODS.create_card { key = "j_smallpox_ins_oro", area = area, key_append = "spox_oro" }
         -- dear god ruby what are you doing
         if cyclic.config.center.key ~= "j_smallpox_ins_oro"  then
