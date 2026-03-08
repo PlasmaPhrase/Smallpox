@@ -222,7 +222,7 @@ return {
                     {
                     "This Joker gains",
                     "{X:mult,C:white}X#4#{} Mult per {V:1}infection{}",
-                    "{C:inactive}(Currently {}{X:mult,C:white}X#1#{}{C:inactive} Mult{})"
+                    "{C:inactive}(Currently {}{X:mult,C:white}X#1#{}{C:inactive} Mult){}"
                     }
                 }
             },
@@ -1088,6 +1088,7 @@ return {
 
 	},        
 }
+
 
 
 
