@@ -142,49 +142,36 @@ end
 
 G.FUNCS.xiii_chair_button_click = function(e)
     local card = e.config and e.config.ref_table
-    local shop_cards = G.shop_jokers.cards
+    local shop_card = G.shop_jokers.highlighted[1]
 
-    for i = 1, #shop_cards do
-        if shop_cards[i] and shop_cards[i].highlighted then
-            xiii_acquire(shop_cards[i])
-
-            SMODS.scale_card(card, {
-                ref_table = card.ability.extra,
-                ref_value = "x_mult",
-                scalar_value = "Xmult_gain",
-                operation = '+',
-            })
-
-            G.GAME.xiii_swap_count = (G.GAME.xiii_swap_count or 0) + 1
-            card:set_cost()
-            card.area:remove_card(card)
-            G.shop_jokers:emplace(card)
-
-            -- add buy/sell buttons
-            for k, v in ipairs(shop_cards) do
-                create_shop_card_ui(v)
-            end
-            return
-        end
+    if shop_card.ability.consumeable and not (#G.consumeables.cards < G.consumeables.config.card_limit) then
+        alert_no_space(card, G.consumeables)
+        return
     end
-end
 
-local function is_selected_a_chair()
-    if G.shop_jokers and G.shop_jokers.cards then
-        local shop_cards = G.shop_jokers.cards
-        for i = 1, #shop_cards do
-            if shop_cards[i] and shop_cards[i].highlighted and shop_cards[i].config.center.key ~= "j_smallpox_antique_chair" then
-                return true
-            end
-        end
-    end
+    xiii_acquire(shop_card)
+
+    SMODS.scale_card(card, {
+        ref_table = card.ability.extra,
+        ref_value = "x_mult",
+        scalar_value = "Xmult_gain",
+        operation = '+',
+    })
+
+    G.GAME.xiii_swap_count = (G.GAME.xiii_swap_count or 0) + 1
+    card:set_cost()
+    card.area:remove_card(card)
+    G.shop_jokers:emplace(card)
+
+    -- add buy/sell button
+    create_shop_card_ui(card)
 end
 
 G.FUNCS.xiii_chair_button_func = function(e)
-    local card = e.config and e.config.ref_table
-    local highlighted = is_selected_a_chair()
+    local can_use = G.shop_jokers and #G.shop_jokers.highlighted == 1 and
+        G.shop_jokers.highlighted[1].config.center.key ~= "j_smallpox_antique_chair"
 
-    if not highlighted then
+    if not can_use then
         e.config.colour = G.C.UI.BACKGROUND_INACTIVE
         e.config.button = nil
     else
