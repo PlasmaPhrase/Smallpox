@@ -142,55 +142,68 @@ end
 
 G.FUNCS.xiii_chair_button_click = function(e)
     local card = e.config and e.config.ref_table
-    local shop_cards = G.shop_jokers.cards
+    local shop_card = G.shop_jokers.highlighted[1]
 
-    for i = 1, #shop_cards do
-        if shop_cards[i] and shop_cards[i].highlighted then
-            xiii_acquire(shop_cards[i])
-
-            SMODS.scale_card(card, {
-                ref_table = card.ability.extra,
-                ref_value = "x_mult",
-                scalar_value = "Xmult_gain",
-                operation = '+',
-            })
-
-            G.GAME.xiii_swap_count = (G.GAME.xiii_swap_count or 0) + 1
-            card:set_cost()
-            card.area:remove_card(card)
-            G.shop_jokers:emplace(card)
-
-            -- add buy/sell buttons
-            for k, v in ipairs(shop_cards) do
-                create_shop_card_ui(v)
-                if v.ability.consumeable then v:start_materialize() end
-                for _kk, vvv in ipairs(G.GAME.tags) do
-                    if vvv:apply_to_run({ type = 'store_joker_modify', card = v }) then break end
-                end
-            end
-        end
+    if shop_card.ability.consumeable and not (#G.consumeables.cards < G.consumeables.config.card_limit) then
+        alert_no_space(card, G.consumeables)
+        return
     end
+
+    xiii_acquire(shop_card)
+
+    SMODS.scale_card(card, {
+        ref_table = card.ability.extra,
+        ref_value = "x_mult",
+        scalar_value = "Xmult_gain",
+        operation = '+',
+    })
+
+    G.GAME.xiii_swap_count = (G.GAME.xiii_swap_count or 0) + 1
+    card:set_cost()
+    card.area:remove_card(card)
+    G.shop_jokers:emplace(card)
+
+    -- add buy/sell button
+    create_shop_card_ui(card)
 end
 
 G.FUNCS.xiii_chair_button_func = function(e)
-    local card = e.config and e.config.ref_table
-    local highlighted = false
+    local can_use = G.shop_jokers and #G.shop_jokers.highlighted == 1 and
+        G.shop_jokers.highlighted[1].config.center.key ~= "j_smallpox_antique_chair"
 
-    if G.shop_jokers and G.shop_jokers.cards then
-        local shop_cards = G.shop_jokers.cards
-        for i = 1, #shop_cards do
-            if shop_cards[i] and shop_cards[i].highlighted and shop_cards[i].config.center.key ~= "j_smallpox_antique_chair" then
-                highlighted = true
-            end
-        end
-    end
-
-    if highlighted then
-        e.config.colour = G.C.RED
-        e.config.button = 'xiii_chair_button_click'
-    else
+    if not can_use then
         e.config.colour = G.C.UI.BACKGROUND_INACTIVE
         e.config.button = nil
+    else
+        e.config.colour = G.C.RED
+        e.config.button = 'xiii_chair_button_click'
     end
 end
+
+SMODS.DrawStep {
+    key = 'smallpox_chair_button',
+    order = -30,
+    func = function(card, layer)
+        if card.children.smallpox_chair_button then
+            card.children.smallpox_chair_button:draw()
+        end
+    end
+}
+
+SMODS.draw_ignore_keys.smallpox_chair_button = true
+
+local highlight_ref = Card.highlight
+function Card.highlight(self, is_highlighted)
+    if is_highlighted and self.ability.set == "Joker" and self.area == G.jokers and self.config.center.key == "j_smallpox_antique_chair" then
+        if not self.children.smallpox_chair_button then
+            self.children.smallpox_chair_button = xiii_chair_UIButton(self)
+        end
+    elseif self.children.smallpox_chair_button then
+        self.children.smallpox_chair_button:remove()
+        self.children.smallpox_chair_button = nil
+    end
+
+    return highlight_ref(self, is_highlighted)
+end
+
 --#endregion
